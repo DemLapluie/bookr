@@ -1,0 +1,15 @@
+/* css page accueil */
+
+html,
+body{
+    min-height: 100vh;
+    margin: 0;
+    color: black;
+    background-image: url("../img/bg_index.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+    background: white;
+}

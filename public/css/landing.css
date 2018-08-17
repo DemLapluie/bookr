@@ -1,45 +1,12 @@
-html,body{ 
-    height: 100vh;
-    margin: 0; 
+
+html,
+body{
+    min-height: 100vh;
+    margin: 0;
     color: black;
     background-image: url("../img/bg_index.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.nav_top_right{ 
-    float: right; 
-    margin-right: 105px; 
-    padding-top: 10px
-}
-
-.nav_top_right a { 
-    font-size: 1.45em;
-     color: black;
-     margin-right: 10px 
-}
-
-.nav_top_right a:hover,.nav_bot_left a:hover{
-    color: dimgrey
-}
-
-
-.nav_bot_left { 
-    float: left;
-    margin-left: 85px;
-    margin-bottom: 9px
-}
-
-.nav_bot_left a { 
-    text-decoration: none;
-    font-size: .85em;
-    color: black;
-    margin: 0 5px
-}
-
-.nav_bot_left a:hover{
-    color: dimgrey;
-    border-bottom: 1px dotted dimgrey
 }
 
 .logo{ 
@@ -100,17 +67,14 @@ button{
 }
 
 footer{
-    height: 40px;
+    width: 100%;
     position: fixed;
     top: 95vh;
 }
 
-@media screen and (min-width: 200px) and (max-width: 480px) {
-    footer{
-        position: static;
-        margin-top: 58%;
-    }
-}
+
+
+
 
 
 

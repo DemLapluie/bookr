@@ -2,8 +2,51 @@
 
 {% block stylesheets %}
     {{ parent() }}
-{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}" />
 {% endblock %}
-    <h1>Accueil</h1>
+
+
+{% block body %}
+<header>
+    <div class="header_top">
+        <nav class="nav_top_left">
+            <a href="#"><span class="text-uppercase">à propos</span><i class="fas fa-sort-down"></i></a>
+            <a href="#"><span class="text-uppercase">nos services</span><i class="fas fa-sort-down"></i></a>
+        </nav>
+        <div class="logo_header col-2">
+            <img src="{{ asset('/img/logo_header.png') }}" alt="">
+            <br>
+            <p>e-réservation esthetique</p>
+        </div>
+        <nav class="nav_top_right">
+            <a href="#"><span  class="text-uppercase">mon compte</span><i class="fas fa-sort-down"></i></a>
+            <a href="#" class="parte_link"><span>Devenez prestataire</span></a>
+            <a href="#" class="icon_nav"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
+        </nav>
+    </div>
+    <div class="clearfix"></div>
+    <div class="cat_type_nav">
+        <nav>
+            <a href="#">Coiffeur</a>
+            <a href="#">Prothesiste ongulaire</a>
+            <a href="#">Barbier</a>
+            <a href="#"> Stylist des cils</a>
+            <a href="#"> MakeUp Artist</a>
+        </nav>
+    </div>
+</header>
+<div class="clearfix"></div>
+<div class="container">
+
+</div>
+<footer>
+    <nav class="nav_bot_left">
+        <a href="#">Mentions legale</a>
+        <a href="#">Contact</a>
+        <a href="#">FAQ</a>
+    </nav>
+</footer>
 
 {% endblock %}
