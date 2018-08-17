@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <header>
+        <nav class="nav_top_right">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+    </header>
+    <div class="clearfix"></div>
+    <div class="container">
+        <div class="logo">
+            <img src="{{  asset('img/logo_landing_page_f_o3.png') }}" alt="">
+        </div>
+        <div class="slogan">
+            <p>La réservation nouvelle generation</p>
+        </div>
+        <div class="button">
+            <a href="{{ path('app_index_accueil') }}" type="button" class="btn btn-outline-secondary btn-lg">Découvrez l'experience</a>
+        </div>
+    </div>
+    <footer>
+        <nav class="nav_bot_left">
+            <a href="#">Mentions legales</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </footer>
+{% endblock %}

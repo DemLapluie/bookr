@@ -1,0 +1,117 @@
+html,body{ 
+    height: 100vh;
+    margin: 0; 
+    color: black;
+    background-image: url("../img/bg_index.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav_top_right{ 
+    float: right; 
+    margin-right: 105px; 
+    padding-top: 10px
+}
+
+.nav_top_right a { 
+    font-size: 1.45em;
+     color: black;
+     margin-right: 10px 
+}
+
+.nav_top_right a:hover,.nav_bot_left a:hover{
+    color: dimgrey
+}
+
+
+.nav_bot_left { 
+    float: left;
+    margin-left: 85px;
+    margin-bottom: 9px
+}
+
+.nav_bot_left a { 
+    text-decoration: none;
+    font-size: .85em;
+    color: black;
+    margin: 0 5px
+}
+
+.nav_bot_left a:hover{
+    color: dimgrey;
+    border-bottom: 1px dotted dimgrey
+}
+
+.logo{ 
+    width:45% ;
+    margin:18% auto 20px;
+    padding: 0;
+}
+
+.logo img{ 
+    width: 100%
+}
+
+.slogan{ 
+    font-size: 1.2em;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    margin: 15px auto;
+    text-transform: uppercase;
+    border-bottom: 2px solid gray;
+ }
+
+.slogan p {
+
+    text-align: center;
+}
+
+.button{
+    height: 50px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    margin: 25px auto;
+    padding-left: 0;
+}
+
+.btn-outline-secondary{ 
+    color: white;
+    background-color: rgba(64, 66, 68,.9);
+}
+
+.btn-outline-secondary:hover {  
+    color: white;
+    background-color: rgba(64, 66, 68,.65)
+}
+
+button{
+    text-transform: uppercase;
+}
+
+.btn-lg{
+    font-size: 1.25em;
+    border-radius: 0;
+    padding: 9px 16px;
+}
+
+footer{
+    height: 40px;
+    position: fixed;
+    top: 95vh;
+}
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+    footer{
+        position: static;
+        margin-top: 58%;
+    }
+}
+
+
+
+
