@@ -26,4 +26,5 @@ class IndexController extends AbstractController
             'index/accueil.html.twig'
         );
     }
+
 }

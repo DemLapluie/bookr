@@ -1,99 +1,127 @@
 /* css commun a toutes les pages : NAVIGATION & FOOTER(sauf landing_page footer) */
 
-.header_top{
-    height: 265px;
-    display:flex;
-    justify-content: space-around;
-    align-items: flex-end ;
-    padding-bottom: 25px;
-    background:white;
+
+/* -------------- NAVIGATION PRINCIPALE --------------- */
+
+
+header .wrapper {
+    text-align: center;
+    height:250px;
+    padding-top: 210px;
+    display: block;
+    background: white;
 }
 
-.nav_top_right {
-    float: right;
-    margin-right: 105px;
-    padding-top: 10px;
+.HeaderLft{
+    float:left;
+    margin-top: -25px;
 }
 
-.nav_top_left a,
-.nav_top_right a {
-    font-size: 1.1em;
+.HeaderLft a,
+.HeaderRgt a{
     color: black;
-    margin-right: 60px;
+    margin-right: 20px;
+    margin-top: -29px;
+    padding-bottom: 10px
 }
 
-.nav_top_left a:hover,
-.nav_top_right a:hover{
-    text-decoration: none
+.HeaderLft a:hover,
+.HeaderRgt a:hover{
+    text-decoration: none;
 }
 
-nav a span{
-    border-bottom:  2px solid black;
-    padding-bottom: 10px;
-    margin-right: 9px;
+.HeaderLft span,
+.HeaderRgt span{
+    border-bottom: 1.5px solid black;
+    margin-right: 5px;
+    padding-bottom: 5px;
 }
 
-.nav_top_right a:hover,
-.nav_bot_left a:hover{
-    color: dimgrey
+.HeaderRgt{
+    float:right;
+    margin-top: -25px;
 }
 
-.cat_type_nav{
-    height: 65px;
-    padding: 20px 0;
-    width: 100%;
-    background: black;
-    background: rgb(109,109,109);
-    background: -moz-linear-gradient(45deg, rgb(109,109,109) 35%, rgb(0,0,0) 67%);
-    background: -webkit-linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
-    background: linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#000000',GradientType=1 );
-
+.MastHead{
+    width:90%; margin:0 auto;
+    margin-top: 52px;
 }
 
-.cat_type_nav nav{
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0 auto;
+.HeaderLogo {
+    width: 90%;
+    margin:  0 auto;
+    text-align:center;
+    margin-top: -275px;
 }
-
-.cat_type_nav nav a{
-    font-size: 1.2em;
-    margin-left: 15px;
-    padding: 0 15px 0 0;
-    line-height: .4px;
-    color: gainsboro ;
-    text-transform:uppercase;
-    border-right: 1px white solid;
-}
-
-.cat_type_nav nav a:last-child{
-    border-right: none;
-}
-
-a.parte_link{
-    margin-right: 50px;
-    text-transform: uppercase;
+.HeaderLogo img {
+    width: 200px;
+    margin:  0 auto;
+    text-align:center;
+    padding-top: 20px;
 }
 
 a.icon_nav{
-    border-bottom: none;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
-.logo_header{
-    width: 200px;
-    text-align: center;
+        /* menu burger */
+
+#burger_menu {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 88%;
+    padding-right: 10px;
+    cursor: pointer;
 }
 
-.logo_header img{
+#burger_menu div{
+    width: 40px;
+    border-bottom: black 2px solid;
+    margin-bottom: 10px;
+    transform-origin :center;
+}
+
+.burger_nav {
+    height: 0;
+    overflow: hidden;
+    background-color: white;
     width: 100%;
+    position: fixed;
+    top: 120px;
+    z-index: 5;
+    transition: height 500ms;
 }
-.logo_header p{
-    margin-bottom: 0;
-    font-size: 1.2em;
-    text-transform: uppercase;
+
+.burger_nav > ul{
+    border-top:black 2px solid;
 }
+
+.burger_nav  ul{
+     list-style: none;
+}
+
+.burger_nav li:first-child{
+    text-decoration: none;
+}
+
+.burger_nav li .sous_menu {
+    background-color: lightgray;
+}
+
+.burger_nav li a{
+    text-align: right;
+    display :block;
+    color: black;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.burger_nav li a i{
+   padding-left: 5px;
+}
+
+/* -------------------- FOOTER ------------------- */
 
 .nav_bot_left {
     float: left;
@@ -142,11 +170,39 @@ footer{
     display: block;
 }
 
+/* -------------- RESPONSIVE --------------------- */
 
-/* RESPONSIVE */
+@media screen and (max-width: 1150px) {
+    /* nav principale */
 
-@media screen and (min-width: 200px) and (max-width: 500px) {
-    footer{
-        position: static;
+
+    header .wrapper{
+        height: 0;
+    }
+
+    .MastHead{
+        display: none;
+    }
+
+    .HeaderLogo {
+        margin-top: -195px;
+        width: 70%;
+
+    }
+    .HeaderLogo p {
+        display:none;
+    }
+
+    .HeaderLogo img {
+        padding-top: 0;
+        width: 100px;
+    }
+
+    #burger_menu {
+        display:block;
     }
 }
+@media screen and (max-width: 640px) {
+
+}
+
