@@ -2,21 +2,13 @@
 
 {% block stylesheets %}
     {{ parent() }}
-<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/recherche.css') }}" />
 {% endblock %}
-
-
-=======
-    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}" />
-{% endblock %}
->>>>>>> dev_ikir
 {% block body %}
     {% block header %}
         {{ parent() }}
     {% endblock %}
     {% block content %}
-<<<<<<< HEAD
         <div class="cat_type_nav">
             <nav>
                 <a href="#">Coiffeur</a>
@@ -45,7 +37,7 @@
                     <br>
                     <span>*service disponible sur toute l'ile de france</span>
                 </p>
-                <span>  {{ form_start (form) }}
+                  {{ form_start (form) }}
                     {{ form_row (form.cp_entreprise) }}
                         <form>
                             <div class="form-row">
@@ -94,19 +86,17 @@
                     {{ form_end(form) }}
             </div>
         </div>
-=======
->>>>>>> dev_ikir
+
 
     {% endblock %}
     {% block footer %}
         {{ parent() }}
     {% endblock %}
 {% endblock %}
-<<<<<<< HEAD
-=======
+
 {% block javascripts %}
     {{ parent() }}
     <!-- //Js -->
     <script src="{{ asset('js/burger_menu.js') }}"></script>
 {% endblock %}
->>>>>>> dev_ikir
+
