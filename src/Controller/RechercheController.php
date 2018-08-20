@@ -12,8 +12,6 @@ class RechercheController extends AbstractController
      */
     public function index()
     {
-        return $this->render('recherche/index.html.twig', [
-            'controller_name' => 'RechercheController',
-        ]);
+        return $this->render('recherche/index.html.twig');
     }
 }

@@ -1,0 +1,28 @@
+.liste_prestation{
+    list-style: none;
+}
+
+/* contenue principal */
+.inscription_container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* partie gauche*/
+.inscription_container .left{
+    width:35%;
+    background-color: green;
+    padding: 5%;
+}
+.left h1 {
+
+}
+
+/* partie droite */
+.inscription_container .right{
+
+    width:60%;
+    min-height: 100px;
+    background-color: red;
+
+}

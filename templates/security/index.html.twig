@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/inscription.css') }}" />
+{% endblock %}
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div class="inscription_container">
+            <div class="left">
+                <h2 class="text-uppercase">Bienvenue</h2>
+                <h3 class="text-uppercase">Client-e ou professionnel-le</h3>
+                <p class="text-uppercase">
+                    l'incription a BOOKR vous donnera accès a
+                    <span class="d-block"></span>
+                    Un service complet de réservation
+                    <span class="d-block"></span>
+                    De prestations esthétique :
+                    <span class="d-block"></span>
+                </p>
+                <ul class="liste_prestation">
+                    <li class="text-uppercase">coiffure,</li>
+                    <li class="text-uppercase">barbier</li>
+                    <li class="text-uppercase">massage</li>
+                    <li class="text-uppercase">beauté des mains et des pieds:  Manucure, Pose de prothèse, Pédicure </li>
+                    <li class="text-uppercase">beauté du regard : Entretien/Extensions des cils et sourcils</li>
+                </ul>
+                <p class="text-uppercase">
+                    Votre compte client vous offre également la possibilité de créer
+                    un profil professionnel "prestataire".
+                    <span class="d-block"></span>
+                    Pour plus d'informations, veuillez vous référer à notre rubrique :
+                    <span class="d-block"></span>
+                    <a href="#">DEVENEZ PRESTATAIRE</a>
+                </p>
+            </div>
+            <div class="right">
+                <div class="connexion_form">
+
+                </div>
+                <div class="inscription_form">
+                    {{ form_start(form) }}
+
+                    {{ form_row(form.civilite) }}
+                    {{ form_row(form.nom) }}
+                    {{ form_row(form.prenom) }}
+                    {{ form_row(form.date_de_naissance) }}
+                    {{ form_row(form.adresse) }}
+                    {{ form_row(form.ville) }}
+                    {{ form_row(form.cp) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.tel) }}
+                    {{ form_row(form.pseudo) }}
+                    {{ form_row(form.plainPassword) }}
+
+                    <div class="form-btn-group text-right">
+                        <button type="submit" class="btn btn-primary">
+                            Enregistrer
+                        </button>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}
