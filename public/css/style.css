@@ -7,7 +7,7 @@
 header .wrapper {
     text-align: center;
     height:250px;
-    padding-top: 210px;
+    padding-top: 185px;
     display: block;
     background: white;
 }
@@ -57,7 +57,7 @@ header .wrapper {
     width: 200px;
     margin:  0 auto;
     text-align:center;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 a.icon_nav{
@@ -194,7 +194,7 @@ footer{
     }
 
     .HeaderLogo img {
-        padding-top: 0;
+        padding-top: 20px;
         width: 100px;
     }
 
