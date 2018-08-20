@@ -122,6 +122,46 @@ a.icon_nav{
    padding-left: 5px;
 }
 
+
+/* -------------------- Content ------------------ */
+.container{padding: 0; }
+.container  div{float: left;}
+.container.search div{float: inherit;}
+.container div.link_reser, .container div.link_prest {height: 100% !important;}
+
+.cat_type_nav{
+    height: 65px;
+    padding: 20px 0;
+    width: 100%;
+    background: black;
+    background: rgb(109,109,109);
+    background: -moz-linear-gradient(45deg, rgb(109,109,109) 35%, rgb(0,0,0) 67%);
+    background: -webkit-linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
+    background: linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#000000',GradientType=1 );
+
+}
+
+.cat_type_nav nav{
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cat_type_nav nav a{
+    font-size: 1.2em;
+    margin-left: 15px;
+    padding: 0 15px 0 0;
+    line-height: .4px;
+    color: gainsboro ;
+    text-transform:uppercase;
+    border-right: 1px white solid;
+}
+
+.cat_type_nav nav a:last-child{
+    border-right: none;
+}
+
 /* -------------------- FOOTER ------------------- */
 
 .nav_bot_left {

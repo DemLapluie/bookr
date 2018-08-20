@@ -2,19 +2,111 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}" />
+<<<<<<< HEAD
+    <link rel="stylesheet" href="{{ asset('css/recherche.css') }}" />
 {% endblock %}
 
 
+=======
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}" />
+{% endblock %}
+>>>>>>> dev_ikir
 {% block body %}
     {% block header %}
         {{ parent() }}
     {% endblock %}
     {% block content %}
-        {{ parent() }}
+<<<<<<< HEAD
+        <div class="cat_type_nav">
+            <nav>
+                <a href="#">Coiffeur</a>
+                <a href="#">Prothesiste ongulaire</a>
+                <a href="#">Barbier</a>
+                <a href="#"> Stylist des cils</a>
+                <a href="#"> MakeUp Artist</a>
+            </nav>
+
+            {{ form_start (form) }}
+
+            {#bloc de formulaire pour le champ name #}
+            {{ form_widget (form.nom_entreprise) }}
+            {{ form_row (form.nom_entreprise) }}
+            {{ form_row (form.ville_entreprise) }}
+            {{ form_row (form.cp_entreprise) }}
+
+
+            {#ferme la balise form#}
+            {{ form_end(form) }}
+
+            <div class="form_content">
+                <p class="form_descript">
+                    Trouver votre meilleur prestataire esthetique
+                    pres de chez vous.
+                    <br>
+                    <span>*service disponible sur toute l'ile de france</span>
+                </p>
+                <span>  {{ form_start (form) }}
+                    {{ form_row (form.cp_entreprise) }}
+                        <form>
+                            <div class="form-row">
+                            <div class="col">
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                              <option>jour ?</option>
+                                              <option>2</option>
+                                              <option>3</option>
+                                              <option>4</option>
+                                              <option>5</option>
+                                            </select>
+                            </div>
+                            <div class="col">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>type de prestation</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                            </div>
+                            <div class="col">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>prestation</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                            </div>
+                            <div class="col">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>lieu</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                            </div>
+                            <div class="col">
+                                    <input class="form-control" type="text" placeholder="code postal">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2 btn-dark">Rechercher</button>
+                            </div>
+                        </form>
+                    {{ form_end(form) }}
+            </div>
+        </div>
+=======
+>>>>>>> dev_ikir
 
     {% endblock %}
     {% block footer %}
         {{ parent() }}
     {% endblock %}
 {% endblock %}
+<<<<<<< HEAD
+=======
+{% block javascripts %}
+    {{ parent() }}
+    <!-- //Js -->
+    <script src="{{ asset('js/burger_menu.js') }}"></script>
+{% endblock %}
+>>>>>>> dev_ikir
