@@ -1,0 +1,47 @@
+.search .cat_type_nav{
+    height: 100%;
+    padding-bottom: 180px;
+}
+
+.search form{
+    background: white;
+    padding: 16px 15px 9.5px;
+    border-radius: .25rem;}
+.form_content{
+    width: 70%;
+    height: 300px;
+    margin:  130px auto 0;
+}
+
+.form-control:focus {
+    border-color: black;
+}
+
+.form_content .col{
+    margin: 0 10px;
+}
+
+.search .form-control{
+    border-radius: 0;
+    box-shadow: 0 3px 2px -2px gray;
+    text-transform: uppercase;
+}
+
+.search .btn{
+    border-radius: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+.form_descript{
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    line-height: 1.1em;
+    width: 400px;
+}
+
+.form_descript span {
+    font-weight: lighter;
+    font-size: .4em}
