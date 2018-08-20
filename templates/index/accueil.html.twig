@@ -7,83 +7,10 @@
 
 
 {% block body %}
-<header>
-    <div class="wrapper">
-        <div id="burger_menu">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <nav class="burger_nav">
-            <ul>
-                <li>
-                    <a class="text-uppercase" href="#">inscription / connexion</a>
-                </li>
-                <li>
-                    <a class="text-uppercase">A propos<i class="fas fa-sort-down"></i></a>
-                    <ul class="sous_menu">
-                        <li>
-                            <a href="#">L'équipe</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="text-uppercase">Nos services<i class="fas fa-sort-down"></i></a>
-                    <ul class="sous_menu">
-                        <li>
-                            <a href="#">E-réservation</a>
-                        </li>
-                        <li>
-                            <a href="#">Futurs services</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="text-uppercase">Devenez prestataire<i class="fas fa-sort-down"></i></a>
-                    <ul class="sous_menu">
-                        <li>
-                            <a href="#">Le concept</a>
-                        </li>
-                        <li>
-                            <a href="#">Processus d'inscription</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <nav class="MastHead" data-role="header" data-position="fixed" data-tap-toggle="false">
-            <div class="HeaderLft">
-                <a href="#"><span class="text-uppercase">a propos</span><i class="fas fa-sort-down"></i></a>
-                <a href="#"><span class="text-uppercase">nos services</span><i class="fas fa-sort-down"></i></a>
-            </div>
-            <div class="HeaderRgt">
-                <a href="#"><span class="text-uppercase">mon compte</span><i class="fas fa-sort-down"></i></a>
-                <a href="#" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
-                <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
-            </div>
-        </nav>
-
-        <div class="HeaderLogo">
-            <img src="{{ asset('/img/logo_header.png') }}">
-            <br>
-            <p class="text-uppercase">e-réservation esthetique</p>
-        </div><div class="clearfix"></div>
-    </div>
-
-</header>
-    <div class="clearfix"></div>
-
-    <div class="container col-12">
-        <div class="cat_type_nav">
-            <nav>
-                <a href="#">Coiffeur</a>
-                <a href="#">Prothesiste ongulaire</a>
-                <a href="#">Barbier</a>
-                <a href="#"> Stylist des cils</a>
-                <a href="#"> MakeUp Artist</a>
-            </nav>
-        </div>
+    {% block header %}
+    {{ parent() }}
+    {% endblock %}
+    {% block content %}
         <a class="button_home" href="#">
             <div class="col-6 link_reser">
                 <p>Reserver une prestation</p>
@@ -98,15 +25,10 @@
                 <p>Devenir prestataire</p>
             </div>
         </a>
-    </div>
-<footer>
-    <nav class="nav_bot_left">
-        <a href="#">Mentions legale</a>
-        <a href="#">Contact</a>
-        <a href="#">FAQ</a>
-    </nav>
-</footer>
-
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

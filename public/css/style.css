@@ -130,6 +130,7 @@ a.icon_nav{
     margin-bottom: 9px;
     height: 70px;
     padding: 10px 0;
+
 }
 
 .nav_bot_left a {
@@ -166,8 +167,7 @@ button{
 
 footer{
     width: 100%;
-    position: fixed;
-    top: 95vh;
+    position: relative;
     display: block;
 }
 

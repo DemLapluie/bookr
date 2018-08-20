@@ -5,9 +5,7 @@ body{
     min-height: 100vh;
     margin: 0;
     color: black;
-    background-image: url("../img/bg_index.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 
@@ -52,11 +50,19 @@ body{
 }
 
 /**  Home_page    **/
-.button_home{height: auto;}
-.button_home:hover div{background: rgba(0,0,0, .5) }
-.button_home:hover p{color: white }
+.button_home{
+    height: auto;
+}
+.button_home:hover div{
+    background: rgba(0,0,0, .5);
+}
+.button_home:hover p{
+    color: white ;
+}
 
 .link_reser{
+    background-image: url("../img/bg_index.jpg");
+    background-repeat: no-repeat;
     text-align: left;
     padding-top: 75px;
     padding-left: 35px
@@ -86,9 +92,14 @@ body{
 }
 
 
-.link_reser span {width: 100%; text-align: right; }
+.link_reser span {
+    width: 100%;
+    text-align: right;
+}
 
-.link_reser i{margin-right: 30px;}
+.link_reser i{
+    margin-right: 30px;
+}
 .link_prest span {
     width: 100%;
     padding-left: 33px;
@@ -97,9 +108,14 @@ body{
     margin-bottom: 80px
 }
 
+footer {
+    width: 100%;
+    margin-bottom: 0;
+}
 
-footer{
+.nav_bot_left{
     background: white;
+    margin-bottom: 0;
 }
 
 /* -------------- RESPONSIVE --------------------- */
