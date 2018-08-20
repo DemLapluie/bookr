@@ -1,0 +1,81 @@
+
+html,
+body{
+    min-height: 100vh;
+    margin: 0;
+    color: black;
+    background-image: url("../img/bg_index.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{ 
+    width:45% ;
+    margin:18% auto 20px;
+    padding: 0;
+}
+
+.logo img{ 
+    width: 100%
+}
+
+.slogan{ 
+    font-size: 1.2em;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    margin: 15px auto;
+    text-transform: uppercase;
+    border-bottom: 2px solid gray;
+ }
+
+.slogan p {
+
+    text-align: center;
+}
+
+.button{
+    height: 50px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    margin: 25px auto;
+    padding-left: 0;
+}
+
+.btn-outline-secondary{ 
+    color: white;
+    background-color: rgba(64, 66, 68,.9);
+}
+
+.btn-outline-secondary:hover {  
+    color: white;
+    background-color: rgba(64, 66, 68,.65)
+}
+
+button{
+    text-transform: uppercase;
+}
+
+.btn-lg{
+    font-size: 1.25em;
+    border-radius: 0;
+    padding: 9px 16px;
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    top: 95vh;
+}
+
+
+
+
+
+
+
+

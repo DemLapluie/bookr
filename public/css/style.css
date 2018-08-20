@@ -1,0 +1,208 @@
+/* css commun a toutes les pages : NAVIGATION & FOOTER(sauf landing_page footer) */
+
+
+/* -------------- NAVIGATION PRINCIPALE --------------- */
+
+
+header .wrapper {
+    text-align: center;
+    height:250px;
+    padding-top: 210px;
+    display: block;
+    background: white;
+}
+
+.HeaderLft{
+    float:left;
+    margin-top: -25px;
+}
+
+.HeaderLft a,
+.HeaderRgt a{
+    color: black;
+    margin-right: 20px;
+    margin-top: -29px;
+    padding-bottom: 10px
+}
+
+.HeaderLft a:hover,
+.HeaderRgt a:hover{
+    text-decoration: none;
+}
+
+.HeaderLft span,
+.HeaderRgt span{
+    border-bottom: 1.5px solid black;
+    margin-right: 5px;
+    padding-bottom: 5px;
+}
+
+.HeaderRgt{
+    float:right;
+    margin-top: -25px;
+}
+
+.MastHead{
+    width:90%; margin:0 auto;
+    margin-top: 52px;
+}
+
+.HeaderLogo {
+    width: 90%;
+    margin:  0 auto;
+    text-align:center;
+    margin-top: -275px;
+}
+.HeaderLogo img {
+    width: 200px;
+    margin:  0 auto;
+    text-align:center;
+    padding-top: 20px;
+}
+
+a.icon_nav{
+    margin-right: 5px;
+}
+
+        /* menu burger */
+
+#burger_menu {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 88%;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#burger_menu div{
+    width: 40px;
+    border-bottom: black 2px solid;
+    margin-bottom: 10px;
+    transform-origin :center;
+}
+
+.burger_nav {
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 120px;
+    z-index: 5;
+    transition: height 500ms;
+}
+
+.burger_nav > ul{
+    border-top:black 2px solid;
+}
+
+.burger_nav  ul{
+     list-style: none;
+}
+
+.burger_nav li:first-child{
+    text-decoration: none;
+}
+
+.burger_nav li .sous_menu {
+    background-color: lightgray;
+}
+
+.burger_nav li a{
+    text-align: right;
+    display :block;
+    color: black;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.burger_nav li a i{
+   padding-left: 5px;
+}
+
+/* -------------------- FOOTER ------------------- */
+
+.nav_bot_left {
+    float: left;
+    margin-left: 85px;
+    margin-bottom: 9px;
+    height: 70px;
+    padding: 10px 0;
+}
+
+.nav_bot_left a {
+    text-decoration: none;
+    font-size: .85em;
+    color: black;
+    margin: 0 5px;
+}
+
+.nav_bot_left a:hover{
+    color: dimgrey;
+    border-bottom: 1px dotted dimgrey;
+}
+
+.btn-outline-secondary{
+    color: white;
+    background-color: rgba(64, 66, 68,.9);
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    background-color: rgba(64, 66, 68,.65)
+}
+
+button{
+    text-transform: uppercase;
+}
+
+.btn-lg{
+    font-size: 1.25em;
+    border-radius: 0;
+    padding: 9px 16px;
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    top: 95vh;
+    display: block;
+}
+
+/* -------------- RESPONSIVE --------------------- */
+
+@media screen and (max-width: 1150px) {
+    /* nav principale */
+
+
+    header .wrapper{
+        height: 0;
+    }
+
+    .MastHead{
+        display: none;
+    }
+
+    .HeaderLogo {
+        margin-top: -195px;
+        width: 70%;
+
+    }
+    .HeaderLogo p {
+        display:none;
+    }
+
+    .HeaderLogo img {
+        padding-top: 0;
+        width: 100px;
+    }
+
+    #burger_menu {
+        display:block;
+    }
+}
+@media screen and (max-width: 640px) {
+
+}
+

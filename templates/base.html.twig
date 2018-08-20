@@ -2,8 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}BOOKR rhobùabrjv{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}BOOKR - site de e-réservation{% endblock %}</title>
+        {% block stylesheets %}
+            {# librairie #}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+            {# css #}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        {% endblock %}
     </head>
     <body>
         {% block body %}
@@ -15,5 +21,4 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         {% endblock %}
     </body>
-
 </html>
