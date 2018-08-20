@@ -9,6 +9,15 @@ body{
     background-size: cover;
 }
 
+.nav_top_right a i{
+    color: black;
+    padding: 5%;
+}
+
+.nav_top_right{
+    padding-left: 80%;
+}
+
 .logo{ 
     width:45% ;
     margin:18% auto 20px;
