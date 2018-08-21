@@ -61,8 +61,10 @@ class InscriptionPrestataireType extends AbstractType
                 'lieu_prestation',
                 ChoiceType::class,
                 [
-                    'attr' => [
-                        'placeholder' => 'Lieu de prestation',
+                    'choices'  => [
+                        'Chez le client' => 'Chez le client',
+                        'Chez le prestataire' => 'Chez le prestataire',
+                        'En salon/institut' => 'En salon/institut'
                     ],
                     'expanded' => true,
                     'multiple' => true
@@ -86,7 +88,7 @@ class InscriptionPrestataireType extends AbstractType
                 ])
             ->add(
                 'cni',
-                TextType::class,
+                FileType::class,
                 [
                     'attr' => [
                         'placeholder' => 'Numero CNI',
@@ -102,7 +104,12 @@ class InscriptionPrestataireType extends AbstractType
                 ])
             ->add(
                 'avatar',
-                FileType::class
+                FileType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'Uploader votre photo de profil',
+                    ]
+                ]
                 )
             ->add(
                 'profession',
