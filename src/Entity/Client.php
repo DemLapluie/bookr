@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
@@ -18,68 +19,100 @@ class Client
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Le nom est obligatoire")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Le prénom est obligatoire")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank(message="La date de naissance est obligatoire")
+     * @Assert\Date(message="La date doit etre format dd-mm-yyyy")
      */
     private $date_de_naissance;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'adresse est obligatoire")
      */
     private $adresse;
 
     /**
      * @ORM\Column(type="string", length=5)
+     * @Assert\NotBlank(message="Le code postale est obligatoire")
+     * @Assert\Length(min="5", max="5", exactMessage="Le code postale ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\Type(type="integer", message="Le code postale doit contenir uniquement des chiffres")
      */
     private $cp;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="La ville est obligatoire")
+     *
      */
     private $ville;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'email est obligatoire")
+     * @Assert\Email(message="L'email n'est pas valide")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=45)
+     *
      */
     private $mdp;
 
+
     /**
-     * @ORM\Column(type="string", length=15)
+     * Mot de passe en clair pour interagir avec le formulaire
+     * @var string
+     * @assert\NotBlank(message="Le mot de passe est obligatoire")
+     */
+    private $plainPassword;
+
+    /**
+     * @ORM\Column(type="string", length=10)
+     * @Assert\NotBlank(message="L'email est obligatoire")
+     * @Assert\Length(min="10", max="10", exactMessage="Le numero de telephone doit contenir {{ limit }} de caractères ")
+     * @Assert\Type(type="integer", message="Le N° de téléphone doit contenir uniquement des chiffres")
      */
     private $tel;
 
     /**
      * @ORM\Column(type="string", length=45)
+     *
      */
     private $pseudo;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank(message="L'email est obligatoire")
+     * @Assert\Choice({"Mme", "M."})
      */
     private $civilite;
 
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
+     * @Assert\Image(maxSize="2M", maxSizeMessage="Le fichier ne doit pas faire plus de 2Mo",
+     * mimeTypesMessage="Le fichier doit être une image")
      */
     private $avatar;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     *
      */
     private $description;
+
+
 
     public function getId(): ?int
     {
@@ -239,6 +272,26 @@ class Client
     {
         $this->description = $description;
 
+         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword(): string
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     * @return Client
+     */
+    public function setPlainPassword(string $plainPassword): Client
+    {
+        $this->plainPassword = $plainPassword;
         return $this;
     }
+
+
 }

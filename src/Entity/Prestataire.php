@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PrestataireRepository")
@@ -18,53 +20,108 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Le nom d'entreprise est obligatoire")
      */
     private $nom_entreprise;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L' adresse est obligatoire")
      */
     private $adresse_entreprise;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="La ville est obligatoire")
      */
     private $ville_entreprise;
 
     /**
      * @ORM\Column(type="string", length=5)
+     * @Assert\NotBlank(message="Le code postale est obligatoire")
+     * @Assert\Length(min="5", max="5", exactMessage="Le code postale ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\Type(type="integer", message="Le code postale doit contenir uniquement des chiffres")
      */
     private $cp_entreprise;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=10)
+     * @Assert\NotBlank(message="Le numero de téléhone est obligatoire")
+     * @Assert\Length(min="10", max="10", exactMessage="Le numero de telephone doit contenir {{ limit }} de caractères ")
+     * @Assert\Type(type="integer", message="Le N° de téléphone doit contenir uniquement des chiffres")
      */
     private $tel_entreprise;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le lieu de prestation est obligatoire")
+     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"})
      */
     private $lieu_prestation;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=14)
+     * @Assert\NotBlank(message="Le N° Siret est obligatoire")
+     * @Assert\Length(max="14", min="14", maxMessage="Le code postale ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\Type(type="integer", message="Le N° de siret doit contenir uniquement des chiffres")
+     *
      */
     private $numero_siret;
 
     /**
      * @ORM\Column(type="string", length=45)
+     * @Assert\Choice({"Validé", "En attente", "Refusé"})
      */
     private $certification;
 
     /**
+     *
      * @ORM\Column(type="string", length=45)
+     * @Assert\NotBlank(message="Le N°  est obligatoire")
+     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image")
+     *
      */
     private $cni;
 
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
+     *
      */
     private $description_entreprise;
+
+    /**
+     * @var Client
+     * @ORM\OneToOne(targetEntity="Client")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     *
+     */
+    private $client;
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     * @Assert\Image(maxSize="2M", maxSizeMessage="Le fichier ne doit pas faire plus de 2Mo",
+     * mimeTypesMessage="Le fichier doit être une image")
+     */
+    private $avatar;
+
+    /**
+     * @var Colllection
+     * @ORM\OneToMany(targetEntity="Photos", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
+     */
+    private $photo;
+
+    /**
+     * @ORM\Column(type="string", length=45)
+     * @Assert\NotBlank(message="La profession est obligatoire")
+     * @Assert\Choice({"Barbier", "Coiffeur", "Expert du regard", "Make-up artist", "Expert des ongles"})
+     */
+    private $profession;
+
+    public function __construct()
+    {
+        $this->photo = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -190,4 +247,80 @@ class Prestataire
 
         return $this;
     }
+
+    /**
+     * @return Client
+     */
+    public function getClient(): Client
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param Client $client
+     * @return Prestataire
+     */
+    public function setClient(Client $client): Prestataire
+    {
+        $this->client = $client;
+        return $this;
+    }
+
+    /**
+     * @return Photos
+     */
+    public function getPhoto(): Photos
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param Photos $photo
+     * @return Prestataire
+     */
+    public function setPhoto(Photos $photo): Prestataire
+    {
+        $this->photo = $photo;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProfession()
+    {
+        return $this->profession;
+    }
+
+    /**
+     * @param mixed $profession
+     * @return Prestataire
+     */
+    public function setProfession($profession)
+    {
+        $this->profession = $profession;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * @param mixed $avatar
+     * @return Prestataire
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+        return $this;
+    }
+
+
+
+
 }
