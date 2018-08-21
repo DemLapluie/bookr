@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
@@ -80,6 +81,13 @@ class Client
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
+
+    /**
+     * Mot de passe en clair pour interagir avec le formulaire
+     * @var string
+     * @Assert\NotBlank(message="Le mot de passe est obligatoire du cul")
+     */
+    private $plainPassword;
 
     public function getId(): ?int
     {
@@ -241,4 +249,23 @@ class Client
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword(): ?string
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     * @return Client
+     */
+    public function setPlainPassword(string $plainPassword): Client
+    {
+        $this->plainPassword = $plainPassword;
+        return $this;
+    }
+
 }

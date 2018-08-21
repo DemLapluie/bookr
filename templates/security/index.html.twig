@@ -9,8 +9,8 @@
         {{ parent() }}
     {% endblock %}
     {% block content %}
-        <div class="inscription_container">
-            <div class="left">
+        <div class="inscription_container row">
+            <div class="left col-md-5 col-xl-4 order-2 order-md-1">
                 <h2 class="text-uppercase">Bienvenue</h2>
                 <h3 class="text-uppercase">Client-e ou professionnel-le</h3>
                 <p class="text-uppercase">
@@ -34,34 +34,86 @@
                     <span class="d-block"></span>
                     Pour plus d'informations, veuillez vous référer à notre rubrique :
                     <span class="d-block"></span>
-                    <a href="#">DEVENEZ PRESTATAIRE</a>
+                    <a class="lien_devenir_prestataire" href="#">DEVENEZ PRESTATAIRE</a>
                 </p>
             </div>
-            <div class="right">
+            <div class="right col-md-6 col-xl-7 order-1 order-md-2">
                 <div class="connexion_form">
-
+                    <h2 class="text-uppercase connexion_form_title">Connexion</h2>
+                    <span class="title_line"></span>
+                    {# OUvre la balise form #}
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="form-group col-12">
+                                    <input id="connexion_form_email" type="text" name="_username" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <input id="connexion_form_password" type="password" name="_password" class="form-control" placeholder="Mot de passe">
+                                </div>
+                            </div>
+                            <div class="form-btn-group offset-1">
+                                <button type="submit" class="connexion_form_button">
+                                    Se connecter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="inscription_form">
-                    {{ form_start(form) }}
+                    <h2 class="text-uppercase inscription_form_title">Votre inscription</h2>
+                    <span class="title_line"></span>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            {{ form_start(form) }}
 
-                    {{ form_row(form.civilite) }}
-                    {{ form_row(form.nom) }}
-                    {{ form_row(form.prenom) }}
-                    {{ form_row(form.date_de_naissance) }}
-                    {{ form_row(form.adresse) }}
-                    {{ form_row(form.ville) }}
-                    {{ form_row(form.cp) }}
-                    {{ form_row(form.email) }}
-                    {{ form_row(form.tel) }}
-                    {{ form_row(form.pseudo) }}
-                    {{ form_row(form.plainPassword) }}
-
-                    <div class="form-btn-group text-right">
-                        <button type="submit" class="btn btn-primary">
-                            Enregistrer
-                        </button>
+                            <div class="col-xl-9">
+                                {{ form_widget(form.civilite) }}
+                            </div>
+                            <div class="col-xl-9">
+                                {{ form_widget(form.nom) }}
+                            </div>
+                            <div class="col-xl-9">
+                                {{ form_widget(form.prenom) }}
+                            </div>
+                            <div class="col-xl-10">
+                                {{ form_widget(form.date_de_naissance) }}
+                            </div>
+                            <div class="col-xl-12">
+                                {{ form_widget(form.adresse) }}
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        {{ form_widget(form.ville) }}
+                                    </div>
+                                    <div class="col-xl-6">
+                                        {{ form_widget(form.cp) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 inscription_form_right">
+                            <div class="col-xl-10">
+                                {{ form_widget(form.email) }}
+                            </div>
+                            <div class="col-xl-8">
+                                {{ form_widget(form.tel) }}
+                            </div>
+                            <div class="col-xl-8">
+                                {{ form_widget(form.pseudo) }}
+                            </div>
+                            <div class="col-xl-8">
+                                {{ form_widget(form.plainPassword) }}
+                            </div>
+                        </div>
+                        <div class="form-btn-group offset-1 offset-xl-9">
+                            <button type="submit" class="inscription_form_button">
+                                Valider
+                            </button>
+                        </div>
+                        {{ form_end(form) }}
                     </div>
-                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

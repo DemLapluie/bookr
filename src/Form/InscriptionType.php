@@ -6,7 +6,9 @@ use App\Entity\Client;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,10 +23,12 @@ class InscriptionType extends AbstractType
             // select sur une entité Doctrine
             ChoiceType::class,
             [
-                'label'         => 'civilité',
 
-                // Nom de l'attribut utilisé pour l'affichage des options
-                'choice_label'  => 'name'
+                'choices'  => [
+                    'Mme' => 'Mme',
+                    'M.' => 'M.'
+                ],
+                'expanded' => true
 
             ])
             ->add('nom',
@@ -106,18 +110,12 @@ class InscriptionType extends AbstractType
                     // Options du second des deux champs
                     'second_options' => [
                         'attr' => [
-                            'placeholder' => 'Confirmation mot de passe'
+                            'placeholder' => 'Confirmation du mot de passe'
                         ],
                     ],
-                    'invalid_message' => 'la confirmation ne correspond pas au mot de passe du Q'
+                    'invalid_message' => 'la confirmation ne correspond pas au mot de passe'
                 ])
 
-
-            ->add('description',
-                TextType::class,
-                [
-                    'label' => 'description',
-                ])
         ;
     }
 
