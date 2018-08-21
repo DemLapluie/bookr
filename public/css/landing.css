@@ -8,37 +8,36 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.nav_top_right a i{
-    color: black;
-    padding: 5%;
-}
-
+/* liste social network */
 .nav_top_right{
-    padding-left: 80%;
+     padding-left: 80%;
+}
+.nav_top_right ul li{
+    padding: 2%;
+    display: inline-block;
 }
 
-.logo{ 
-    width:45% ;
-    margin:18% auto 20px;
-    padding: 0;
+.nav_top_right a {
+    color: black;
+}
+
+/* contenu principal */
+
+.container{
+    margin: 0 auto;
+    background-color: red;
+}
+
+.logo{
+
 }
 
 .logo img{ 
-    width: 100%
+    width: 60%
 }
 
 .slogan{ 
-    font-size: 1.2em;
-    height: -moz-fit-content;
-    height: -webkit-fit-content;
-    height: fit-content;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
-    margin: 15px auto;
-    text-transform: uppercase;
-    border-bottom: 2px solid gray;
+
  }
 
 .slogan p {
@@ -48,9 +47,7 @@ body{
 
 .button{
     height: 50px;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
+
     margin: 25px auto;
     padding-left: 0;
 }

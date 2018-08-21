@@ -69,15 +69,7 @@ class Client
      *
      */
     private $mdp;
-
-
-    /**
-     * Mot de passe en clair pour interagir avec le formulaire
-     * @var string
-     * @assert\NotBlank(message="Le mot de passe est obligatoire")
-     */
-    private $plainPassword;
-
+    
     /**
      * @ORM\Column(type="string", length=10)
      * @Assert\NotBlank(message="L'email est obligatoire")
@@ -112,16 +104,12 @@ class Client
      */
     private $description;
 
-<<<<<<< HEAD
     /**
      * Mot de passe en clair pour interagir avec le formulaire
      * @var string
-     * @Assert\NotBlank(message="Le mot de passe est obligatoire du cul")
+     * @assert\NotBlank(message="Le mot de passe est obligatoire")
      */
     private $plainPassword;
-=======
-
->>>>>>> dev_ikir
 
     public function getId(): ?int
     {
@@ -287,25 +275,6 @@ class Client
     /**
      * @return string
      */
-    public function getPlainPassword(): string
-    {
-        return $this->plainPassword;
-    }
-
-    /**
-     * @param string $plainPassword
-     * @return Client
-     */
-    public function setPlainPassword(string $plainPassword): Client
-    {
-        $this->plainPassword = $plainPassword;
-        return $this;
-    }
-
-<<<<<<< HEAD
-    /**
-     * @return string
-     */
     public function getPlainPassword(): ?string
     {
         return $this->plainPassword;
@@ -320,7 +289,5 @@ class Client
         $this->plainPassword = $plainPassword;
         return $this;
     }
-=======
->>>>>>> dev_ikir
 
 }
