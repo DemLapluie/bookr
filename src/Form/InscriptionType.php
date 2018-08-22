@@ -5,10 +5,10 @@ namespace App\Form;
 use App\Entity\Client;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -45,7 +45,21 @@ class InscriptionType extends AbstractType
                     ]
                 ])
 
-            ->add('date_de_naissance')
+            ->add('date_de_naissance',
+                DateType::class,
+                [
+                    'years' => [
+                        '1999',
+                        '1998',
+                        '1997',
+                        '1996',
+                        '1995',
+                        '1994',
+                        '1993',
+                        '1992',
+                        '1991'
+                    ]
+                ])
             ->add('adresse',
                 TextType::class,
                 [

@@ -35,14 +35,10 @@ class Prestation
      */
     private $duree;
 
-
-    /*
-     *  A FAIRE
-     */
-
     /**
      * @ORM\Column(type="string", length=45)
      * @Assert\NotBlank(message="La categorie est obligatoire")
+     * @Assert\Choice({"Barbe", "Coiffure", "Regard", "Make-up", "Ongles"})
      */
     private $categorie;
 

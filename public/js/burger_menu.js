@@ -1,7 +1,22 @@
 
     var active = false;
+    var scroll = true;
 
     $('#burger_menu').on('click',function(){
+        /* ON bloque le scroll quand le menu bureger est ouvert */
+        if(scroll == true){
+            window.onscroll = function () {
+                window.scrollTo(0, 0);
+            }
+
+            scroll = false;
+        }else if(scroll == false){
+            window.onscroll = function () {
+
+            }
+            scroll = true;
+        }
+
 
         if(active === false){
             $('#burger_menu div').css({
