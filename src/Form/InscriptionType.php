@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Client;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -46,8 +47,8 @@ class InscriptionType extends AbstractType
                 ])
 
             ->add('date_de_naissance',
-<<<<<<< HEAD
-                DateType::class,
+
+                /**DateType::class,
                 [
                     'years' => [
                         '1999',
@@ -60,16 +61,18 @@ class InscriptionType extends AbstractType
                         '1992',
                         '1991'
                     ]
-                ])
-=======
+                ]) */
+
                 BirthdayType::class, array
                     (
+                        
+                        'years'=> range(1918,2000),
                         'placeholder' => array(
-                            'day' => 'Day', 'month' => 'Month', 'year' => 'Year',
+                            'day' => 'Jour', 'month' => 'Mois', 'year' => 'Année',
+
                         )
                 )
             )
->>>>>>> dev_demmy
             ->add('adresse',
                 TextType::class,
                 [

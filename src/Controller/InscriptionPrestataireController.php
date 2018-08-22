@@ -47,11 +47,8 @@ class InscriptionPrestataireController extends AbstractController
             }
         }
 
-<<<<<<< HEAD
         return $this->render('inscription_prestataire/validation.html.twig', [
-=======
-        return $this->render('security/prestataire.html.twig', [
->>>>>>> dev_demmy
+
             'form' => $form->createView(),
         ]);
     }

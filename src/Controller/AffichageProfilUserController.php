@@ -128,7 +128,7 @@ class AffichageProfilUserController extends AbstractController
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $client->("En attente");
+                //$client->();
 
                 $this->addFlash(
                     'success',

@@ -92,11 +92,7 @@ class InscriptionPrestataireType extends AbstractType
                 FileType::class,
                 [
                     'attr' => [
-<<<<<<< HEAD
-                        'placeholder' => 'Carte d\'identité',
-=======
                         'placeholder' => 'Pièce d\'identité',
->>>>>>> dev_demmy
                     ]
                 ])
             ->add(
