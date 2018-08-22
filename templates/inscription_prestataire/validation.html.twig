@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/inscription_prest.css') }}" />
+{% endblock %}
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div class="inscription_container row">
+            <div class="inscription_form">
+                <h2 class="text-uppercase inscription_form_title">Mon profil pro</h2>
+                <span class="title_line"></span>
+
+
+                <div class="col-md-6 form_content validation">
+                    <h4>Activation du profil 2/2</h4>
+                    <span class="title_line"></span>
+                    <div class="logo_validation">
+                        <img src="{{ asset('img/logo_validation.png') }}" alt="">
+                    </div>
+                    <p>Votre profile doit être verifié par nos équipes</p>
+                    <p>Nous vous enverons un email dans un délai de 24h.<br>
+                       Dans un délai de 24h vous serrez informaez du statut de votre profil. Une fois les données
+                        certifiées, vous aurez accés à votre gestionnaire de profil prestataire.
+                    </p>
+
+                    <button type="button" class="btn valid btn-dark">Acceder au profil</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}

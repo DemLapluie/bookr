@@ -20,7 +20,7 @@ class InscriptionPrestataireType extends AbstractType
                  TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Nom',
+                        'placeholder' => 'Nom de l\'entreprise',
                     ]
                 ]
                 )
@@ -61,6 +61,7 @@ class InscriptionPrestataireType extends AbstractType
                 'lieu_prestation',
                 ChoiceType::class,
                 [
+                    'label' => 'choix realisation prestataire',
                     'choices'  => [
                         'Chez le client' => 'Chez le client',
                         'Chez le prestataire' => 'Chez le prestataire',
@@ -91,7 +92,7 @@ class InscriptionPrestataireType extends AbstractType
                 FileType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Numero CNI',
+                        'placeholder' => 'Carte d\'identité',
                     ]
                 ])
             ->add(

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/inscription.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/inscription_prest.css') }}" />
 {% endblock %}
 
 {% block body %}
@@ -13,32 +13,49 @@
                 <div class="inscription_form">
                     <h2 class="text-uppercase inscription_form_title">Mon profil pro</h2>
                     <span class="title_line"></span>
+
+
+                    <div class="col-md-6 form_content">
+                        <h4>Activation du profil 1/2</h4>
+                        <span class="title_line"></span>
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-12">
                             {{ form_start(form) }}
 
-                            <div class="col-xl-9">
+                            <span class="label_cni">Photocopie pièce d'identité du dirigeant de l'entreprise</span>
+                            <div class="col-md-6 col-sm-6 cni">
+                                {{ form_widget(form.cni) }}
+                            </div>
+                            <div class="col-md-8 col-xl-5 col-sm-6 form-field">
                                 {{ form_widget(form.nom_entreprise) }}
                             </div>
-                            <div class="col-xl-9">
+                            <div class="col-md-8 col-xl-5 col-sm-6 form-field">
+                                {{ form_widget(form.numero_siret) }}
+                            </div>
+                            <div class="row col-12">
+                            <div class="col-md-8 col-sm-9 form-field">
                                 {{ form_widget(form.adresse_entreprise) }}
                             </div>
-                            <div class="col-xl-9">
-                                {{ form_widget(form.ville_entreprise) }}
-                            </div>
-                            <div class="col-xl-10">
-                                {{ form_widget(form.cp_entreprise) }}
-                            </div>
-                            <div class="col-xl-12">
-                                {{ form_widget(form.adresse_entreprise) }}
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        {{ form_widget(form.lieu_prestation) }}
-                                    </div>
+                                <div class="col-md-4 col-sm-6 form-field">
+                                    {{ form_widget(form.tel_entreprise) }}
                                 </div>
                             </div>
+                            <div class="row col-9 col-sm-12">
+                            <div class="col-md-4 col-sm-4 ville">
+                                {{ form_widget(form.ville_entreprise) }}
+                            </div>
+                            <div class="col-md-4 col-sm-4 cp">
+                                {{ form_widget(form.cp_entreprise) }}
+                            </div>
+                            </div>
+                            <div class="col-md-6 lieu">
+                                {{ form_row(form.lieu_prestation) }}
+                            </div>
+                        </div>
+                        <div class="form-btn-group offset-1 offset-md-9">
+                            <button type="submit" class="inscription_form_button">
+                                Valider
+                            </button>
                         </div>
                         {# <div class="col-xl-6 inscription_form_right">
                             <div class="col-xl-10">
@@ -59,7 +76,8 @@
                                 Valider
                             </button>
                         </div>#}
-                        {{ form_end(form) }}
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
                     </div>
                 </div>
             </div>

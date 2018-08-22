@@ -23,22 +23,31 @@ class InscriptionPrestataireController extends AbstractController
 
         if($form->isSubmitted()){
             if($form->isValid()){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($prestataire);
+                $em->flush();
+
                 $prestataire -> setCertification("En attente");
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($prestataire);
+                $em->flush();
 
                 $this->addFlash(
                     'success',
                     'Votre inscription est en cours de validation'
                 );
-                return $this->redirectToRoute('app_index_index');
+
+                return $this->render('inscription_prestataire/validation.html.twig');
             }else{
                 $this->addFlash(
                     'error',
-                    'Le formulaire est mal remplis'
+                    'zerazerazera'
                 );
             }
         }
 
-        return $this->render('inscription_prestataire/index.html.twig', [
+        return $this->render('inscription_prestataire/validation.html.twig', [
             'form' => $form->createView(),
         ]);
     }
