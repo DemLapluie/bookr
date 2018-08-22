@@ -92,7 +92,7 @@ class InscriptionType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Telephone',
+                        'placeholder' => 'Téléphone',
                     ]
 
                 ])
@@ -105,7 +105,7 @@ class InscriptionType extends AbstractType
 
                 ])
             ->add('plainPassword',
-                // 2 champs qui doivent avoir la meme valeure..
+                // 2 champs qui doivent avoir la meme valeur..
                 RepeatedType::class,
                 [
                     // ..de type password

@@ -117,7 +117,7 @@ class InscriptionPrestataireType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Telephone',
+                        'placeholder' => 'Téléphone',
                     ]
                 ])
         ;

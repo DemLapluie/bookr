@@ -71,15 +71,7 @@ class RechercheType extends AbstractType
                     ]
                 ]
                 )
-            ->add(
-                'numero_siret',
-                TextType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'Numero Siret'
-                    ]
-                ]
-                )
+
 
             ->add(
                 'certification',

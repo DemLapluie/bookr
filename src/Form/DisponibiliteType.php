@@ -135,7 +135,7 @@ class DisponibiliteType extends AbstractType
                 TimeType::class,
                 array('label' => 'fermeture',
                     'placeholder' => array(
-                        'hour' => 'Hour',
+                        'hour' => 'Heure',
                         'minute' => 'Minute'
                     )
                 ))
