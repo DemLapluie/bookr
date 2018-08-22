@@ -69,15 +69,40 @@ body{
 .main_content .right a{
     text-decoration: none;
     color: black;
-    display: block;
     width: 100%;
+    height: 100%;
     display: flex;
+    font-weight: bold;
 }
 
-.left a p{
+.main_content .left a p{
+    padding: 170px 0 370px 15%;
+}
+
+.main_content .right a p{
+    text-align: right;
+    padding: 370px 15% 170px 0;
+}
+
+.main_content .left a i{
+    text-align: right;
+    padding-top: 310px;
+    padding-right: 25px;
+}
+
+.main_content .right a i{
+    padding-top: 310px;
+    padding-left: 25px;
+}
+
+.left a p,
+.right a p{
     width: 80%;
 }
-.left a i{
+
+.left a i,
+.right a i{
+    padding-top:10px;
     width: 20%;
 }
 
@@ -92,25 +117,41 @@ body{
 footer {
     width: 100%;
     margin-bottom: 0;
-
-}
-
-.nav_bot_left{
-
 }
 
 /* -------------- RESPONSIVE --------------------- */
 
 @media screen and (max-width: 1200px) {
+
     .main_content .left,
     .main_content .right{
         width: 100%;
         text-align: center;
     }
+
     .main_content .left i,
     .main_content .right i{
         display:none;
     }
+    .main_content .left span,
+    .main_content .right span{
+        display:none;
+    }
+
+
+
+    .main_content .left a p,
+    .main_content .right a p{
+        padding: 150px 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+
+
+
+
 }
 
 

@@ -4,7 +4,9 @@ body{
     background-image: url("../img/bg_index.jpg");
     background-size: cover;
 }
+
 /* liste social network */
+
 .nav_top_right{
      padding-left: 80%;
 }
@@ -24,12 +26,15 @@ body{
     text-align: center;
     padding-bottom: 80px;
 }
+
 /* logo */
+
 .logo img{
     width: 60%;
 }
 
 /* slogan */
+
 .slogan {
     color: gray;
     font-size: 1.1rem;
