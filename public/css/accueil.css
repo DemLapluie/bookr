@@ -5,16 +5,12 @@ body{
     min-height: 100vh;
     margin: 0;
     color: black;
-
 }
 
 
 
-/* navigation seco categories */
-.container{padding: 0; height: 75vh;}
-.container  div{float: left;}
-.container.search div{float: inherit;}
-.container div.link_reser, .container div.link_prest {height: 100% !important;}
+/* navigation secondaire categories */
+
 
 .cat_type_nav{
     height: 65px;
@@ -49,79 +45,113 @@ body{
     border-right: none;
 }
 
-/**  Home_page    **/
-.button_home{
-    height: auto;
-}
-.button_home:hover div{
-    background: rgba(0,0,0, .5);
-}
-.button_home:hover p{
-    color: white ;
+/* contenue principal */
+
+.main_content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.link_reser{
+.main_content .left,
+.main_content .right{
+    width: 50%;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+.left {
     background-image: url("../img/bg_index.jpg");
     background-repeat: no-repeat;
-    text-align: left;
-    padding-top: 75px;
-    padding-left: 35px
 }
-.link_prest{
-    text-align: right;
-    padding-top: 286px;
-}
-.link_reser p, .link_prest p {
-    font-size: 2.4em;
-    text-transform: Uppercase;
+
+.main_content .left a,
+.main_content .right a{
+    text-decoration: none;
     color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
     font-weight: bold;
 }
 
-
-.link_reser p:first-child{
-    display: block;
-    width: 220px
-}
-.link_reser p:last-child{
-    display: block;
-    width: 100%
-}
-.link_prest p:last-child{
-    padding-right: 35px
+.main_content .left a p{
+    padding: 170px 0 370px 15%;
 }
 
-
-.link_reser span {
-    width: 100%;
+.main_content .right a p{
     text-align: right;
+    padding: 370px 15% 170px 0;
 }
 
-.link_reser i{
-    margin-right: 30px;
+.main_content .left a i{
+    text-align: right;
+    padding-top: 310px;
+    padding-right: 25px;
 }
-.link_prest span {
-    width: 100%;
-    padding-left: 33px;
-    text-align: left;
-    float: left ;
-    margin-bottom: 80px
+
+.main_content .right a i{
+    padding-top: 310px;
+    padding-left: 25px;
 }
+
+.left a p,
+.right a p{
+    width: 80%;
+}
+
+.left a i,
+.right a i{
+    padding-top:10px;
+    width: 20%;
+}
+
+.main_content .left a:hover,
+.main_content .right a:hover{
+    background-color: gray;
+    color: white;
+}
+
+/**  footer    **/
 
 footer {
     width: 100%;
     margin-bottom: 0;
 }
 
-.nav_bot_left{
-    background: white;
-    margin-bottom: 0;
-}
-
 /* -------------- RESPONSIVE --------------------- */
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
+
+    .main_content .left,
+    .main_content .right{
+        width: 100%;
+        text-align: center;
+    }
+
+    .main_content .left i,
+    .main_content .right i{
+        display:none;
+    }
+    .main_content .left span,
+    .main_content .right span{
+        display:none;
+    }
+
+
+
+    .main_content .left a p,
+    .main_content .right a p{
+        padding: 150px 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+
+
 
 
 }
+
 

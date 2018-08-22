@@ -18,6 +18,7 @@
     background: linear-gradient(to bottom, rgb(0,0,0) 31%,rgb(153,153,153) 84%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#999999',GradientType=0 );
     padding: 30px;
+    margin-left: -30px;
 }
 
 .lien_devenir_prestataire {
@@ -48,6 +49,7 @@
 }
 
 /* formulaire connexion */
+
 .connexion_form {
     margin-bottom: 25px;
 }

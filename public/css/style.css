@@ -14,7 +14,7 @@ header .wrapper {
 
 .HeaderLft{
     float:left;
-    margin-top: -25px;
+    margin: -25px 0 25px;
 }
 
 .HeaderLft a,
@@ -52,7 +52,7 @@ header .wrapper {
     width: 90%;
     margin:  0 auto;
     text-align:center;
-    margin-top: -275px;
+    margin-top: -250px;
 }
 .HeaderLogo img {
     width: 200px;
@@ -60,74 +60,32 @@ header .wrapper {
     text-align:center;
     padding-top: 40px;
 }
+.HeaderLogo p {
+font-size: 0.7rem;
+}
 
 a.icon_nav{
     margin-right: 5px;
 }
 
-        /* menu burger */
-
-#burger_menu {
-    display: none;
-    position: fixed;
-    top: 30px;
-    left: 88%;
-    padding-right: 10px;
-    cursor: pointer;
-}
-
-#burger_menu div{
-    width: 40px;
-    border-bottom: black 2px solid;
-    margin-bottom: 10px;
-    transform-origin :center;
-}
-
-.burger_nav {
-    height: 0;
-    overflow: hidden;
-    background-color: white;
-    width: 100%;
-    position: fixed;
-    top: 120px;
-    z-index: 5;
-    transition: height 500ms;
-}
-
-.burger_nav > ul{
-    border-top:black 2px solid;
-}
-
-.burger_nav  ul{
-     list-style: none;
-}
-
-.burger_nav li:first-child{
-    text-decoration: none;
-}
-
-.burger_nav li .sous_menu {
-    background-color: lightgray;
-}
-
-.burger_nav li a{
-    text-align: right;
-    display :block;
-    color: black;
-    padding: 10px;
-    margin-right: 20px;
-}
-
-.burger_nav li a i{
-   padding-left: 5px;
-}
-
-
 /* -------------------- Content ------------------ */
-.container{padding: 0; }
-.container  div{float: left;}
-.container.search div{float: inherit;}
-.container div.link_reser, .container div.link_prest {height: 100% !important;}
+
+.container{
+    padding: 0;
+}
+
+.container  div{
+    float: left;
+}
+
+.container.search div{
+    float: inherit;
+}
+
+.container div.link_reser,
+.container div.link_prest {
+    height: 100% !important;
+}
 
 .cat_type_nav{
     height: 65px;
@@ -165,11 +123,11 @@ a.icon_nav{
 /* -------------------- FOOTER ------------------- */
 
 .nav_bot_left {
-    float: left;
+    background-color: white;
     margin-left: 85px;
     margin-bottom: 9px;
     height: 70px;
-    padding: 10px 0;
+    padding: 10px 0 0 ;
 
 }
 
@@ -209,13 +167,13 @@ footer{
     width: 100%;
     position: relative;
     display: block;
+    background-color: white;
 }
 
 /* -------------- RESPONSIVE --------------------- */
 
 @media screen and (max-width: 1200px) {
     /* nav principale */
-
 
     header .wrapper{
         height: 0;
@@ -239,9 +197,6 @@ footer{
         width: 100px;
     }
 
-    #burger_menu {
-        display:block;
-    }
 }
 
 

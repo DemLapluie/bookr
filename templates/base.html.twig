@@ -9,6 +9,7 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
             {# css #}
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/burger_menu.css') }}" />
         {% endblock %}
     </head>
     <body>
@@ -25,7 +26,7 @@
                     <nav class="burger_nav">
                         <ul>
                             <li>
-                                <a class="text-uppercase" href="">inscription / connexion</a>
+                                <a class="text-uppercase" href="{{ path('app_security_register') }}">inscription / connexion</a>
                             </li>
                             <li>
                                 <a class="text-uppercase">A propos<i class="fas fa-sort-down"></i></a>
@@ -65,7 +66,7 @@
                             <a href="#"><span class="text-uppercase">nos services</span><i class="fas fa-sort-down"></i></a>
                         </div>
                         <div class="HeaderRgt">
-                            <a href="#"><span class="text-uppercase">connexion</span><i class="fas fa-sort-down"></i></a>
+                            <a href="{{ path('app_security_register') }}"><span class="text-uppercase">connexion</span><i class="fas fa-sort-down"></i></a>
                             <a href="#" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
                             <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
@@ -73,7 +74,10 @@
                     </nav>
 
                     <div class="HeaderLogo">
-                        <img src="{{ asset('/img/logo_header.png') }}">
+                        <a href="{{ path('app_index_accueil') }}">
+                            <img src="{{ asset('/img/logo_header.png') }}">
+                        </a>
+
                         <br>
                         <p class="text-uppercase">e-réservation esthetique</p>
                     </div><div class="clearfix"></div>
@@ -107,11 +111,15 @@
                 </nav>
             </footer>
             {% endblock %}
+            {% block javascripts %}
+                <!-- librairies -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                <!-- //Js -->
+                <script src="{{ asset('js/burger_menu.js') }}"></script>
+            {% endblock %}
         {% endblock %}
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        {% endblock %}
+
     </body>
 </html>

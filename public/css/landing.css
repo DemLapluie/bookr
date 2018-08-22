@@ -1,14 +1,12 @@
 
 html,
 body{
-    min-height: 100vh;
-    margin: 0;
-    color: black;
     background-image: url("../img/bg_index.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
 }
+
 /* liste social network */
+
 .nav_top_right{
      padding-left: 80%;
 }
@@ -24,60 +22,104 @@ body{
 /* contenu principal */
 
 .container{
-    margin: 0 auto;
-    background-color: red;
-}
-
-.logo{
-
-}
-
-.logo img{ 
-    width: 60%
-}
-
-.slogan{ 
-
- }
-
-.slogan p {
-
+    margin: 10% auto;
     text-align: center;
+    padding-bottom: 80px;
 }
 
-.button{
-    height: 50px;
+/* logo */
 
-    margin: 25px auto;
-    padding-left: 0;
+.logo img{
+    width: 60%;
 }
 
-.btn-outline-secondary{ 
-    color: white;
-    background-color: rgba(64, 66, 68,.9);
+/* slogan */
+
+.slogan {
+    color: gray;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    display: block;
+    width: 500px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin-bottom: 25px;
 }
 
-.btn-outline-secondary:hover {  
-    color: white;
-    background-color: rgba(64, 66, 68,.65)
+/* button */
+
+#button{
+    width: 350px;
+    padding: 15px 35px;
+    border-radius: initial;
+    font-size: 1.3rem;
 }
 
-button{
-    text-transform: uppercase;
-}
+/* footer */
 
-.btn-lg{
-    font-size: 1.25em;
-    border-radius: 0;
-    padding: 9px 16px;
-}
-
-footer{
-    width: 100%;
+.nav_bot_left{
     position: fixed;
     top: 95vh;
+    display: block;
+    width: 100%;
 }
 
+.nav_bot_left ul{
+    list-style: none;
+}
+
+.nav_bot_left ul li{
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.nav_bot_left ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+/* -------------- RESPONSIVE ------------ */
+
+@media screen and (max-width: 992px){
+    /* slogan */
+    .slogan {
+        font-size: 0.8rem;
+        width: 300px;
+    }
+    /* button */
+    #button{
+        width: 275px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 720px){
+    /* slogan */
+    .slogan {
+        font-size: 0.8rem;
+        width: 200px;
+    }
+    /* button */
+    #button{
+        padding: 5px;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 540px){
+    /* slogan */
+    .slogan {
+        font-size: 0.8rem;
+        width: 200px;
+    }
+    /* button */
+    #button{
+        padding: 5px;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
 
 
 

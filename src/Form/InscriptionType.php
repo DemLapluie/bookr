@@ -23,7 +23,6 @@ class InscriptionType extends AbstractType
             // select sur une entité Doctrine
             ChoiceType::class,
             [
-
                 'choices'  => [
                     'Mme' => 'Mme',
                     'M.' => 'M.'
@@ -36,7 +35,6 @@ class InscriptionType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Nom',
                 ]
-
             ]
             )
             ->add('prenom',

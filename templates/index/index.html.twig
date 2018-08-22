@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    {{ parent() }}
+    {# librairie #}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    {# css #}
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
 {% endblock %}
 
@@ -22,11 +25,11 @@
         <div class="logo">
             <img src="{{  asset('img/logo_landing_page_f_o3.png') }}" alt="BOOKR, logo du site">
         </div>
-        <div class="slogan">
+        <div class="text-uppercase slogan">
             <p>La réservation nouvelle generation</p>
         </div>
-        <div class="button">
-            <a href="{{ path('app_index_accueil') }}" type="button" class="btn btn-outline-secondary btn-lg">Découvrez l'experience</a>
+        <div  class="text-uppercase">
+            <a href="{{ path('app_index_accueil') }}" id="button" class="btn btn-secondary btn-lg">Découvrez l'experience</a>
         </div>
     </div>
     <footer>
@@ -44,4 +47,7 @@
             </ul>
         </nav>
     </footer>
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}
 {% endblock %}
