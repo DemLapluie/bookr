@@ -12,21 +12,23 @@
         <div class="inscription_container row">
             <div class="left col-md-5 col-xl-4 order-2 order-md-1">
                 <h2 class="text-uppercase font-weight-bold">Bienvenue</h2>
+                <br>
                 <h3 class="text-uppercase">Client-e ou professionnel-le</h3>
+                <br>
                 <p class="text-uppercase">
                     l'incription a BOOKR vous donnera accès a
                     <span class="d-block"></span>
                     Un service complet de réservation
                     <span class="d-block"></span>
-                    De prestations esthétique :
+                    De prestations esthétiques :
                     <span class="d-block"></span>
                 </p>
                 <ul class="liste_prestation">
-                    <li class="text-uppercase">coiffure,</li>
-                    <li class="text-uppercase">barbier</li>
-                    <li class="text-uppercase">massage</li>
-                    <li class="text-uppercase">beauté des mains et des pieds:  Manucure, Pose de prothèse, Pédicure </li>
-                    <li class="text-uppercase">beauté du regard : Entretien/Extensions des cils et sourcils</li>
+                    <li class="text-uppercase">- Coiffure,</li>
+                    <li class="text-uppercase">- Barbier</li>
+                    <li class="text-uppercase">- Make Up Artist</li>
+                    <li class="text-uppercase">- Beauté des mains et des pieds:  Manucure, Pose de prothèse, Pédicure </li>
+                    <li class="text-uppercase">- Beauté du regard : Entretien/Extensions des cils et sourcils</li>
                 </ul>
                 <p class="text-uppercase">
                     Votre compte client vous offre également la possibilité de créer
@@ -41,7 +43,8 @@
                 <div class="connexion_form">
                     <h2 class="text-uppercase connexion_form_title font-weight-bold ">Connexion</h2>
                     <span class="title_line"></span>
-                    {# OUvre la balise form #}
+                    <br>
+                    {# Ouvre la balise form #}
                     <form method="POST">
                         <div class="row">
                             <div class="col-xl-4">
@@ -63,20 +66,25 @@
                 {# #}<div class="inscription_form">
                      <h2 class="text-uppercase inscription_form_title font-weight-bold">Votre inscription</h2>
                      <span class="title_line"></span>
+                    <br>
+                    {# Ouvre la balise form #}
                      <div class="row">
                          <div class="col-xl-6">
                              {{ form_start(form) }}
 
-                             <div class="col-xl-9">
+                             <div class="col-xl-4">
                                  {{ form_widget(form.civilite) }}
                              </div>
+                             <br>
                              <div class="col-xl-9">
                                  {{ form_widget(form.nom) }}
                              </div>
                              <div class="col-xl-9">
                                  {{ form_widget(form.prenom) }}
                              </div>
+                             <br>
                              <div class="col-xl-10">
+                                 <p>Date de naissance : </p>
                                  {{ form_widget(form.date_de_naissance) }}
                              </div>
                              <div class="col-xl-12">
@@ -94,12 +102,15 @@
                              </div>
                          </div>
                          <div class="col-xl-6 inscription_form_right">
+                             <br>
                              <div class="col-xl-10">
                                  {{ form_widget(form.email) }}
                              </div>
                              <div class="col-xl-8">
                                  {{ form_widget(form.tel) }}
                              </div>
+                             <!-- les 3 <br> sont à améliorer -->
+                             <br><br><br>
                              <div class="col-xl-8">
                                  {{ form_widget(form.pseudo) }}
                              </div>

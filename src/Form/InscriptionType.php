@@ -47,25 +47,9 @@ class InscriptionType extends AbstractType
                 ])
 
             ->add('date_de_naissance',
-
-                /**DateType::class,
-                [
-                    'years' => [
-                        '1999',
-                        '1998',
-                        '1997',
-                        '1996',
-                        '1995',
-                        '1994',
-                        '1993',
-                        '1992',
-                        '1991'
-                    ]
-                ]) */
-
                 BirthdayType::class, array
                     (
-                        
+                        'format' => 'dd-MM-yyyy',
                         'years'=> range(1918,2000),
                         'placeholder' => array(
                             'day' => 'Jour', 'month' => 'Mois', 'year' => 'Année',
