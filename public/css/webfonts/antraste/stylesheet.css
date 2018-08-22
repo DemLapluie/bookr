@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Antraste';
+    src: url('Antraste.eot');
+    src: url('Antraste.eot?#iefix') format('embedded-opentype'),
+        url('Antraste.woff2') format('woff2'),
+        url('Antraste.woff') format('woff'),
+        url('Antraste.ttf') format('truetype'),
+        url('Antraste.svg#Antraste') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

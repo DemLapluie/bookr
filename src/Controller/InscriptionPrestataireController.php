@@ -18,7 +18,7 @@ class InscriptionPrestataireController extends AbstractController
 
         $prestataire = new Prestataire();
 
-        $form = $this->createForm( InscriptionPrestataireType::class, $prestataire);
+        $form = $this->createForm( InscriptionPrestataireType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
@@ -33,12 +33,12 @@ class InscriptionPrestataireController extends AbstractController
             }else{
                 $this->addFlash(
                     'error',
-                    'zerazerazera'
+                    'Le formulaire est mal remplis'
                 );
             }
         }
 
-        return $this->render('security/index.html.twig', [
+        return $this->render('inscription_prestataire/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }
