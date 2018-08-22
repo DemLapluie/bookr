@@ -45,7 +45,14 @@ class InscriptionType extends AbstractType
                     ]
                 ])
 
-            ->add('date_de_naissance')
+            ->add('date_de_naissance',
+                BirthdayType::class, array
+                    (
+                        'placeholder' => array(
+                            'day' => 'Day', 'month' => 'Month', 'year' => 'Year',
+                        )
+                )
+            )
             ->add('adresse',
                 TextType::class,
                 [
