@@ -14,7 +14,7 @@ header .wrapper {
 
 .HeaderLft{
     float:left;
-    margin-top: -25px;
+    margin: -25px 0 25px;
 }
 
 .HeaderLft a,
@@ -52,13 +52,16 @@ header .wrapper {
     width: 90%;
     margin:  0 auto;
     text-align:center;
-    margin-top: -275px;
+    margin-top: -250px;
 }
 .HeaderLogo img {
     width: 200px;
     margin:  0 auto;
     text-align:center;
     padding-top: 40px;
+}
+.HeaderLogo p {
+font-size: 0.7rem;
 }
 
 a.icon_nav{
