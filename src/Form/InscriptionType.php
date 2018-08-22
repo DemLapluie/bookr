@@ -44,6 +44,7 @@ class InscriptionType extends AbstractType
                         'placeholder' => 'Prénom',
                     ]
                 ])
+
             ->add('date_de_naissance')
             ->add('adresse',
                 TextType::class,
