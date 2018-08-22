@@ -56,7 +56,7 @@ class Prestataire
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le lieu de prestation est obligatoire")
-     * @Assert\Choice(mutltiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" {"Chez le client", "Chez le prestataire", "En salon/institut"})
+     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" )
      */
     private $lieu_prestation;
 
@@ -189,14 +189,14 @@ class Prestataire
         return $this;
     }
 
-    public function getLieuPresttion(): ?string
+    public function getLieuPrestation(): ?string
     {
         return $this->lieu_prestation;
     }
 
     public function setLieuPrestation(string $lieu_presttion): self
     {
-        $this->lieu_presttion = $lieu_presttion;
+        $this->lieu_prestation = $lieu_presttion;
 
         return $this;
     }
