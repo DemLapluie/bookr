@@ -5,33 +5,34 @@
 
 @font-face {
     font-family: 'antraste';
-    src: url('Antraste.eot'); /* IE9 Compat Modes */
-    src: url('Antraste.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('Antraste.woff2') format('woff2'), /* Super Modern Browsers */
-    url('Antraste.woff') format('woff'), /* Pretty Modern Browsers */
-    url('Antraste.ttf')  format('truetype'), /* Safari, Android, iOS */
-    url('Antraste.svg#svgFontName') format('svg'); /* Legacy iOS */
+    src: url('webfonts/antraste/Antraste.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/antraste/Antraste.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfonts/antraste/Antraste.woff2') format('woff2'), /* Super Modern Browsers */
+    url('webfonts/antraste/Antraste.woff') format('woff'), /* Pretty Modern Browsers */
+    url('webfonts/antraste/Antraste.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('webfonts/antraste/Antraste.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
     font-family: 'code-bold';
-    src: url('Code-Bold.eot'); /* IE9 Compat Modes */
-    src: url('Code-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('Code-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-    url('Code-Bold.woff') format('woff'), /* Pretty Modern Browsers */
-    url('Code-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-    url('Code-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+    src: url('webfonts/code/Code-Bold.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/code/Code-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfonts/code/Code-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('webfonts/code/Code-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('webfonts/code/Code-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('webfonts/code/Code-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
     font-family: 'code-light';
-    src: url('Code-Light.eot'); /* IE9 Compat Modes */
-    src: url('Code-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('Code-Light.woff2') format('woff2'), /* Super Modern Browsers */
-    url('Code-Light.woff') format('woff'), /* Pretty Modern Browsers */
-    url('Code-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
-    url('Code-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+    src: url('webfonts/code/Code-Light.eot'); /* IE9 Compat Modes */
+    src: url('webfonts/code/Code-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfonts/code/Code-Light.woff2') format('woff2'), /* Super Modern Browsers */
+    url('webfonts/code/Code-Light.woff') format('woff'), /* Pretty Modern Browsers */
+    url('webfonts/code/Code-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('webfonts/code/Code-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
+
 
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: antraste }

@@ -1,8 +1,9 @@
 
-html,
+
 body{
     background-image: url("../img/bg_index.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* liste social network */
