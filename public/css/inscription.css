@@ -8,21 +8,143 @@
     justify-content: space-evenly;
 }
 
-/* partie gauche*/
+/* partie gauche */
 .inscription_container .left{
-    width:35%;
-    background-color: green;
-    padding: 5%;
+    color:white;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(top, rgb(0,0,0) 31%, rgb(153,153,153) 84%);
+    background: -webkit-linear-gradient(top, rgb(0,0,0) 31%,rgb(153,153,153) 84%);
+    background: linear-gradient(to bottom, rgb(0,0,0) 31%,rgb(153,153,153) 84%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#999999',GradientType=0 );
+    padding: 30px;
 }
-.left h1 {
 
+.lien_devenir_prestataire {
+    line-height: 4rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+
+.lien_devenir_prestataire:hover {
+    color: white;
+    text-decoration: none;
 }
 
 /* partie droite */
 .inscription_container .right{
+    padding: 25px;
+}
 
-    width:60%;
-    min-height: 100px;
-    background-color: red;
+.title_line {
+    display: block;
+    width: 60%;
+    margin-left: 5%;
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+}
+
+/* formulaire connexion */
+.connexion_form {
+    margin-bottom: 25px;
+}
+
+#connexion_form_email,
+#connexion_form_password {
+    border: 1px solid black;
+    border-radius: initial;
+    margin-bottom: 15px;
 
 }
+
+.connexion_form_button {
+    margin-top: 25px;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+    border: none;
+
+}
+.connexion_form_button:hover {
+    background-color: gray;
+
+}
+
+/* formulaire inscription */
+
+
+.inscription_form_right {
+    margin-top: 40px;
+}
+
+#inscription_civilite {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#inscription_civilite .form-check{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#inscription_nom,
+#inscription_prenom,
+#inscription_adresse,
+#inscription_ville,
+#inscription_cp,
+#inscription_email,
+#inscription_tel,
+#inscription_pseudo,
+#inscription_plainPassword_first,
+#inscription_plainPassword_second{
+    border: 1px solid black;
+    border-radius: initial;
+    margin-bottom: 15px;
+}
+#inscription_plainPassword label{
+    display: none;
+}
+
+#inscription_date_de_naissance{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+#inscription_date_de_naissance_year,
+#inscription_date_de_naissance_month,
+#inscription_date_de_naissance_day{
+    border: none;
+    border-radius: initial;
+}
+
+.inscription_form_button{
+    margin-top: 60px;
+    background-color: black;
+    color: white;
+    padding: 15px 40px;
+    cursor: pointer;
+    border: none;
+}
+.inscription_form_button:hover{
+    background-color: grey;
+}
+
+/* -------- RESPONSIVE ----------- */
+
+
+@media screen and (max-width: 768px) {
+    .inscription_form_button,
+    .connexion_form_button {
+        margin-top: 15px;
+    }
+    .left {
+        font-size: 0.6rem;
+    }
+}
+
