@@ -67,10 +67,22 @@ a.icon_nav{
 
 /* -------------------- Content ------------------ */
 
-.container{padding: 0; }
-.container  div{float: left;}
-.container.search div{float: inherit;}
-.container div.link_reser, .container div.link_prest {height: 100% !important;}
+.container{
+    padding: 0;
+}
+
+.container  div{
+    float: left;
+}
+
+.container.search div{
+    float: inherit;
+}
+
+.container div.link_reser,
+.container div.link_prest {
+    height: 100% !important;
+}
 
 .cat_type_nav{
     height: 65px;
@@ -108,11 +120,11 @@ a.icon_nav{
 /* -------------------- FOOTER ------------------- */
 
 .nav_bot_left {
-    float: left;
+    background-color: white;
     margin-left: 85px;
     margin-bottom: 9px;
     height: 70px;
-    padding: 10px 0;
+    padding: 10px 0 0 ;
 
 }
 
@@ -152,13 +164,13 @@ footer{
     width: 100%;
     position: relative;
     display: block;
+    background-color: white;
 }
 
 /* -------------- RESPONSIVE --------------------- */
 
 @media screen and (max-width: 1200px) {
     /* nav principale */
-
 
     header .wrapper{
         height: 0;
