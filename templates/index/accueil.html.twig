@@ -12,20 +12,24 @@
     {% endblock %}
     {% block content %}
         {{ parent() }}
-        <a class="button_home" href="#">
-            <div class="col-6 link_reser">
-                <p>Reserver une prestation</p>
-                <br>
-                <span><p><i class="fas fa-caret-right"></i></p></span>
+
+        <div class="main_content">
+            <div class="left">
+                <a href="#">
+                    <p>Reserver une prestation</p>
+                    <i class="fas fa-caret-right"></i>
+                </a>
             </div>
-        </a>
-        <a class="button_home" href="#">
-            <div class="col-6 link_prest">
-                <span><p><i class="fas fa-caret-left"></i></p></span>
-                <br>
-                <p>Devenir prestataire</p>
+            <div class="right">
+                <a href="#">
+                    <i class="fas fa-caret-left"></i>
+                    <p>Devenir prestataire</p>
+                </a>
             </div>
-        </a>
+        </div>
+
+
+
     {% endblock %}
     {% block footer %}
         {{ parent() }}

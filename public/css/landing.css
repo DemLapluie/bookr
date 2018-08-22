@@ -2,6 +2,7 @@
 html,
 body{
     background-image: url("../img/bg_index.jpg");
+    background-size: cover;
 }
 /* liste social network */
 .nav_top_right{
