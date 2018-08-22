@@ -47,4 +47,7 @@
             </ul>
         </nav>
     </footer>
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}
 {% endblock %}
