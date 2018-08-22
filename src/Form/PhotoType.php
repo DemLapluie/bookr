@@ -20,15 +20,8 @@ class PhotoType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Telephone',
+                        'placeholder' => 'Ajouter une photo',
                     ]
-                ])
-            ->add(
-                'prestataire',
-                EntityType::class,
-                [
-                    'class' => Prestataire::class,
-
                 ])
         ;
     }

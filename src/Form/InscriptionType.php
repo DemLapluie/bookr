@@ -46,6 +46,7 @@ class InscriptionType extends AbstractType
                 ])
 
             ->add('date_de_naissance',
+<<<<<<< HEAD
                 DateType::class,
                 [
                     'years' => [
@@ -60,6 +61,15 @@ class InscriptionType extends AbstractType
                         '1991'
                     ]
                 ])
+=======
+                BirthdayType::class, array
+                    (
+                        'placeholder' => array(
+                            'day' => 'Day', 'month' => 'Month', 'year' => 'Year',
+                        )
+                )
+            )
+>>>>>>> dev_demmy
             ->add('adresse',
                 TextType::class,
                 [

@@ -59,6 +59,7 @@ class SecurityController extends AbstractController
             }
         }
 
+<<<<<<< HEAD
 
 
         return $this->render(
@@ -89,6 +90,11 @@ class SecurityController extends AbstractController
                 'last_username' => $lastUsername,
             ]
         );
+=======
+        return $this->render('security/prestataire.html.twig', [
+            'form' => $form->createView(),
+        ]);
+>>>>>>> dev_demmy
     }
 }
 

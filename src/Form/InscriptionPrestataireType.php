@@ -46,7 +46,7 @@ class InscriptionPrestataireType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Code postale',
+                        'placeholder' => 'Code Postal',
                     ]
                 ])
             ->add(
@@ -54,7 +54,7 @@ class InscriptionPrestataireType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Telephone',
+                        'placeholder' => 'Téléphone',
                     ]
                 ])
             ->add(
@@ -84,7 +84,7 @@ class InscriptionPrestataireType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Status de validation',
+                        'placeholder' => 'Statut de validation',
                     ]
                 ])
             ->add(
@@ -92,7 +92,11 @@ class InscriptionPrestataireType extends AbstractType
                 FileType::class,
                 [
                     'attr' => [
+<<<<<<< HEAD
                         'placeholder' => 'Carte d\'identité',
+=======
+                        'placeholder' => 'Pièce d\'identité',
+>>>>>>> dev_demmy
                     ]
                 ])
             ->add(
@@ -108,7 +112,7 @@ class InscriptionPrestataireType extends AbstractType
                 FileType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Uploader votre photo de profil',
+                        'placeholder' => 'Sélectionner une image',
                     ]
                 ]
                 )
