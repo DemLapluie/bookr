@@ -28,7 +28,7 @@ class PhotoType extends AbstractType
                 EntityType::class,
                 [
                     'class' => Prestataire::class,
-                    
+
                 ])
         ;
     }
