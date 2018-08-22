@@ -17,9 +17,10 @@ security:
             anonymous: true
             provider: db
             pattern: ^/
+
             form_login:
-                login_path: app_security_inscription
-                check_path: app_security_inscription
+                login_path: app_security_connexion
+                check_path: app_security_connexion
                 default_target_path: app_index_accueil
             logout:
                 path: app_security_deconnexion

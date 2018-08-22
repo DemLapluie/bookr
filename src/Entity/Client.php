@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
+ * @UniqueEntity(fields={"email"}, message="Cet email est déjà pris")
  */
-class Client
+class Client implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -30,6 +33,7 @@ class Client
     private $prenom;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="date")
      * @Assert\NotBlank(message="La date de naissance est obligatoire")
      * @Assert\Date(message="La date doit etre format dd-mm-yyyy")
@@ -46,7 +50,7 @@ class Client
      * @ORM\Column(type="string", length=5)
      * @Assert\NotBlank(message="Le code postale est obligatoire")
      * @Assert\Length(min="5", max="5", exactMessage="Le code postale ne doit pas dépasser {{ limit }} caractères")
-     * @Assert\Type(type="integer", message="Le code postale doit contenir uniquement des chiffres")
+     * @Assert\Type(type="string", message="Le code postale doit contenir uniquement des chiffres")
      */
     private $cp;
 
@@ -68,13 +72,13 @@ class Client
      * @ORM\Column(type="string", length=45)
      *
      */
-    private $mdp;
+    private $password;
     
     /**
      * @ORM\Column(type="string", length=10)
      * @Assert\NotBlank(message="L'email est obligatoire")
      * @Assert\Length(min="10", max="10", exactMessage="Le numero de telephone doit contenir {{ limit }} de caractères ")
-     * @Assert\Type(type="integer", message="Le N° de téléphone doit contenir uniquement des chiffres")
+     * @Assert\Type(type="string", message="Le N° de téléphone doit contenir uniquement des chiffres")
      */
     private $tel;
 
@@ -200,14 +204,14 @@ class Client
         return $this;
     }
 
-    public function getMdp(): ?string
+    public function getPassword(): ?string
     {
-        return $this->mdp;
+        return $this->password;
     }
 
-    public function setMdp(string $mdp): self
+    public function setPassword(string $password): self
     {
-        $this->mdp = $mdp;
+        $this->password = $password;
 
         return $this;
     }
@@ -289,5 +293,25 @@ class Client
         $this->plainPassword = $plainPassword;
         return $this;
     }
+
+    public function getSalt() {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
+
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
 
 }
