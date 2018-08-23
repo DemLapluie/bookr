@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/inscription-prest.css') }}" />
+{% endblock %}
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div class="inscription_container row">
+            <div class="inscription_form">
+                <h2 class="text-uppercase inscription_form_title">Mon profil pro</h2>
+                <span class="title_line"></span>
+
+
+                <<<<<<< HEAD
+                <div class="col-md-6 form_content">
+                    <h4>Activation du profil 1/2</h4>
+                    <span class="title_line"></span>
+                    <div class="row">
+                        <div class="col-12">
+                            {{ form_start(form) }}
+
+                            <span class="label_cni">Photocopie pièce d'identité du dirigeant de l'entreprise</span>
+                            <div class="col-md-6 col-sm-6 cni">
+                                {{ form_widget(form.cni) }}
+                            </div>
+                            <div class="col-md-8 col-xl-5 col-sm-6 form-field">
+                                {{ form_widget(form.nom_entreprise) }}
+                            </div>
+                            <div class="col-md-8 col-xl-5 col-sm-6 form-field">
+                                {{ form_widget(form.numero_siret) }}
+                            </div>
+                            <div class="row col-12">
+                                <div class="col-md-8 col-sm-9 form-field">
+                                    {{ form_widget(form.adresse_entreprise) }}
+                                </div>
+                                <div class="col-md-4 col-sm-6 form-field">
+                                    {{ form_widget(form.tel_entreprise) }}
+                                </div>
+                            </div>
+                            <div class="row col-9 col-sm-12">
+                                <div class="col-md-4 col-sm-4 ville">
+                                    {{ form_widget(form.ville_entreprise) }}
+                                </div>
+                                <div class="col-md-4 col-sm-4 cp">
+                                    {{ form_widget(form.cp_entreprise) }}
+                                </div>
+                            </div>
+                            <div class="col-md-6 lieu">
+                                {{ form_row(form.lieu_prestation) }}
+                            </div>
+                        </div>
+                        <div class="form-btn-group offset-1 offset-md-9">
+                            <button type="submit" class="inscription_form_button">
+                                Valider
+                            </button>
+                        </div>
+                        {# <div class="col-xl-6 inscription_form_right">
+                            <div class="col-xl-10">
+                                {{ form_widget(form.email) }}
+                            </div>
+                            <div class="col-xl-8">
+                                {{ form_widget(form.tel) }}
+                            </div>
+                            <div class="col-xl-8">
+                                {{ form_widget(form.pseudo) }}
+                            </div>
+                            <div class="col-xl-8">
+                                {{ form_widget(form.plainPassword) }}
+                            </div>
+                        </div>
+                        <div class="form-btn-group offset-1 offset-xl-9">
+                            <button type="submit" class="inscription_form_button">
+                                Valider
+                            </button>
+                        </div>#}
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}

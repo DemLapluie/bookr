@@ -3,103 +3,42 @@
 namespace App\Form;
 
 use App\Entity\Prestataire;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 
 class RechercheType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add(
-                'nom_entreprise',
-                 TextType::class
-                ,
-                  [
-                      'attr' => [
-                        'placeholder' => 'Nom'
-                      ]
-                  ]
-             )
-            ->add(
-                'adresse_entreprise',
-                 TextType::class,
-                  [
-                      'attr' => [
-                      'placeholder' => 'Adresse'
-                      ]
-                  ]
-            )
-            ->add(
-                'ville_entreprise',
+            ->add('cp_entreprise',
+                   TextType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'Code Postal',
+                    ]
+                ])
+            ->add('lieu_prestation',
+                  ChoiceType::class,
+                [
+                    'label' => 'choix realisation prestataire',
+                    'choices'  => [
+                        'Chez le client' => 'Chez le client',
+                        'Chez le prestataire' => 'Chez le prestataire',
+                        'En salon/institut' => 'En salon/institut'
+                    ],
+                    'expanded' => true,
+                    'multiple' => true
+                ])
+            ->add('profession',
                 TextType::class,
                 [
                     'attr' => [
-                    'placeholder' => 'Ville'
+                        'placeholder' => 'Téléphone',
                     ]
-                ]
-                )
-            ->add(
-                'cp_entreprise',
-                TextType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'Code postal'
-                    ]
-                ]
-                )
-            ->add(
-                'tel_entreprise',
-                TextType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'Telephone'
-                     ]
-                ]
-                )
-            ->add(
-                'lieu_prestation',
-                ChoiceType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'Lieu de prestation'
-                    ]
-                ]
-                )
-
-
-            ->add(
-                'certification',
-                TextType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'certification'
-                    ]
-                ]
-                )
-            ->add(
-                'cni',
-                TextType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'CNI'
-                    ]
-                ]
-            )
-            ->add(
-                'description_entreprise',
-                 TextareaType::class,
-                [
-                    'attr' => [
-                    'placeholder' => 'Numero Siret'
-                    ]
-                ]
-            )
+                ])
+            ->add('jour', DisponibiliteType::class)
         ;
     }
 

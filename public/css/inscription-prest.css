@@ -1,0 +1,127 @@
+
+.liste_prestation{
+    list-style: none;
+}
+
+/* contenue principal */
+.inscription_container{
+    display: flex;
+    justify-content: space-evenly;
+    background-image: url("../img/bg_marbre.jpg");
+    background-size: cover;
+    margin-top: 25px;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* partie gauche */
+.inscription_container .left{
+    color:white;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(top, rgb(0,0,0) 31%, rgb(153,153,153) 84%);
+    background: -webkit-linear-gradient(top, rgb(0,0,0) 31%,rgb(153,153,153) 84%);
+    background: linear-gradient(to bottom, rgb(0,0,0) 31%,rgb(153,153,153) 84%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#999999',GradientType=0 );
+    padding: 30px;
+    margin-left: -30px;
+}
+
+.inscription_form{width: 100%}
+.inscription_form_title{
+    margin-top: -25px;
+
+}
+
+input[type=file]#inscription_prestataire_cni{ border: 1px solid black !important;}
+
+.form_content , .validation { margin: 0 auto}
+
+.title_line {
+    display: block;
+    width: 60%;
+    margin-left: 5%;
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+}
+
+.form_content .title_line, .validation .title_line {border-bottom: 1px solid black}
+.form_content h4, .validation h4{margin-top: 70px;}
+
+.form_content .ville, .form_content .cp {
+    padding-right: 0;
+    margin-bottom: 15px }
+
+.validation{text-align: center}
+.validation p{
+    font-family: Roboto, sans-serif;
+    line-height: 1.5em;
+    text-align: center;
+}
+.validation p:last-child{margin-bottom: 150px;}
+
+.form-control{
+    border-radius: 0;
+    border: 1px solid black;
+}
+
+.form-field{margin-bottom: 15px;}
+.btn.valid {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border-radius: 0;
+}
+
+.label_cni{
+    width: fit-content;
+    margin-left: 17px;
+    margin-bottom: 9px;
+    display: block;
+    font-family: antraste, sans-serif;;
+    font-size: .7em;
+}
+
+.lieu .col-form-label {
+    font-family: antraste, sans-serif;;
+    font-size: .8em
+}
+
+.logo_validation{
+    width: 96px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+/* formulaire inscription */
+.inscription_form_button{
+    margin-top: 0;
+    margin-bottom: 50px;
+    background-color: black;
+    color: white;
+    padding: 15px 40px;
+    cursor: pointer;
+    border: none;
+}
+.inscription_form_button:hover{
+    background-color: grey;
+}
+
+
+/* -------- RESPONSIVE ----------- */
+@media screen and (max-width: 768px) {
+    .inscription_form_button,
+    .connexion_form_button {
+        margin-top: 15px;
+    }
+    .left {
+        font-size: 0.6rem;
+    }
+}
+
+
+@media screen and (max-width: 590px) {
+   .lieu{ margin-left: 5px}
+}
+
+
