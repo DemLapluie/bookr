@@ -58,7 +58,7 @@ class InscriptionPrestataireController extends AbstractController
             }
         }
 
-        return $this->render('inscription_prestataire/index.html.twig', [
+        return $this->render('inscription_prestataire/formulaire.html.twig', [
 
             'form' => $form->createView(),
         ]);

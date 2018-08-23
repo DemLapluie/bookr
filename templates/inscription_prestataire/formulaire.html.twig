@@ -14,8 +14,6 @@
                 <h2 class="text-uppercase inscription_form_title">Mon profil pro</h2>
                 <span class="title_line"></span>
 
-
-                <<<<<<< HEAD
                 <div class="col-md-6 form_content">
                     <h4>Activation du profil 1/2</h4>
                     <span class="title_line"></span>
@@ -48,10 +46,19 @@
                                 <div class="col-md-4 col-sm-4 cp">
                                     {{ form_widget(form.cp_entreprise) }}
                                 </div>
+                                <div class="col-md-4 col-sm-4 cp">
+                                    {{ form_widget(form.jour) }}
+                                </div>
                             </div>
                             <div class="col-md-6 lieu">
                                 {{ form_row(form.lieu_prestation) }}
                             </div>
+                            <p>Date: <input type="text" id="datepicker"></p>
+
+                            <button onclick="myFunction()">Try it</button>
+
+                            <p id="demo"></p>
+
                         </div>
                         <div class="form-btn-group offset-1 offset-md-9">
                             <button type="submit" class="inscription_form_button">

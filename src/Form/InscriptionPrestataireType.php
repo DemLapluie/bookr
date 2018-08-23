@@ -5,10 +5,12 @@ namespace App\Form;
 use App\Entity\Prestataire;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Date;
 
 class InscriptionPrestataireType extends AbstractType
 {
@@ -112,6 +114,14 @@ class InscriptionPrestataireType extends AbstractType
                     ]
                 ]
                 )
+            ->add(
+                'jour',
+                DateType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'Téléphone',
+                    ]
+                ])
             ->add(
                 'profession',
                 TextType::class,
