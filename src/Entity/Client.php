@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
  * @UniqueEntity(fields={"email"}, message="Cet email est déjà pris")
  */
-class Client implements UserInterface
+class Client implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -62,7 +62,7 @@ class Client implements UserInterface
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank(message="L'email est obligatoire")
      * @Assert\Email(message="L'email n'est pas valide")
      */
@@ -114,6 +114,7 @@ class Client implements UserInterface
      * @assert\NotBlank(message="Le mot de passe est obligatoire")
      */
     private $plainPassword;
+
 
     public function getId(): ?int
     {
@@ -294,6 +295,73 @@ class Client implements UserInterface
         return $this;
     }
 
+    /**
+     * quel attribut va servir d'identifiant
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+    /**
+    * Transforme un objet User en chaîne de caractère
+    * @return string
+    */
+    public function serialize() :string
+    {
+        return serialize([
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->date_de_naissance,
+            $this->adresse,
+            $this->cp,
+            $this->ville,
+            $this->email,
+            $this->password,
+            $this->tel,
+            $this->pseudo,
+            $this->civilite,
+        ]);
+    }
+
+    /**
+     * Transforme une chaîne générée par serialize en objet user
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->date_de_naissance,
+            $this->adresse,
+            $this->cp,
+            $this->ville,
+            $this->email,
+            $this->password,
+            $this->tel,
+            $this->pseudo,
+            $this->civilite,
+            ) = unserialize($serialized);
+    }
+
+    public function __toString()
+    {
+        return $this->firstname . ' ' . $this->name;
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * Rôle sous forme d'un array
+     * @return array
+     */
     public function getSalt() {
         // TODO: Implement getSalt() method.
     }
@@ -302,16 +370,5 @@ class Client implements UserInterface
     {
         // TODO: Implement getRoles() method.
     }
-
-    public function getUsername()
-    {
-        // TODO: Implement getUsername() method.
-    }
-
-    public function eraseCredentials()
-    {
-        // TODO: Implement eraseCredentials() method.
-    }
-
 
 }

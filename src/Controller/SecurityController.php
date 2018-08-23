@@ -10,6 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+/**
+ * Class SecurityController
+ * @package App\Controller
+ */
 class SecurityController extends AbstractController
 {
     /**
@@ -47,46 +51,43 @@ class SecurityController extends AbstractController
 
                 $this->addFlash(
                     'success',
-                    'Votre compte à bien été créé.'
+                    'Votre compte a bien été créé.'
                 );
 
                 return $this->redirectToRoute('app_index_accueil');
             }else{
                 $this->addFlash(
                     'error',
-                    'Erreur'
+                    'le formulaire contient des erreurs.'
                 );
             }
         }
 
-
-
         return $this->render(
-            'security/index.html.twig',
+            'security/register.html.twig',
             [
                 'form' => $form->createView(),
-            ]);
+            ]
+        );
     }
 
     /**
      * @Route("/connexion")
-    */
+     */
     public function login(AuthenticationUtils $authenticationUtils)
     {
-        // Traitement du formulaire par Security
+        // traitement du formulaire par Security
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        dump($error);
-
-        if(!empty($error)){
-            $this->addFlash('error', "Indentifiants incorrect");
+        if (!empty($error)) {
+            $this->addFlash('error', 'Identifiants incorrects');
         }
 
         return $this->render(
-            'security/connexion.html.twig',
+            'security/login.html.twig',
             [
-                'last_username' => $lastUsername,
+                'last_username' => $lastUsername
             ]
         );
     }
