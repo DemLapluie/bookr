@@ -1,0 +1,58 @@
+/*----------------Main Content-------------*/
+
+.main_content{
+    display: flex;
+    justify-content: space-evenly;
+    background-image: url("../img/bg_marbre.jpg");
+    background-size: cover;
+    margin-top: 0;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+.text-activation{
+    margin-top: 175px;
+    margin-bottom: 70px;
+    font-family: Antraste;
+}
+.text-activation p:first-child{
+    font-size: 1.5em;
+}
+.text-activation p.note{
+    font-size: .8em;
+    font-family: roboto;
+}
+
+.text-activation a{text-decoration: underline; color: black}
+
+.text-activation .btn{ border-radius: 0}
+.img_ecrans img{
+    width: 100%;
+    margin-top: 131px;
+    margin-left: -100px;
+    margin-bottom: 100px;
+}
+
+
+@media (min-width: 768px){
+    .col-md-12{ flex: inherit;}
+}
+
+@media (max-width: 1160px){
+    .img_ecrans img{
+
+    }
+
+    .text-activation {
+        margin-top: 135px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 840px){
+    .img_ecrans {
+        display: none;
+    }
+
+
+}

@@ -1,100 +1,39 @@
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/inscription_prest.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/inscription-prest_index.css') }}" />
 {% endblock %}
+
 
 {% block body %}
     {% block header %}
         {{ parent() }}
     {% endblock %}
     {% block content %}
-        <div class="inscription_container row">
-                <div class="inscription_form">
-                    <h2 class="text-uppercase inscription_form_title">Mon profil pro</h2>
-                    <span class="title_line"></span>
+        {{ parent() }}
 
-
-<<<<<<< HEAD
-                    <div class="col-md-6 form_content">
-                        <h4>Activation du profil 1/2</h4>
-                        <span class="title_line"></span>
-                    <div class="row">
-                        <div class="col-12">
-                            {{ form_start(form) }}
-
-                            <span class="label_cni">Photocopie pièce d'identité du dirigeant de l'entreprise</span>
-                            <div class="col-md-6 col-sm-6 cni">
-                                {{ form_widget(form.cni) }}
-                            </div>
-                            <div class="col-md-8 col-xl-5 col-sm-6 form-field">
-                                {{ form_widget(form.nom_entreprise) }}
-                            </div>
-                            <div class="col-md-8 col-xl-5 col-sm-6 form-field">
-                                {{ form_widget(form.numero_siret) }}
-                            </div>
-                            <div class="row col-12">
-                            <div class="col-md-8 col-sm-9 form-field">
-                                {{ form_widget(form.adresse_entreprise) }}
-                            </div>
-                                <div class="col-md-4 col-sm-6 form-field">
-                                    {{ form_widget(form.tel_entreprise) }}
-                                </div>
-                            </div>
-                            <div class="row col-9 col-sm-12">
-                            <div class="col-md-4 col-sm-4 ville">
-                                {{ form_widget(form.ville_entreprise) }}
-                            </div>
-                            <div class="col-md-4 col-sm-4 cp">
-                                {{ form_widget(form.cp_entreprise) }}
-                            </div>
-                            </div>
-                            <div class="col-md-6 lieu">
-                                {{ form_row(form.lieu_prestation) }}
-                            </div>
-                        </div>
-                        <div class="form-btn-group offset-1 offset-md-9">
-                            <button type="submit" class="inscription_form_button">
-                                Valider
-                            </button>
-                        </div>
-                        {# <div class="col-xl-6 inscription_form_right">
-                            <div class="col-xl-10">
-                                {{ form_widget(form.email) }}
-                            </div>
-                            <div class="col-xl-8">
-                                {{ form_widget(form.tel) }}
-                            </div>
-                            <div class="col-xl-8">
-                                {{ form_widget(form.pseudo) }}
-                            </div>
-                            <div class="col-xl-8">
-                                {{ form_widget(form.plainPassword) }}
-                            </div>
-                        </div>
-                        <div class="form-btn-group offset-1 offset-xl-9">
-                            <button type="submit" class="inscription_form_button">
-                                Valider
-                            </button>
-                        </div>#}
-                        {{ form_end(form, {'render_rest': false}) }}
-                    </div>
-                    </div>
-                </div>
+        <div class="main_content">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-left">
+            <div class="col-lg-10 col-md-12 text-activation float-right">
+                <p>Activez votre<br>profil professionnel<br>pour devenir prestataire</p>
+                <br>
+                <p class="note">Pour plus d'informations consulter la recherche <a href="#">Devenir prestataire</a></p>
+                <button type="button" class="btn valid btn-dark">Activer</button>
+            </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 img_ecrans">
+                <img src="{{ asset('img/img-ecran.png') }}" alt="">
             </div>
         </div>
 
+
+
     {% endblock %}
     {% block footer %}
-=======
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/InscriptionPrestataireController.php'|file_link(0) }}">src/Controller/InscriptionPrestataireController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/inscription_prestataire/prestataire.html.twig'|file_link(0) }}">templates/inscription_prestataire/index.html.twig</a></code></li>
-    </ul>
-</div>
+        {{ parent() }}
+    {% endblock %}
     {% block javascripts %}
->>>>>>> dev_demmy
         {{ parent() }}
     {% endblock %}
 {% endblock %}

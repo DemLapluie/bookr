@@ -11,10 +11,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InscriptionPrestataireController extends AbstractController
 {
+
     /**
-     * @Route("/inscription/prestataire")
+     * @Route("/inscription/prestataire/")
      */
-    public function register(Request $request){
+    public function prestIndex ()
+    {
+        return $this->render(
+            'inscription_prestataire/index.html.twig'
+        );
+    }
+
+    /**
+     * @Route("/inscription/prestataire/form")
+     */
+    public function prestFormulaire (Request $request){
 
         $prestataire = new Prestataire();
 
@@ -47,9 +58,19 @@ class InscriptionPrestataireController extends AbstractController
             }
         }
 
-        return $this->render('inscription_prestataire/validation.html.twig', [
+        return $this->render('inscription_prestataire/index.html.twig', [
 
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/inscription/prestataire/validation")
+     */
+    public function prestValid ()
+    {
+        return $this->render(
+            'inscription_prestataire/validation.html.twig'
+        );
     }
 }
