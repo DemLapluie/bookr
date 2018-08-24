@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DisponibiliteRepository")
  */
-class Horaires
+class Disponibilite
 {
     /**
      * @ORM\Id()
@@ -19,91 +19,91 @@ class Horaires
 
     /**
      * @var Prestataire
-     * @ORM\OneToOne(targetEntity="prestataire", inversedBy="horaires")
+     * @ORM\OneToOne(targetEntity="prestataire")
      * @ORM\JoinColumn(name="prestataire_id", referencedColumnName="id")
      */
     private $prestataire;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $lundi_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $lundi_Fermeture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $mardi_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $mardi_fermeture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $mercredi_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $mercredi_fermeture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $jeudi_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $jeudi_fermeture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $vendredi_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $vendredi_fermeture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $samedi_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $samedi_fermeture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $dimanche_ouverture;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Time(message="Le format de l'heure n'est pas respecté")
      */
     private $dimanche_fermeture;
@@ -123,9 +123,9 @@ class Horaires
 
     /**
      * @param Prestataire $prestataire
-     * @return Horaires
+     * @return Disponibilite
      */
-    public function setPrestataire(Prestataire $prestataire): Horaires
+    public function setPrestataire(Prestataire $prestataire): Disponibilite
     {
         $this->prestataire = $prestataire;
         return $this;
@@ -141,7 +141,7 @@ class Horaires
 
     /**
      * @param mixed $lundi_ouverture
-     * @return Horaires
+     * @return Disponibilite
      */
     public function setLundiOuverture($lundi_ouverture)
     {
@@ -159,7 +159,7 @@ class Horaires
 
     /**
      * @param mixed $lundi_Fermeture
-     * @return Horaires
+     * @return Disponibilite
      */
     public function setLundiFermeture($lundi_Fermeture)
     {

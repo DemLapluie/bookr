@@ -38,7 +38,6 @@ class RechercheType extends AbstractType
                         'En salon/institut' => 'En salon/institut'
                     ],
                 ])
-<<<<<<< HEAD
             ->add(
                 'profession',
                 ChoiceType::class,
@@ -52,16 +51,6 @@ class RechercheType extends AbstractType
                         'Expert/Styliste du Regard' => 'Expert/Styliste du Regard',
                     )
                 ))
-=======
-            ->add('profession',
-                TextType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Téléphone',
-                    ]
-                ])
-            ->add('jour', HorairesType::class)
->>>>>>> dev_demmy
         ;
     }
 

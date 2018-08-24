@@ -115,7 +115,6 @@ class Client implements UserInterface, \Serializable
      */
     private $plainPassword;
 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -295,70 +294,18 @@ class Client implements UserInterface, \Serializable
         return $this;
     }
 
-    /**
-     * quel attribut va servir d'identifiant
-     * @return string
-     */
+    public function getSalt() {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
     public function getUsername()
     {
         return $this->email;
-    }
-
-    /**
-    * Transforme un objet User en chaîne de caractère
-    * @return string
-    */
-    public function serialize() :string
-    {
-        return serialize([
-            $this->id,
-            $this->nom,
-            $this->prenom,
-            $this->date_de_naissance,
-            $this->adresse,
-            $this->cp,
-            $this->ville,
-            $this->email,
-            $this->password,
-            $this->tel,
-            $this->pseudo,
-            $this->civilite,
-        ]);
-    }
-
-    /**
-     * Transforme une chaîne générée par serialize en objet user
-     * @param string $serialized
-     */
-    public function unserialize($serialized)
-    {
-<<<<<<< HEAD
-        list(
-            $this->id,
-            $this->nom,
-            $this->prenom,
-            $this->date_de_naissance,
-            $this->adresse,
-            $this->cp,
-            $this->ville,
-            $this->email,
-            $this->password,
-            $this->tel,
-            $this->pseudo,
-            $this->civilite,
-            ) = unserialize($serialized);
-=======
-        return ['ROLE_USER'];
->>>>>>> backup_dev
-    }
-
-    public function __toString()
-    {
-<<<<<<< HEAD
-        return $this->firstname . ' ' . $this->name;
-=======
-        return $this->email;
->>>>>>> backup_dev
     }
 
     public function eraseCredentials()
@@ -366,20 +313,6 @@ class Client implements UserInterface, \Serializable
         // TODO: Implement eraseCredentials() method.
     }
 
-<<<<<<< HEAD
-    /**
-     * Rôle sous forme d'un array
-     * @return array
-     */
-    public function getSalt() {
-        // TODO: Implement getSalt() method.
-    }
-
-    public function getRoles()
-    {
-        // TODO: Implement getRoles() method.
-    }
-=======
     public function serialize()
     {
         return serialize([
@@ -416,13 +349,9 @@ class Client implements UserInterface, \Serializable
             ) = unserialize($serialized);
     }
 
-<<<<<<< HEAD
     public function __toString()
     {
         return $this->pseudo;
     }
-=======
->>>>>>> backup_dev
->>>>>>> dev_demmy
 
 }

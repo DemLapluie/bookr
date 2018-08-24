@@ -8,14 +8,9 @@ use App\Entity\Prestataire;
 use App\Entity\Prestation;
 use App\Form\InscriptionPrestataireType;
 use App\Form\PhotoType;
-<<<<<<< HEAD
 use App\Form\ProfilClientType;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-=======
-use App\Form\PrestationType;
-use App\Form\ProfilPrestataireType;
->>>>>>> dev_demmy
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,11 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AffichageProfilUserController extends AbstractController
 {
     /**
-<<<<<<< HEAD
      * @Route("/profil/prestataire/{id}")
-=======
-     * @Route("/profil/prestataire/")
->>>>>>> dev_demmy
      */
 
     public function affichagePrestataire()
@@ -38,50 +29,52 @@ class AffichageProfilUserController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
 
-        $repository= $em->getRepository(ProfilPrestataireType::class, $prestataire);
-        $prestataire = $repository->findAll();
+        $repositoryPrestaraire = $em->getRepository(Prestataire::class);
+        $repositoryPhotos = $em->getRepository(Photos::class);
+        $repositoryPrestations = $em->getRepository(Prestation::class);
 
-        $prestataire->getAvatar();
-        $prestataire->getAdresseEntreprise();
-        $prestataire->getVilleEntreprise();
-        $prestataire->getCpEntreprise();
-        $prestataire->getTelEntreprise();
-        $prestataire->getDescriptionEntreprise();
-        $prestataire->getPhoto();
-        $prestataire->getPrestation();
-        $prestataire->getJour();
-        $prestataire->getHoraires();
-
+        $prestataire = $repositoryPrestaraire->findAll();
+        $prestatairePhotos = $repositoryPhotos->findAll();
+        $prestatairePrestations = $repositoryPrestations->findAll();
 
         return $this->render(
-            '/affichage_profil/fiche_prestataire/ficheprestataire.html.twig',
+            '/affichage_profil/prestataire.html.twig',
             [
                 'prestataire' => $prestataire,
-
+                'prestataire_photos' => $prestatairePhotos,
+                'prestataire_prestations' => $prestatairePrestations,
             ]
         );
 
-    }
-
-    /**
-     * @Route("/modficationprofil/prestataire/")
-     */
-    public function modificationProfilPrestataire() {
 
         /**
          * Requête POST pour modifier les données Prestataire en BDD via une modale (cf.fichier Twig)
          */
-        $prestataire = $this->getUser();
+        $prestataire = new Prestataire();
+        $prestatairePhotos= new Photos();
+        $prestatairePrestations = new Prestation() ;
 
         $form = $this->createForm(InscriptionPrestataireType::class, $prestataire);
+                $this->createForm(PhotoType::class,$prestatairePhotos);
+                $this->createForm(PrestationType::class,$prestatairePrestations);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
 
                 $prestataire->setAvatar();
+                $prestataire->setNomEntreprise();
+                $prestataire->setLieuPrestation();
                 $prestataire->setDescriptionEntreprise();
+                $prestataire->setAdresseEntreprise();
+                $prestataire->setVilleEntreprise();
+                $prestataire->setCpEntreprise();
+                $prestataire->setTelEntreprise();
 
+
+                $prestatairePhotos->setNom();
+
+                $prestatairePrestations->setNom();
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($prestataire);
@@ -101,60 +94,14 @@ class AffichageProfilUserController extends AbstractController
                         'prestataire' => $prestataire
                     ]
                 );
+
             }
+
         }
     }
 
     /**
-<<<<<<< HEAD
      * @Route("/profil/client")
-=======
-     * @Route("/modification/photos")
-     */
-    public function gestionPhotos() {
-
-
-
-        $prestataire->setPhoto();
-
-
-
-
-        return $this->render(
-            '/affichage_profil/fiche_prestataire/photos.html.twig',
-            [
-                'prestataire' => $prestataire,
-
-            ]
-        );
-    }
-
-    /**
-     * @Route("/modification/photos")
-     */
-    public function gestionPrestations() {
-
-
-
-
-        $prestataire->setPhoto();
-
-
-
-        return $this->render(
-            '/affichage_profil/fiche_prestataire/prestataions.html.twig',
-            [
-                'prestataire' => $prestataire,
-
-            ]
-        );
-    }
-
-
-
-    /**
-     * @Route("/affichage/profil/client/{id}")
->>>>>>> dev_demmy
      */
 
     public function affichageClient(
