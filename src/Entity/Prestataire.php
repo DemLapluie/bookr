@@ -108,7 +108,6 @@ class Prestataire
     /**
      * @var Collection
      * @ORM\OneToMany(targetEntity="Photos", mappedBy="prestataire")
-     * 
      * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
      */
     private $photo;
