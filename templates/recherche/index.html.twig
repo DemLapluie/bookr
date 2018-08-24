@@ -4,95 +4,60 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/recherche.css') }}" />
 {% endblock %}
+
+
 {% block body %}
     {% block header %}
         {{ parent() }}
     {% endblock %}
     {% block content %}
-        <div class="cat_type_nav">
+        <div class="cat_type_nav recherche">
             <nav>
-                <a href="#">Coiffeur</a>
-                <a href="#">Prothesiste ongulaire</a>
-                <a href="#">Barbier</a>
-                <a href="#">Stylist des cils</a>
-                <a href="#">MakeUp Artist</a>
+                <ul>
+                <li><a href="#">Coiffeur</a></li>
+                <li><a href="#">Prothesiste ongulaire</a></li>
+                <li><a href="#">Barbier</a></li>
+                <li><a href="#">Stylist des cils</a></li>
+                <li><a href="#">MakeUp Artist</a></li>
+                </ul>
             </nav>
 
-            {{ form_start (form) }}
+                <div class="col-8 form-inscripton">
+            {{ form_start(form) }}
+                 <div class="row col-12 form-content">
+                 <div class="col">
+                     <p><input class="form-control" type="text" placeholder="Jour?" id="datepicker"></p>
+                     <button class="btn-js" onclick="myFunction()">Try it</button>
 
-            {#bloc de formulaire pour le champ name #}
-            {{ form_widget (form.nom_entreprise) }}
-            {{ form_row (form.nom_entreprise) }}
-            {{ form_row (form.ville_entreprise) }}
-            {{ form_row (form.cp_entreprise) }}
+                     <p id="demo"></p>
+                 </div>
+                 <div class="col">
+                     {{ form_widget(form.profession) }}
+                 </div>
+                 <div class="col">
+                     {{ form_widget(form.cp_entreprise) }}
+                 </div>
+                 <div class="col lieu">
+                     {{ form_widget(form.lieu_prestation) }}
+                 </div>
+                        <div class="form-btn-group col">
+                            <button type="submit" class="inscription_form_button">
+                                Rechercher
+                            </button>
+                        </div>
+                 </div>
+            {{ form_end(form, {'render_rest': false}) }}
+                </div>
 
-
-            {#ferme la balise form#}
-            {{ form_end(form) }}
-
-            <div class="form_content">
-                <p class="form_descript">
-                    Trouver votre meilleur prestataire esthetique
-                    pres de chez vous.
-                    <br>
-                    <span>*service disponible sur toute l'ile de france</span>
-                </p>
-                  {{ form_start (form) }}
-                    {{ form_row (form.cp_entreprise) }}
-                        <form>
-                            <div class="form-row">
-                            <div class="col">
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>jour ?</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>type de prestation</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                    </select>
-                            </div>
-                            <div class="col">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>prestation</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                    </select>
-                            </div>
-                            <div class="col">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      <option>lieu</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                    </select>
-                            </div>
-                            <div class="col">
-                                    <input class="form-control" type="text" placeholder="code postal">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2 btn-dark">Rechercher</button>
-                            </div>
-                        </form>
-                    {{ form_end(form) }}
-            </div>
         </div>
+        <div class="main_content">
+        </div>
+
     {% endblock %}
     {% block footer %}
         {{ parent() }}
     {% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}
 {% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-{% endblock %}
-
