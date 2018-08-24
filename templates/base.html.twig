@@ -111,6 +111,21 @@
                 </nav>
             </footer>
             {% endblock %}
+        <div class="container">
+            {# Affichage des messages du bootstrap #}
+            {% for type, flashes in app.session.flashBag.all %}
+                {% for message in flashes %}
+                    {# pour la class alert-danger du bootstrap #}
+                    {% if type == 'error' %}
+                        {% set type = 'danger' %}
+                    {% endif %}
+                    <div class="alert alert-{{ type }}">
+                        {{ message|raw }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="container">
             {% block javascripts %}
                 <!-- librairies -->
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

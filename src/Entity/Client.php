@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
  * @UniqueEntity(fields={"email"}, message="Cet email est déjà pris")
  */
-class Client implements UserInterface
+class Client implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -62,14 +62,14 @@ class Client implements UserInterface
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank(message="L'email est obligatoire")
      * @Assert\Email(message="L'email n'est pas valide")
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255)
      *
      */
     private $password;
@@ -305,12 +305,22 @@ class Client implements UserInterface
 
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this->email;
     }
 
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    public function serialize()
+    {
+        // TODO: Implement serialize() method.
+    }
+
+    public function unserialize($serialized)
+    {
+        // TODO: Implement unserialize() method.
     }
 
 
