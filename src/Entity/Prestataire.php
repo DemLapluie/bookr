@@ -41,7 +41,7 @@ class Prestataire
      * @ORM\Column(type="string", length=5)
      * @Assert\NotBlank(message="Le code postale est obligatoire")
      * @Assert\Length(min="5", max="5", exactMessage="Le code postale ne doit pas dépasser {{ limit }} caractères")
-     * @Assert\Type(type="integer", message="Le code postale doit contenir uniquement des chiffres")
+     * @Assert\Type(type="digit", message="Le code postale doit contenir uniquement des chiffres")
      */
     private $cp_entreprise;
 
@@ -49,35 +49,35 @@ class Prestataire
      * @ORM\Column(type="string", length=10)
      * @Assert\NotBlank(message="Le numero de téléhone est obligatoire")
      * @Assert\Length(min="10", max="10", exactMessage="Le numero de telephone doit contenir {{ limit }} de caractères ")
-     * @Assert\Type(type="integer", message="Le N° de téléphone doit contenir uniquement des chiffres")
+     * @Assert\Type(type="digit", message="Le N° de téléphone doit contenir uniquement des chiffres")
      */
     private $tel_entreprise;
 
-    /**
-     * @ORM\Column(type="string", length=255)
+     /**
+     * @ORM\Column(type="array")
      * @Assert\NotBlank(message="Le lieu de prestation est obligatoire")
-     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" )
+     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" ))
      */
     private $lieu_prestation;
 
     /**
      * @ORM\Column(type="string", length=14)
      * @Assert\NotBlank(message="Le N° Siret est obligatoire")
-     * @Assert\Length(max="14", min="14", maxMessage="Le code postale ne doit pas dépasser {{ limit }} caractères")
-     * @Assert\Type(type="integer", message="Le N° de siret doit contenir uniquement des chiffres")
+     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres")
      *
      */
     private $numero_siret;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Choice({"Validé", "En attente", "Refusé"})
      */
     private $certification;
 
     /**
      *
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le N°  est obligatoire")
      * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image")
      *
@@ -106,16 +106,90 @@ class Prestataire
     private $avatar;
 
     /**
-     * @var Collection
      * @ORM\OneToMany(targetEntity="Photos", mappedBy="prestataire")
      * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
      */
     private $photo;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\OneToMany(targetEntity="Prestation", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="prestation_id", referencedColumnName="id")
+     */
+    private $prestation;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
+     */
+    private $horaires;
+
+    /**
+     * @ORM\Column(type="array")
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+     * @Assert\Choice({"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi","Samedi","Dimanche"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de jour" ))
+     */
+    private $jour;
+
+
+    /**
+     * @return mixed
+     */
+    public function getHoraires()
+    {
+        return $this->horaires;
+    }
+
+    /**
+     * @param mixed $horaires
+     * @return Prestataire
+     */
+    public function setHoraires($horaires)
+    {
+        $this->horaires = $horaires;
+        return $this;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getPrestation()
+    {
+        return $this->prestation;
+    }
+
+    /**
+     * @param mixed $prestation
+     * @return Prestataire
+     */
+    public function setPrestation($prestation)
+    {
+        $this->prestation = $prestation;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJour()
+    {
+        return $this->jour;
+    }
+
+    /**
+     * @param mixed $jour
+     * @return Prestataire
+     */
+    public function setJour($jour)
+    {
+        $this->jour = $jour;
+        return $this;
+    }
+
+    /**
+     * @ORM\Column(type="array")
      * @Assert\NotBlank(message="La profession est obligatoire")
-     * @Assert\Choice({"Barbier", "Coiffeur", "Expert du regard", "Make-up artist", "Expert des ongles"})
      */
     private $profession;
 
@@ -189,12 +263,14 @@ class Prestataire
         return $this;
     }
 
-    public function getLieuPrestation(): ?string
+
+
+    public function getLieuPrestation(): ?array
     {
         return $this->lieu_prestation;
     }
 
-    public function setLieuPrestation(string $lieu_presttion): self
+    public function setLieuPrestation(?array $lieu_presttion): self
     {
         $this->lieu_prestation = $lieu_presttion;
 

@@ -69,7 +69,7 @@ class Client implements UserInterface, \Serializable
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255)
      *
      */
     private $password;
@@ -332,6 +332,74 @@ class Client implements UserInterface, \Serializable
      */
     public function unserialize($serialized)
     {
+<<<<<<< HEAD
+        list(
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->date_de_naissance,
+            $this->adresse,
+            $this->cp,
+            $this->ville,
+            $this->email,
+            $this->password,
+            $this->tel,
+            $this->pseudo,
+            $this->civilite,
+            ) = unserialize($serialized);
+=======
+        return ['ROLE_USER'];
+>>>>>>> backup_dev
+    }
+
+    public function __toString()
+    {
+<<<<<<< HEAD
+        return $this->firstname . ' ' . $this->name;
+=======
+        return $this->email;
+>>>>>>> backup_dev
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+<<<<<<< HEAD
+    /**
+     * Rôle sous forme d'un array
+     * @return array
+     */
+    public function getSalt() {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
+=======
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->date_de_naissance,
+            $this->adresse,
+            $this->cp,
+            $this->ville,
+            $this->email,
+            $this->password,
+            $this->tel,
+            $this->pseudo,
+            $this->civilite,
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
         list(
             $this->id,
             $this->nom,
@@ -348,27 +416,6 @@ class Client implements UserInterface, \Serializable
             ) = unserialize($serialized);
     }
 
-    public function __toString()
-    {
-        return $this->firstname . ' ' . $this->name;
-    }
-
-    public function eraseCredentials()
-    {
-        // TODO: Implement eraseCredentials() method.
-    }
-
-    /**
-     * Rôle sous forme d'un array
-     * @return array
-     */
-    public function getSalt() {
-        // TODO: Implement getSalt() method.
-    }
-
-    public function getRoles()
-    {
-        // TODO: Implement getRoles() method.
-    }
+>>>>>>> backup_dev
 
 }

@@ -50,7 +50,7 @@ class Prestation
 
     /**
      * @var Prestataire
-     * @ORM\ManyToOne(targetEntity="Prestataire")
+     * @ORM\ManyToOne(targetEntity="Prestataire", inversedBy="prestation")
      * @ORM\JoinColumn(name="prestataire_id", referencedColumnName="id")
      */
     private $prestataire;

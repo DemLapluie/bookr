@@ -38,7 +38,7 @@ class RechercheType extends AbstractType
                         'placeholder' => 'Téléphone',
                     ]
                 ])
-            ->add('jour', DisponibiliteType::class)
+            ->add('jour', HorairesType::class)
         ;
     }
 

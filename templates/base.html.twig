@@ -49,7 +49,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a class="text-uppercase">Devenez prestataire<i class="fas fa-sort-down"></i></a>
+                                <a class="text-uppercase" href="{{ path('inscription_prestataire_index') }}">Devenez prestataire<i class="fas fa-sort-down"></i></a>
                                 <ul class="sous_menu">
                                     <li>
                                         <a href="#">Le concept</a>
@@ -67,6 +67,7 @@
                             <a href="#"><span class="text-uppercase">nos services</span><i class="fas fa-sort-down"></i></a>
                         </div>
                         <div class="HeaderRgt">
+<<<<<<< HEAD
                             {% if app.user is null %}
                             <a href="{{ path('app_security_register') }}"><span class="text-uppercase">Inscription</span></a>
                             <a href="{{ path('app_security_login') }}"><span class="text-uppercase">Connexion</span></a>
@@ -75,6 +76,10 @@
                             <a href="{{ path('app_security_logout') }}" class="nav-link">Déconnexion</a>
                             {% endif %}
                             <a href="#" class="parte_link"><span class="text-uppercase">Devenez prestataire</span><i class="fas fa-sort-down"></i></a>
+=======
+                            <a href="{{ path('app_security_register') }}"><span class="text-uppercase">connexion</span><i class="fas fa-sort-down"></i></a>
+                            <a href="{{ path('inscription_prestataire_index') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
+>>>>>>> backup_dev
                             <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
                         </div>

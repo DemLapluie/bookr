@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Disponibilite;
+use App\Entity\Horaires;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DisponibiliteType extends AbstractType
+class HorairesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -145,7 +145,7 @@ class DisponibiliteType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Disponibilite::class,
+            'data_class' => Horaires::class,
         ]);
     }
 }
