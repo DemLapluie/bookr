@@ -13,7 +13,7 @@ class InscriptionPrestataireController extends AbstractController
 {
 
     /**
-     * @Route("/inscription/prestataire/")
+     * @Route("/inscription/prestataire/", name="inscription_prestataire_index")
      */
     public function prestIndex ()
     {
@@ -23,7 +23,7 @@ class InscriptionPrestataireController extends AbstractController
     }
 
     /**
-     * @Route("/inscription/prestataire/form")
+     * @Route("/inscription/prestataire/form/", name="inscription_prestataire_form")
      */
     public function prestFormulaire (Request $request){
 
@@ -53,7 +53,7 @@ class InscriptionPrestataireController extends AbstractController
             }else{
                 $this->addFlash(
                     'error',
-                    'zerazerazera'
+                    'Le formulaire contient des erreurs'
                 );
             }
         }
@@ -65,10 +65,24 @@ class InscriptionPrestataireController extends AbstractController
     }
 
     /**
-     * @Route("/inscription/prestataire/validation")
+     * @Route("/validation/{id}", name="inscription_prestataire_validation")
      */
     public function prestValid ()
     {
+
+        $repositoryStatut = $this->getDoctrine()->getManager()->getRepository(InscriptionPrestataireType::class);
+        $statutprofil = $repositoryStatut->findOneBy( ['id', 'certfication' => 'Validé']);
+
+
+        // redirection vers la page profil prestataire - Faire en sorte de valider
+        if($statutprofil){
+
+
+
+        }
+
+
+
         return $this->render(
             'inscription_prestataire/validation.html.twig'
         );
