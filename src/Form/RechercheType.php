@@ -14,6 +14,13 @@ class RechercheType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add(
+                'jour',
+                TextType::class,[
+                'attr' => [
+                    'placeholder' => 'Jour',
+                ]
+            ])
             ->add('cp_entreprise',
                    TextType::class,
                 [
@@ -31,20 +38,24 @@ class RechercheType extends AbstractType
                         'En salon/institut' => 'En salon/institut'
                     ],
                 ])
-            ->add('profession',
-                TextType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Type d\'activité',
-                    ]
-                ])
+            ->add(
+                'profession',
+                ChoiceType::class,
+                array(
+                    'placeholder'=>'Type d\'activité',
+                    'choices'  => array(
+                        'Coiffeur' => 'Coiffeur',
+                        'Barbier' => 'Barbier',
+                        'Prothésiste Ongulaire' => 'Prothésiste Ongulaire',
+                        'MakeUp Artist' => 'MakeUp Artist',
+                        'Expert/Styliste du Regard' => 'Expert/Styliste du Regard',
+                    )
+                ))
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
-            'data_class' => Prestataire::class,
-        ]);
+
     }
 }

@@ -126,7 +126,7 @@ class InscriptionPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
-        ;
+    ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

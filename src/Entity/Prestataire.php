@@ -118,6 +118,12 @@ class Prestataire
      */
     private $profession;
 
+    /**
+ * @ORM\Column(type="simple_array")
+ * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+ */
+    private $jour;
+
     public function __construct()
     {
         $this->photo = new ArrayCollection();
@@ -321,6 +327,25 @@ class Prestataire
         $this->avatar = $avatar;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getJour()
+    {
+        return $this->jour;
+    }
+
+    /**
+     * @param mixed $jour
+     * @return Prestataire
+     */
+    public function setJour($jour)
+    {
+        $this->jour = $jour;
+        return $this;
+    }
+
 
 
 

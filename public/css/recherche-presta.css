@@ -13,23 +13,17 @@ body{
 
 
 .cat_type_nav{
-    height: 65px;
+    height: auto;
     padding: 15px 0;
     width: 100%;
-    background: black;
-    background: rgb(109,109,109);
-    background: -moz-linear-gradient(45deg, rgb(109,109,109) 35%, rgb(0,0,0) 67%);
-    background: -webkit-linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
-    background: linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#000000',GradientType=1 );
-
+    padding-top: 10px;
+    padding-bottom: 35px;
 }
 
 .cat_type_nav nav{
     width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto;
-    height: 65px;
 }
 
 .cat_type_nav nav li{
@@ -60,6 +54,15 @@ body{
 
 
 /* formulaire inscription */
+.text-form{ margin: 100px auto; }
+.text-form p{
+    font-family: Antraste;
+    font-size: 1.5em;
+}
+.text-form .note{
+    font-family: Code-bold;
+    font-size: .8em;
+}
 
 .inscription_form_button{
     margin-top: -4px;
@@ -74,10 +77,9 @@ body{
 }
 
 .form-inscripton{
-    margin: 200px auto;
+    margin: 0px auto 200px;
 }
 .form-inscripton form{
-    background: white;
     padding: 25px 0;
     border-radius: .25rem;
     height: 85px;
@@ -85,9 +87,8 @@ body{
 
 .form-content{ margin-left: 5px; padding-right: 0}
 .form-btn-group{ text-align: center}
-.col.lieu{color: black}
-.btn-js, #demo{ display: none }
-
+/*.col.lieu{color: black}
+.btn-js, #demo{ display: none }*/
 /* contenue principal */
 
 .main_content{
@@ -95,6 +96,8 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-image: url("../img/bg_marbre.jpg");
+    background-size: cover;
 }
 
 /**  footer    **/

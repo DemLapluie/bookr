@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/recherche-presta.css') }}" />
+{% endblock %}
+
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div class="cat_type_nav recherche">
+            <nav>
+                <ul>
+                    <li><a href="#">Coiffeur</a></li>
+                    <li><a href="#">Prothesiste ongulaire</a></li>
+                    <li><a href="#">Barbier</a></li>
+                    <li><a href="#">Stylist des cils</a></li>
+                    <li><a href="#">MakeUp Artist</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main_content">
+            <div class="col-8 text-form">
+                <p class="col-6">Trouver votre meilleur prestataire esthetique pres de chez vous.</p>
+                <p class="note col-6">Service disponible dans toute l'Ile de france.</p>
+            </div>
+            <div class="col-8 form-inscripton">
+                {{ form_start(form) }}
+                <div class="row col-12 form-content">
+                    <div class="col">
+                        <!-- p><input class="form-control" type="text" placeholder="Jour?" id="datepicker"></p>
+                     <button class="btn-js" onclick="myFunction()">Try it</button>
+
+                     <p id="demo"></p -->
+                        {{ form_widget(form.jour) }}
+                    </div>
+                    <div class="col">
+                        {{ form_widget(form.profession) }}
+                    </div>
+                    <div class="col">
+                        {{ form_widget(form.cp_entreprise) }}
+                    </div>
+                    <div class="col lieu">
+                        {{ form_widget(form.lieu_prestation) }}
+                    </div>
+                    <div class="form-btn-group col">
+                        <button type="submit" class="inscription_form_button">
+                            Rechercher
+                        </button>
+                    </div>
+                </div>
+                {{ form_end(form, {'render_rest': false}) }}
+            </div>
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}

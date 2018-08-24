@@ -16,7 +16,7 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             $( function() {
-                $( "#datepicker" ).datepicker({
+                $( "#recherche_jour" ).datepicker({
                     altField: "#datepicker",
                     closeText: 'Fermer',
                     prevText: 'Précédent',
@@ -39,10 +39,19 @@
                 var jour = (document.getElementById("datepicker").value).substring(8, 10);
                 var dateJour = annee+","+mois+","+jour;
                 var d = new Date(dateJour);
-                var n = d.getDay()
+                var n;
+                switch (d.getDay()) {
+                    case 0: n = 'Dimanche'; break;
+                    case 1: n = 'Lundi'; break;
+                    case 2: n = 'Mardi'; break;
+                    case 3: n = 'Mercredi'; break;
+                    case 4: n = 'Jeudi'; break;
+                    case 5: n = 'Vendredi'; break;
+                    case 6: n = 'Samedi';  break;
+                    default: n='jour non disponible';
+                }
                 document.getElementById("demo").innerHTML = n;
-
-            };
+            }
         </script>
     </head>
     <body>
