@@ -54,10 +54,10 @@ class Prestataire
     private $tel_entreprise;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le lieu de prestation est obligatoire")
-     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" )
-     */
+ * @ORM\Column(type="string", length=255)
+ * @Assert\NotBlank(message="Le lieu de prestation est obligatoire")
+ * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" )
+ */
     private $lieu_prestation;
 
     /**

@@ -1,47 +1,115 @@
-.search .cat_type_nav{
-    height: 100%;
-    padding-bottom: 180px;
+/* css page accueil */
+
+html,
+body{
+    min-height: 100vh;
+    margin: 0;
+    color: black;
 }
 
-.search form{
-    background: white;
-    padding: 16px 15px 9.5px;
-    border-radius: .25rem;}
-.form_content{
-    width: 70%;
-    height: 300px;
-    margin:  130px auto 0;
+
+
+/* navigation secondaire categories */
+
+
+.cat_type_nav{
+    height: 65px;
+    padding: 20px 0;
+    width: 100%;
+    background: black;
+    background: rgb(109,109,109);
+    background: -moz-linear-gradient(45deg, rgb(109,109,109) 35%, rgb(0,0,0) 67%);
+    background: -webkit-linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
+    background: linear-gradient(45deg, rgb(109,109,109) 35%,rgb(0,0,0) 67%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#000000',GradientType=1 );
+
 }
 
-.form-control:focus {
-    border-color: black;
+.cat_type_nav nav{
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    height: 65px;
 }
 
-.form_content .col{
-    margin: 0 10px;
+.cat_type_nav nav li{
+    float: left;
+    list-style: none;}
+
+.cat_type_nav nav li{
+    font-size: 1.2em;
+    margin-left: 15px;
+    padding: 0 15px 0 0;
+    line-height: 1em;
+    color: gainsboro ;
+    text-transform:uppercase;
+    border-right: 1px white solid;
 }
 
-.search .form-control{
-    border-radius: 0;
-    box-shadow: 0 3px 2px -2px gray;
-    text-transform: uppercase;
+.cat_type_nav nav li{
+    font-size: 1em;
 }
 
-.search .btn{
-    border-radius: 0;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-transform: uppercase;
+.cat_type_nav nav li:last-child{
+    border-right: none;
 }
 
-.form_descript{
-    font-size: 2em;
+.cat_type_nav.recherche{ height: auto}
+
+
+
+
+/* formulaire inscription */
+.inscription_form_button{
+    margin-top: -4px;
+    background-color: black;
     color: white;
-    font-weight: bold;
-    line-height: 1.1em;
-    width: 400px;
+    padding: 10px 40px;
+    cursor: pointer;
+    border: none;
+}
+.inscription_form_button:hover{
+    background-color: grey;
 }
 
-.form_descript span {
-    font-weight: lighter;
-    font-size: .4em}
+.form-inscripton{
+    margin: 200px auto;
+}
+.form-inscripton form{
+    background: white;
+    padding: 25px 0;
+    border-radius: .25rem;
+    height: 85px;
+}
+
+.form-content{ margin-left: 5px; padding-right: 0}
+.form-btn-group{ text-align: center}
+.col.lieu{color: black}
+.btn-js, #demo{ display: none }
+
+/* contenue principal */
+
+.main_content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/**  footer    **/
+
+footer {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* -------------- RESPONSIVE --------------------- */
+
+@media screen and (max-width: 1200px) {
+
+
+
+
+}
+
+

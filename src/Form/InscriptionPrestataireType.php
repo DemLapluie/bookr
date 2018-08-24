@@ -61,7 +61,7 @@ class InscriptionPrestataireType extends AbstractType
                 ])
             ->add(
                 'lieu_prestation',
-                ChoiceType::class,
+                  ChoiceType::class,
                 [
                     'label' => 'choix realisation prestataire',
                     'choices'  => [
@@ -115,19 +115,11 @@ class InscriptionPrestataireType extends AbstractType
                 ]
                 )
             ->add(
-                'jour',
-                DateType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Téléphone',
-                    ]
-                ])
-            ->add(
                 'profession',
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Téléphone',
+                        'placeholder' => 'Type d\'activité',
                     ]
                 ])
         ;

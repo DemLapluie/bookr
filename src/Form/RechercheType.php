@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Prestataire;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -22,23 +24,20 @@ class RechercheType extends AbstractType
             ->add('lieu_prestation',
                   ChoiceType::class,
                 [
-                    'label' => 'choix realisation prestataire',
+                    'placeholder' => 'Lieu ?',
                     'choices'  => [
                         'Chez le client' => 'Chez le client',
                         'Chez le prestataire' => 'Chez le prestataire',
                         'En salon/institut' => 'En salon/institut'
                     ],
-                    'expanded' => true,
-                    'multiple' => true
                 ])
             ->add('profession',
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Téléphone',
+                        'placeholder' => 'Type d\'activité',
                     ]
                 ])
-            ->add('jour', DisponibiliteType::class)
         ;
     }
 
