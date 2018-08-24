@@ -106,11 +106,86 @@ class Prestataire
     private $avatar;
 
     /**
-     * @var Collection
      * @ORM\OneToMany(targetEntity="Photos", mappedBy="prestataire")
      * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
      */
     private $photo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Prestation", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="prestation_id", referencedColumnName="id")
+     */
+    private $prestation;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
+     */
+    private $horaires;
+
+    /**
+     * @ORM\Column(type="array")
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+     * @Assert\Choice({"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi","Samedi","Dimanche"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de jour" ))
+     */
+    private $jour;
+
+
+    /**
+     * @return mixed
+     */
+    public function getHoraires()
+    {
+        return $this->horaires;
+    }
+
+    /**
+     * @param mixed $horaires
+     * @return Prestataire
+     */
+    public function setHoraires($horaires)
+    {
+        $this->horaires = $horaires;
+        return $this;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getPrestation()
+    {
+        return $this->prestation;
+    }
+
+    /**
+     * @param mixed $prestation
+     * @return Prestataire
+     */
+    public function setPrestation($prestation)
+    {
+        $this->prestation = $prestation;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJour()
+    {
+        return $this->jour;
+    }
+
+    /**
+     * @param mixed $jour
+     * @return Prestataire
+     */
+    public function setJour($jour)
+    {
+        $this->jour = $jour;
+        return $this;
+    }
 
     /**
      * @ORM\Column(type="array")

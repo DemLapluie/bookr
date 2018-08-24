@@ -72,6 +72,7 @@
                                 <a href="{{ path('app_security_login') }}"><span class="text-uppercase">Connexion</span></a>
                             </li>
                             <li>
+<<<<<<< HEAD
                                 <a href="{{ path('app_security_register') }}"><span class="text-uppercase">Inscription</span></a>
                             </li>
                             {% else %}
@@ -79,6 +80,10 @@
                                 <a href="{{ path('app_affichageprofiluser_affichageclient') }}" class="text-uppercase nav-link">
                                     {{ app.user}}
                                 </a>
+=======
+                                <a class="text-uppercase" href="{{ path('app_security_register') }}">inscription</a>
+                                <a class="text-uppercase" href="{{ path('app_security_login') }}">connexion</a>
+>>>>>>> dev_demmy
                             </li>
                             <li>
                                 <a href="{{ path('app_security_logout') }}"><span class="text-uppercase">Deconnexion</span></a>
@@ -115,6 +120,7 @@
                             <a href="#"><span class="text-uppercase">nos services</span><i class="fas fa-sort-down"></i></a>
                         </div>
                         <div class="HeaderRgt">
+<<<<<<< HEAD
                             {% if app.user is null %}
                                 <a href="{{ path('app_security_login') }}"><span class="text-uppercase">Connexion</span></a>
                                 <a href="{{ path('app_security_register') }}"><span class="text-uppercase">Inscription</span></a>
@@ -125,6 +131,21 @@
                             {% endif %}
 
                             <a href="{{ path('app_inscriptionprestataire_inscriptionprestataire') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
+=======
+<<<<<<< HEAD
+                            {% if app.user is null %}
+                            <a href="{{ path('app_security_register') }}"><span class="text-uppercase">Inscription</span></a>
+                            <a href="{{ path('app_security_login') }}"><span class="text-uppercase">Connexion</span></a>
+                            {% else %}
+                            <a href="" class="nav-link">{{ app.user }}</a>
+                            <a href="{{ path('app_security_logout') }}" class="nav-link">Déconnexion</a>
+                            {% endif %}
+                            <a href="#" class="parte_link"><span class="text-uppercase">Devenez prestataire</span><i class="fas fa-sort-down"></i></a>
+=======
+                            <a href="{{ path('app_security_register') }}"><span class="text-uppercase">connexion</span><i class="fas fa-sort-down"></i></a>
+                            <a href="{{ path('inscription_prestataire_index') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
+>>>>>>> backup_dev
+>>>>>>> dev_demmy
                             <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -136,7 +157,7 @@
                         </a>
 
                         <br>
-                        <p class="text-uppercase">e-réservation esthetique</p>
+                        <p class="text-uppercase">e-réservation esthétique</p>
                     </div><div class="clearfix"></div>
                 </div>
 
@@ -162,9 +183,9 @@
                     <div class="cat_type_nav">
                         <nav>
                             <a href="#">Coiffeur</a>
-                            <a href="#">Prothesiste ongulaire</a>
+                            <a href="#">Prothésiste ongulaire</a>
                             <a href="#">Barbier</a>
-                            <a href="#">Stylist des cils</a>
+                            <a href="#">Styliste des cils</a>
                             <a href="#">MakeUp Artist</a>
                         </nav>
                     </div>
