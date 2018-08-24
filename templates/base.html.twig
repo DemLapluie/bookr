@@ -95,15 +95,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a class="text-uppercase" href="#">Devenez prestataire<i class="fas fa-sort-down"></i></a>
-                                <ul class="sous_menu">
-                                    <li>
-                                        <a href="#">Le concept</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Processus d'inscription</a>
-                                    </li>
-                                </ul>
+                                <a class="text-uppercase" href="{{ path('app_inscriptionprestataire_inscriptionprestataire') }}">Devenez prestataire</a>
                             </li>
                         </ul>
                     </nav>
@@ -120,9 +112,10 @@
                             {% else %}
                                 <a href="{{ path('app_affichageprofiluser_affichageclient') }}"><span class="text-uppercase">{{ app.user }}</span></a>
                                 <a href="{{ path('app_security_logout') }}"><span class="text-uppercase">Deconnexion</span></a>
+
                             {% endif %}
 
-                            <a href="#" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
+                            <a href="{{ path('app_inscriptionprestataire_inscriptionprestataire') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
                             <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
                         </div>

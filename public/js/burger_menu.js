@@ -23,12 +23,10 @@
                 'display': 'none'
             });
 
-
             $('#burger_menu > div:first-child').css({
                 'display': 'block',
                 'transform': 'rotateZ(-45deg)',
                 'margin-top': '12px'
-
             });
 
             $('#burger_menu > div:last-child').css({

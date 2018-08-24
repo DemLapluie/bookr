@@ -22,9 +22,11 @@
                 </div>
                 <h4 class="text-uppercase offset-1">Avatar</h4>
                 <span class="title_line offset-1 col-xl-3"></span>
-                <div class="offset-2">
-                    <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px">
-                </div>
+                {% if original_image %}
+                    <div class="offset-2">
+                        <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px">
+                    </div>
+                {% endif %}
 
 
                 <div class="col-xl-4 offset-1">
