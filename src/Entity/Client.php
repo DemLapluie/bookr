@@ -342,7 +342,6 @@ class Client implements UserInterface, \Serializable
             $this->cp,
             $this->ville,
             $this->email,
-            $this->password
             $this->password,
             $this->tel,
             $this->pseudo,
