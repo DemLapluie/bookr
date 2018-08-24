@@ -60,16 +60,15 @@ class InscriptionPrestataireType extends AbstractType
             ->add(
                 'lieu_prestation',
                 ChoiceType::class,
-                [
-                    'label' => 'choix realisation prestataire',
-                    'choices'  => [
+                array(
+                    'label' => 'Lieu de réalisation de la prestation',
+                    'choices'  => array(
                         'Chez le client' => 'Chez le client',
                         'Chez le prestataire' => 'Chez le prestataire',
-                        'En salon/institut' => 'En salon/institut'
-                    ],
+                        'En salon/institut' => 'En salon/institut'),
                     'expanded' => true,
                     'multiple' => true
-                ])
+                ))
             ->add(
                 'numero_siret',
                 TextType::class,
@@ -79,14 +78,14 @@ class InscriptionPrestataireType extends AbstractType
                     ]
                 ]
                 )
-            ->add(
+           /** ->add(
                 'certification',
                 TextType::class,
                 [
                     'attr' => [
                         'placeholder' => 'Statut de validation',
                     ]
-                ])
+                ]) */
             ->add(
                 'cni',
                 FileType::class,
@@ -95,15 +94,15 @@ class InscriptionPrestataireType extends AbstractType
                         'placeholder' => 'Pièce d\'identité',
                     ]
                 ])
-            ->add(
+            /**->add(
                 'description_entreprise',
                 TextType::class,
                 [
                     'attr' => [
                         'placeholder' => 'Description entreprise',
                     ]
-                ])
-            ->add(
+                ])*/
+           /** ->add(
                 'avatar',
                 FileType::class,
                 [
@@ -111,15 +110,22 @@ class InscriptionPrestataireType extends AbstractType
                         'placeholder' => 'Sélectionner une image',
                     ]
                 ]
-                )
+                )*/
             ->add(
                 'profession',
-                TextType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Téléphone',
-                    ]
-                ])
+                ChoiceType::class,
+                array(
+                    'label' => 'Profession',
+                    'choices'  => array(
+                        'Coiffeur' => 'Coiffeur',
+                        'Barbier' => 'Barbier',
+                        'Prothésiste Ongulaire' => 'Prothésiste Ongulaire',
+                        'MakeUp Artist' => 'MakeUp Artist',
+                        'Expert/Styliste du Regard' => 'Expert/Styliste du Regard',
+                    ),
+                    'expanded' => true,
+                    'multiple' => true
+                ))
         ;
     }
 
