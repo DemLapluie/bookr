@@ -300,7 +300,7 @@ class Client implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        return ['ROLE_USER'];
     }
 
     public function getUsername()
@@ -315,12 +315,24 @@ class Client implements UserInterface, \Serializable
 
     public function serialize()
     {
-        // TODO: Implement serialize() method.
+        return serialize([
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->email,
+            $this->password
+        ]);
     }
 
     public function unserialize($serialized)
     {
-        // TODO: Implement unserialize() method.
+        list(
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->email,
+            $this->password
+            ) = unserialize($serialized);
     }
 
 
