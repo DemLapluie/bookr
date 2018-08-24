@@ -319,8 +319,15 @@ class Client implements UserInterface, \Serializable
             $this->id,
             $this->nom,
             $this->prenom,
+            $this->date_de_naissance,
+            $this->adresse,
+            $this->cp,
+            $this->ville,
             $this->email,
-            $this->password
+            $this->password,
+            $this->tel,
+            $this->pseudo,
+            $this->civilite,
         ]);
     }
 
@@ -330,8 +337,16 @@ class Client implements UserInterface, \Serializable
             $this->id,
             $this->nom,
             $this->prenom,
+            $this->date_de_naissance,
+            $this->adresse,
+            $this->cp,
+            $this->ville,
             $this->email,
             $this->password
+            $this->password,
+            $this->tel,
+            $this->pseudo,
+            $this->civilite,
             ) = unserialize($serialized);
     }
 
