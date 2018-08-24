@@ -18,13 +18,12 @@ class SecurityController extends AbstractController
     public function register(
         Request $request,
         UserPasswordEncoderInterface $passwordEncoder
-
     )
     {
         /* inscription*/
 
         $client = new Client();
-        $form = $this->createForm(InscriptionType::class, $client);
+        $form = $this->createForm(InscriptionType::class, $client, ['validation_groups' => ['registration']]);
         $form->handleRequest($request);
 
         if($form->isSubmitted()){

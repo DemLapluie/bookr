@@ -19,6 +19,7 @@
 }
 
 .burger_nav {
+    display: none;
     height: 0;
     overflow: hidden;
     background-color: white;
@@ -66,5 +67,10 @@
 @media screen and (max-width: 1200px) {
     #burger_menu {
         display:block;
+    }
+
+    .burger_nav {
+        display: block;
+
     }
 }

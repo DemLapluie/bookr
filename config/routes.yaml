@@ -1,4 +1,4 @@
 
 
-app_security_deconnexion:
+app_security_logout:
     path: /deconnexion

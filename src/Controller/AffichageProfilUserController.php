@@ -8,6 +8,9 @@ use App\Entity\Prestataire;
 use App\Entity\Prestation;
 use App\Form\InscriptionPrestataireType;
 use App\Form\PhotoType;
+use App\Form\ProfilClientType;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +18,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AffichageProfilUserController extends AbstractController
 {
     /**
-     * @Route("/affichage/profil/prestataire/{id}")
+     * @Route("/profil/prestataire/{id}")
      */
 
-    public function AffichagePrestataire()
+    public function affichagePrestataire()
     {
         /**
          * Requête GET pour afficher les données archivées Prestataire en BDD
@@ -98,52 +101,94 @@ class AffichageProfilUserController extends AbstractController
     }
 
     /**
-     * @Route("/affichage/profil/client/{id}")
+     * @Route("/profil/client")
      */
 
-    public function AffichageClient()
+    public function affichageClient(
+        Request $request
+    )
     {
-        /**
-         * Requête GET pour afficher les données archivées Client en BDD
-         */
 
         $em = $this->getDoctrine()->getManager();
-        $repositoryClient = $em->getRepository(Client::class);
-        $client = $repositoryClient->findAll();
+
+        $client = $this->getUser();
+        $originalImage = null;
+
+
+        if(!is_null($client->getAvatar())){
+            // le nom du fichier venant de la bdd
+            $originalImage = $client->getAvatar() ;
+
+        }
+
+        if (!empty($originalImage)) {
+            $client->setAvatar(
+                new  File($this->getParameter('upload_dir') . $originalImage)
+            );
+        }
+
+        $form = $this->createForm(ProfilClientType::class, $client);
+        $form->handleRequest($request);
+
+
+        if($form->isSubmitted()){
+
+            if ($form->isValid()) {
+
+
+                /**
+                 * @var UploadedFile|null
+                 */
+                $image = $client->getAvatar() ;
+
+
+                if(!is_null($image)){
+                    $filename = uniqid() . '.' . $image->guessExtension();
+                    $image->move(
+                        $this->getParameter('upload_dir'),
+                        $filename
+                    );
+
+                    $client->setAvatar($filename);
+                    if (!is_null($originalImage)){
+                        unlink($this->getParameter('upload_dir') . $originalImage);
+                    }
+                }else{
+                    $client->setAvatar($originalImage);
+                }
+
+                $em->persist($client);
+                $em->flush();
+
+                // message de confirmation
+                $this->addFlash(
+                    'success',
+                    'Les modifications on bien été enregistrées'
+                );
+                // redirection vers la page de Liste
+                return $this->redirectToRoute('app_affichageprofiluser_affichageclient');
+
+
+            }else{
+                $this->addFlash(
+                    'error',
+                    'Erreuraagarg'
+                );
+            }
+
+        }
+
+
+
 
         return $this->render(
             '/affichage_profil/client.html.twig',
             [
-                'client' => $client
+                'client' => $client,
+                'form'  => $form->createView(),
+                'original_image'  => $originalImage
             ]
         );
-
-        /**
-         * Requête POST pour modifier les données Client en BDD
-         */
-        $client = new Client();
-
-        $form = $this->createForm(Client::class, $client);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted()) {
-            if ($form->isValid()) {
-                //$client->();
-
-                $this->addFlash(
-                    'success',
-                    'Votre inscription est en cours de validation'
-                );
-
-                return $this->render(
-                    '/affichage_profil/client.html.twig',
-                    [
-                        'client' => $client
-                    ]
-                );
-
-            }
-        }
     }
 
 

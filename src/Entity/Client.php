@@ -62,7 +62,7 @@ class Client implements UserInterface, \Serializable
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank(message="L'email est obligatoire")
      * @Assert\Email(message="L'email n'est pas valide")
      */
@@ -111,7 +111,7 @@ class Client implements UserInterface, \Serializable
     /**
      * Mot de passe en clair pour interagir avec le formulaire
      * @var string
-     * @assert\NotBlank(message="Le mot de passe est obligatoire")
+     * @assert\NotBlank(message="Le mot de passe est obligatoire", groups={"registration"})
      */
     private $plainPassword;
 
@@ -149,7 +149,7 @@ class Client implements UserInterface, \Serializable
         return $this->date_de_naissance;
     }
 
-    public function setDateDeNaissance(\DateTimeInterface $date_de_naissance): self
+    public function setDateDeNaissance(?\DateTimeInterface $date_de_naissance): self
     {
         $this->date_de_naissance = $date_de_naissance;
 
@@ -252,12 +252,12 @@ class Client implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getAvatar(): ?string
+    public function getAvatar()
     {
         return $this->avatar;
     }
 
-    public function setAvatar(string $avatar): self
+    public function setAvatar($avatar): self
     {
         $this->avatar = $avatar;
 
@@ -349,5 +349,9 @@ class Client implements UserInterface, \Serializable
             ) = unserialize($serialized);
     }
 
+    public function __toString()
+    {
+        return $this->pseudo;
+    }
 
 }
