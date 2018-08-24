@@ -29,6 +29,7 @@
                             </div>
                             <div class="col-md-8 col-xl-5 col-sm-6 form-field">
                                 {{ form_widget(form.numero_siret) }}
+                                {{ form_errors(form.numero_siret) }}
                             </div>
                             <div class="row col-12">
                                 <div class="col-md-8 col-sm-9 form-field">
@@ -46,8 +47,13 @@
                                     {{ form_widget(form.cp_entreprise) }}
                                 </div>
                             </div>
-                            <div class="col-md-6 lieu">
-                                {{ form_row(form.lieu_prestation) }}
+                            <div class="row col-9 col-sm-12">
+                                <div class="col-md-6 lieu">
+                                    {{ form_row(form.profession) }}
+                                </div>
+                                <div class="col-md-6 lieu">
+                                    {{ form_row(form.lieu_prestation) }}
+                                </div>
                             </div>
                         </div>
                         <div class="form-btn-group offset-1 offset-md-9">
@@ -55,7 +61,7 @@
                                 Valider
                             </button>
                         </div>
-                        {{ form_end(form, {'render_rest': false}) }}
+                        {{ form_end(form) }}
                     </div>
                 </div>
             </div>

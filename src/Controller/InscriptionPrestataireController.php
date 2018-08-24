@@ -28,8 +28,9 @@ class InscriptionPrestataireController extends AbstractController
     public function prestFormulaire (Request $request){
 
         $prestataire = new Prestataire();
+        $prestataire->setClient($this->getUser());
 
-        $form = $this->createForm( InscriptionPrestataireType::class);
+        $form = $this->createForm( InscriptionPrestataireType::class, $prestataire);
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
