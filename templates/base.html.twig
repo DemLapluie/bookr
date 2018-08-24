@@ -25,9 +25,23 @@
                     </div>
                     <nav class="burger_nav">
                         <ul>
+                            {% if app.user is null %}
                             <li>
-                                <a class="text-uppercase" href="{{ path('app_security_register') }}">inscription / connexion</a>
+                                <a href="{{ path('app_security_login') }}"><span class="text-uppercase">Connexion</span></a>
                             </li>
+                            <li>
+                                <a href="{{ path('app_security_register') }}"><span class="text-uppercase">Inscription</span></a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a href="{{ path('app_affichageprofiluser_affichageclient') }}" class="text-uppercase nav-link">
+                                    {{ app.user}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('app_security_logout') }}"><span class="text-uppercase">Deconnexion</span></a>
+                            </li>
+                            {% endif %}
                             <li>
                                 <a class="text-uppercase">A propos<i class="fas fa-sort-down"></i></a>
                                 <ul class="sous_menu">
@@ -48,7 +62,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a class="text-uppercase" href="{{ path('inscription_prestataire_index') }}">Devenez prestataire<i class="fas fa-sort-down"></i></a>
+                                <a class="text-uppercase" href="#">Devenez prestataire<i class="fas fa-sort-down"></i></a>
                                 <ul class="sous_menu">
                                     <li>
                                         <a href="#">Le concept</a>
@@ -60,14 +74,22 @@
                             </li>
                         </ul>
                     </nav>
+
                     <nav class="MastHead" data-role="header" data-position="fixed" data-tap-toggle="false">
                         <div class="HeaderLft">
                             <a href="#"><span class="text-uppercase">a propos</span><i class="fas fa-sort-down"></i></a>
                             <a href="#"><span class="text-uppercase">nos services</span><i class="fas fa-sort-down"></i></a>
                         </div>
                         <div class="HeaderRgt">
-                            <a href="{{ path('app_security_register') }}"><span class="text-uppercase">connexion</span><i class="fas fa-sort-down"></i></a>
-                            <a href="{{ path('inscription_prestataire_index') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
+                            {% if app.user is null %}
+                                <a href="{{ path('app_security_login') }}"><span class="text-uppercase">Connexion</span></a>
+                                <a href="{{ path('app_security_register') }}"><span class="text-uppercase">Inscription</span></a>
+                            {% else %}
+                                <a href="{{ path('app_affichageprofiluser_affichageclient') }}"><span class="text-uppercase">{{ app.user }}</span></a>
+                                <a href="{{ path('app_security_logout') }}"><span class="text-uppercase">Deconnexion</span></a>
+                            {% endif %}
+
+                            <a href="#" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
                             <a href="#" class="icon_nav"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="icon_nav"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -86,6 +108,20 @@
             </header>
             <div class="clearfix"></div>
             <div class="container search col-12">
+                <div class="container">
+                    {# Affichage des messages du bootstrap #}
+                    {% for type, flashes in app.session.flashBag.all %}
+                        {% for message in flashes %}
+                            {# pour la class alert-danger du bootstrap #}
+                            {% if type == 'error' %}
+                                {% set type = 'danger' %}
+                            {% endif %}
+                            <div class="alert alert-{{ type }}">
+                                {{ message|raw }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
             {% endblock %}
             {% block content %}
 
@@ -100,6 +136,7 @@
                     </div>
 
             {% endblock %}
+
 
             {% block footer %}
             </div>

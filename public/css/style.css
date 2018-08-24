@@ -93,10 +93,10 @@ header .wrapper {
 
 .HeaderLogo {
     width: 90%;
-    margin:  0 auto;
+    margin:  -250px auto 0;
     text-align:center;
-    margin-top: -250px;
 }
+
 .HeaderLogo img {
     width: 200px;
     margin:  0 auto;
@@ -104,7 +104,10 @@ header .wrapper {
     padding-top: 40px;
 }
 .HeaderLogo p {
-font-size: 0.7rem;
+    font-size: 0.7rem;
+}
+.HeaderLogo a {
+   text-decoration: none;
 }
 
 a.icon_nav{

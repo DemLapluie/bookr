@@ -1,0 +1,54 @@
+
+/* titre + mise en forme */
+.form_title{
+    margin-left: 25px;
+}
+
+.title_line {
+    display: block;
+    width: 40%;
+    margin-left: 5%;
+    border-bottom: 1px solid black;
+    margin-bottom: 40px;
+}
+
+.container > .title_line {
+    border-bottom: 2px solid black;
+}
+
+
+/* formulaire */
+
+form{
+    max-width: 85%;
+}
+
+#profil_client_pseudo,
+#profil_client_description,
+#profil_client_adresse,
+#profil_client_ville,
+#profil_client_cp,
+#profil_client_email,
+#profil_client_tel{
+    border: 1px solid black;
+    border-radius: initial;
+    margin-bottom: 15px;
+}
+
+.avatar_actuel{
+    margin: 15px;
+    box-shadow: 0 0 5px #000000;
+}
+
+.modification_form_button{
+    margin: 60px auto 0 ;
+    background-color: black;
+    color: white;
+    padding: 15px 40px;
+    cursor: pointer;
+    border: none;
+}
+
+.modification_form_button:hover{
+    background-color: grey;
+}

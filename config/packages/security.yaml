@@ -23,7 +23,7 @@ security:
                 check_path: app_security_login
                 default_target_path: app_index_accueil
             logout:
-                path: app_security_deconnexion
+                path: app_security_logout
                 target: app_index_accueil
 
 

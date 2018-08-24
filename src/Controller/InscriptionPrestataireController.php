@@ -13,9 +13,9 @@ class InscriptionPrestataireController extends AbstractController
 {
 
     /**
-     * @Route("/inscription/prestataire/", name="inscription_prestataire_index")
+     * @Route("/inscription/prestataire/")
      */
-    public function prestIndex ()
+    public function inscriptionPrestataire()
     {
         return $this->render(
             'inscription_prestataire/index.html.twig'
@@ -65,7 +65,7 @@ class InscriptionPrestataireController extends AbstractController
     }
 
     /**
-     * @Route("/validation/{id}", name="inscription_prestataire_validation")
+     * @Route("/validation/{id}")
      */
     public function prestValid ()
     {
