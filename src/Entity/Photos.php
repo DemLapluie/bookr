@@ -28,7 +28,7 @@ class Photos
 
     /**
      * @var Prestataire
-     * @ORM\ManyToOne(targetEntity="Prestataire")
+     * @ORM\ManyToOne(targetEntity="Prestataire", inversedBy="photo")
      * @ORM\JoinColumn(name="prestataire_id", referencedColumnName="id")
      */
     private $prestataire;

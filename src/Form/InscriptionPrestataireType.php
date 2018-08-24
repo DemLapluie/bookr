@@ -102,15 +102,7 @@ class InscriptionPrestataireType extends AbstractType
                         'placeholder' => 'Description entreprise',
                     ]
                 ])*/
-           /** ->add(
-                'avatar',
-                FileType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Sélectionner une image',
-                    ]
-                ]
-                )*/
+
             ->add(
                 'profession',
                 ChoiceType::class,
