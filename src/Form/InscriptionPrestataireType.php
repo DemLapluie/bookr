@@ -126,6 +126,23 @@ class InscriptionPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
+        ->add(
+        'jour',
+        ChoiceType::class,
+        array(
+            'label' => 'Jour disponible',
+            'choices'  => array(
+                'Lundi' => '1',
+                'Mardi' => '2',
+                'Mercredi' => '3',
+                'Jeudi' => '4',
+                'Vendredi' => '5',
+                'Samedi' => '6',
+                'Dimanche' => '7',
+            ),
+            'expanded' => true,
+            'multiple' => true
+        ))
     ;
     }
 
