@@ -15,12 +15,9 @@ class RechercheType extends AbstractType
     {
         $builder
             ->add(
-                'jour',
-                TextType::class,[
-                'attr' => [
-                    'placeholder' => 'Jour',
-                ]
-            ])
+                'jour',HorairesType::class)
+
+
             ->add('cp_entreprise',
                    TextType::class,
                 [

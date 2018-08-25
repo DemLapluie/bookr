@@ -37,6 +37,7 @@ class RechercheController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+
             $data = $form->getData();
             dump($data);
             $data['jour']  = date('N', strtotime($data['jour']));

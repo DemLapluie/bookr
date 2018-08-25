@@ -102,15 +102,7 @@ class InscriptionPrestataireType extends AbstractType
                         'placeholder' => 'Description entreprise',
                     ]
                 ])*/
-           /** ->add(
-                'avatar',
-                FileType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Sélectionner une image',
-                    ]
-                ]
-                )*/
+
             ->add(
                 'profession',
                 ChoiceType::class,
@@ -130,7 +122,7 @@ class InscriptionPrestataireType extends AbstractType
         'jour',
         ChoiceType::class,
         array(
-            'label' => 'Jour disponible',
+            'label' => 'Jour(s) et Horaires d\'ouverture :',
             'choices'  => array(
                 'Lundi' => '1',
                 'Mardi' => '2',

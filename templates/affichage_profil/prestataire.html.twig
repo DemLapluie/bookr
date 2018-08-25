@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+ {% block stylesheets %}
+     {% block title %}Hello {{ controller_name }}!{% endblock %}	    {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/inscription-prest.css') }}" />
+ {% endblock %
 
 {% block body %}
     {% block header %}

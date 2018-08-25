@@ -1,0 +1,16 @@
+
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/inscription-prest.css') }}" />
+{% endblock %}
+ {% block body %}
+     {% block header %}
+         {{ parent() }}
+     {% endblock %}
+     {% block content %}
+     {% endblock %}
+     {% block footer %}
+         {{ parent() }}
+     {% endblock %}
+ {% endblock %}

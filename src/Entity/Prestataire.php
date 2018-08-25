@@ -56,13 +56,13 @@ class Prestataire
      /**
      * @ORM\Column(type="array")
      * @Assert\NotBlank(message="Le lieu de prestation est obligatoire")
-     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" ))
+     * @Assert\Choice({"Chez le client", "Chez le prestataire", "En salon/institut"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de lieu" )
      */
     private $lieu_prestation;
 
     /**
      * @ORM\Column(type="string", length=14)
-     * @Assert\NotBlank(message="Le N° Siret est obligatoire")
+     * @Assert\NotBlank(message="Le n° SIRET est obligatoire")
      * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères")
      * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres")
      *
@@ -118,11 +118,69 @@ class Prestataire
      */
     private $profession;
 
-    /**
+    /*
  * @ORM\Column(type="simple_array")
  * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
- */
+
+    private $jour;*/
+
+    /**
+     * @ORM\OneToMany(targetEntity="Prestation", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="prestation_id", referencedColumnName="id")
+     */
+    private $prestation;
+    /**
+     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire")
+     * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
+     */
+    private $horaires;
+    /**
+     * @ORM\Column(type="array")
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+     * @Assert\Choice({"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi","Samedi","Dimanche"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de jour" ))
+     */
     private $jour;
+
+    /**
+     * @return mixed
+     */
+    public function getPrestation()
+    {
+        return $this->prestation;
+    }
+
+    /**
+     * @param mixed $prestation
+     * @return Prestataire
+     */
+    public function setPrestation($prestation)
+    {
+        $this->prestation = $prestation;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHoraires()
+    {
+        return $this->horaires;
+    }
+
+    /**
+     * @param mixed $horaires
+     * @return Prestataire
+     */
+    public function setHoraires($horaires)
+    {
+        $this->horaires = $horaires;
+        return $this;
+    }
+
+
+
+
+
 
     public function __construct()
     {

@@ -9,6 +9,7 @@ use App\Entity\Prestation;
 use App\Form\InscriptionPrestataireType;
 use App\Form\PhotoType;
 use App\Form\ProfilClientType;
+use App\Form\ProfilPrestataireType;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,10 +19,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AffichageProfilUserController extends AbstractController
 {
     /**
-     * @Route("/profil/prestataire/{id}")
+     * @Route("/profil/prestataire/")
      */
 
-    public function affichagePrestataire()
+    public function affichagePrestataire() // Méthode nécessaire pour la recherche
     {
         /**
          * Requête GET pour afficher les données archivées Prestataire en BDD
@@ -29,34 +30,39 @@ class AffichageProfilUserController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
 
-        $repositoryPrestaraire = $em->getRepository(Prestataire::class);
-        $repositoryPhotos = $em->getRepository(Photos::class);
-        $repositoryPrestations = $em->getRepository(Prestation::class);
+        $repository = $em->getRepository(ProfilPrestataireType::class);
+        $prestataire = $repository->findAll();
 
-        $prestataire = $repositoryPrestaraire->findAll();
-        $prestatairePhotos = $repositoryPhotos->findAll();
-        $prestatairePrestations = $repositoryPrestations->findAll();
+        $prestataire->getAvatar();
+        $prestataire->getAdresseEntreprise();
+        $prestataire->getVilleEntreprise();
+        $prestataire->getCpEntreprise();
+        $prestataire->getTelEntreprise();
+        $prestataire->getDescriptionEntreprise();
+        $prestataire->getPhoto();
+        $prestataire->getPrestation();
+        $prestataire->getJour();
+        $prestataire->getHoraires();
 
         return $this->render(
-            '/affichage_profil/prestataire.html.twig',
+            '/affichage_profil/ficheprestataire.html.twig',
             [
                 'prestataire' => $prestataire,
-                'prestataire_photos' => $prestatairePhotos,
-                'prestataire_prestations' => $prestatairePrestations,
             ]
         );
+    }
 
+    /**
+     * @Route("/modficationprofil/prestataire/")
+     */
+    public function modificationProfilPrestataire(Request $request) {
 
         /**
          * Requête POST pour modifier les données Prestataire en BDD via une modale (cf.fichier Twig)
          */
-        $prestataire = new Prestataire();
-        $prestatairePhotos= new Photos();
-        $prestatairePrestations = new Prestation() ;
+        $prestataire = $this->getUser();
 
         $form = $this->createForm(InscriptionPrestataireType::class, $prestataire);
-                $this->createForm(PhotoType::class,$prestatairePhotos);
-                $this->createForm(PrestationType::class,$prestatairePrestations);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
@@ -71,15 +77,8 @@ class AffichageProfilUserController extends AbstractController
                 $prestataire->setCpEntreprise();
                 $prestataire->setTelEntreprise();
 
-
-                $prestatairePhotos->setNom();
-
-                $prestatairePrestations->setNom();
-
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($prestataire);
-                $em->persist($prestatairePhotos);
-                $em->persist($prestatairePrestations);
                 $em->flush();
 
 
@@ -94,11 +93,81 @@ class AffichageProfilUserController extends AbstractController
                         'prestataire' => $prestataire
                     ]
                 );
-
             }
-
         }
     }
+
+
+    /**
+     * @Route("/modificationprofil/prestations/list/{id}")
+     */
+
+
+
+
+    public function Photos(Request $request) {
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository(PrestationsType::class);
+        $prestataire = $repository->findAll();
+        $prestataire->getPhoto();
+
+
+        $photo = new Photos();
+        $form = $this->createForm(PhotoType::class, $prestataire);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted()) {
+            if ($form->isValid()) {
+
+                $photo->getNom();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($prestataire);
+                $em->flush();
+
+                $this->addFlash(
+                    'success',
+                    'Vos photos sont mises à jour.'
+                );
+
+                return $this->render(
+                    '/affichage_profil/fiche_prestataire.photos.html.twig',
+                    [
+                        'prestataire' => $prestataire
+                    ]
+                );
+            }
+        }
+    }
+
+    public function Prestations(Request $request){
+
+
+    }
+
+    /**
+     * @Route("/modificationprofil/prestations/list/{id}")
+     */
+    public function affichagePrestations() {
+        $prestataire = $this->getUser();
+        $prestataire->getPrestations();
+        return $this->render(
+            '/affichage_profil/fiche_prestataire/prestations.html.twig',
+            [
+                'prestataire' => $prestataire,
+            ]
+        );
+    }
+
+
+
+
+
+
+
+
+
+
 
     /**
      * @Route("/profil/client")
