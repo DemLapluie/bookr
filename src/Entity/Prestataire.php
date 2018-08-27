@@ -90,7 +90,7 @@ class Prestataire
 
     /**
      * @var Client
-     * @ORM\OneToOne(targetEntity="Client")
+     * @ORM\OneToOne(targetEntity="Client", inversedBy="prestataire")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      *
      */
@@ -129,11 +129,10 @@ class Prestataire
     private $prestation;
 
     /**
-     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire")
+     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire",cascade={"persist"})
      * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
-
 
     /**
      * @return mixed

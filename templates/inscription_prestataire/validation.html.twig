@@ -21,12 +21,16 @@
                     <div class="logo_validation">
                         <img src="{{ asset('img/logo_validation.png') }}" alt="">
                     </div>
-                    <p>Votre profile doit être verifié par nos équipes</p>
+                    <p>Votre profil doit être verifié par nos équipes</p>
                     <p>Nous vous enverons un email dans un délai de 24h.<br>
-                       Dans un délai de 24h vous serrez informaez du statut de votre profil. <br>Une fois les données
+                       Dans un délai de 24h vous serrez informez du statut de votre profil. <br>Une fois les données
                         certifiées, vous aurez accés à votre gestionnaire de profil prestataire.
                     </p>
-                    <button type="button" class="btn valid btn-dark">Acceder au profil</button>
+                    {% if prestataire.certification == 'Validé'  %}
+                    <a type="button" class="btn valid btn-dark" href="{{ path('app_affichageprofiluser_modificationprofilprestataire') }}">Acceder au profil</a>
+                    {% else %}
+                    <a type="button" class="btn valid btn-dark">Acceder au profil</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

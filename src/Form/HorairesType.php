@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Horaires;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,6 +17,7 @@ class HorairesType extends AbstractType
                 'lundi_ouverture',
                 TimeType::class,
                  array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -25,6 +27,7 @@ class HorairesType extends AbstractType
                 'lundi_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -35,6 +38,7 @@ class HorairesType extends AbstractType
                 'mardi_ouverture',
                 TimeType::class,
                 array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -44,6 +48,7 @@ class HorairesType extends AbstractType
                 'mardi_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -53,6 +58,7 @@ class HorairesType extends AbstractType
                 'mercredi_ouverture',
                 TimeType::class,
                 array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -62,6 +68,7 @@ class HorairesType extends AbstractType
                 'mercredi_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -71,6 +78,7 @@ class HorairesType extends AbstractType
                 'jeudi_ouverture',
                 TimeType::class,
                 array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -80,6 +88,7 @@ class HorairesType extends AbstractType
                 'jeudi_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -89,6 +98,7 @@ class HorairesType extends AbstractType
                 'vendredi_ouverture',
                 TimeType::class,
                 array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -98,6 +108,7 @@ class HorairesType extends AbstractType
                 'vendredi_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -107,6 +118,7 @@ class HorairesType extends AbstractType
                 'samedi_ouverture',
                 TimeType::class,
                 array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -116,6 +128,7 @@ class HorairesType extends AbstractType
                 'samedi_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'
@@ -125,6 +138,7 @@ class HorairesType extends AbstractType
                 'dimanche_ouverture',
                 TimeType::class,
                 array('label' => 'ouverture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Hour',
                         'minute' => 'Minute'
@@ -134,6 +148,7 @@ class HorairesType extends AbstractType
                 'dimanche_fermeture',
                 TimeType::class,
                 array('label' => 'fermeture',
+                    'required' => false,
                     'placeholder' => array(
                         'hour' => 'Heure',
                         'minute' => 'Minute'

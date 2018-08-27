@@ -17,7 +17,7 @@ class PhotoType extends AbstractType
         $builder
             ->add(
                 'nom',
-                TextType::class,
+                FileType::class,
                 [
                     'attr' => [
                         'placeholder' => 'Ajouter une photo',

@@ -50,7 +50,7 @@ class InscriptionPrestataireController extends AbstractController
                     'Votre inscription est en cours de validation'
                 );
 
-                return $this->render('inscription_prestataire/validation.html.twig');
+                return $this->redirectToRoute('inscription_validation');
             }else{
                 $this->addFlash(
                     'error',
@@ -62,30 +62,23 @@ class InscriptionPrestataireController extends AbstractController
         return $this->render('inscription_prestataire/formulaire.html.twig', [
 
             'form' => $form->createView(),
+            'prestataire' => $prestataire
         ]);
     }
 
     /**
-     * @Route("/validation/{id}")
+     * @Route("/validation", name="inscription_validation")
      */
     public function prestValid ()
     {
+        dump($this->getUser());
 
-        $repositoryStatut = $this->getDoctrine()->getManager()->getRepository(InscriptionPrestataireType::class);
-        $statutprofil = $repositoryStatut->findOneBy( ['id', 'certfication' => 'Validé']);
-
-
-        // redirection vers la page profil prestataire - Faire en sorte de valider
-        if($statutprofil){
-
-
-
-        }
-
-
+        $prestataire= $this->getUser()->getPrestataire();
 
         return $this->render(
-            'inscription_prestataire/validation.html.twig'
+            'inscription_prestataire/validation.html.twig',[
+                'prestataire' => $prestataire
+            ]
         );
     }
 }

@@ -115,6 +115,31 @@ class Client implements UserInterface, \Serializable
      */
     private $plainPassword;
 
+    /**
+     * @var Prestataire
+     * @ORM\OneToOne(targetEntity="Prestataire", mappedBy="client")
+     *
+     */
+    private $prestataire;
+
+    /**
+     * @return Prestataire
+     */
+    public function getPrestataire(): Prestataire
+    {
+        return $this->prestataire;
+    }
+
+    /**
+     * @param Prestataire $prestataire
+     * @return Client
+     */
+    public function setPrestataire(Prestataire $prestataire): Client
+    {
+        $this->prestataire = $prestataire;
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
