@@ -1,0 +1,16 @@
+
+/* liste des images */
+.liste_image{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.liste_image li{
+    display: inline-block;
+}
+
+.image_entreprise{
+    width: 200px;
+}

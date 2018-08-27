@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/affichage_prestataire.css') }}" />
+{% endblock %}
+ {% block body %}
+     {% block header %}
+         {{ parent() }}
+     {% endblock %}
+     {% block content %}
+         <div class="container">
+             <h2 class="text-uppercase">{{ prestataire }}</h2>
+             <p>adresse + ville + cp de l'entreprise</p>
+             <div class="row">
+                 <div class="col-md-3 col-12">
+                     <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                 </div>
+                 <div class="offset-md-1 col-md-8 col-12">
+                     <p>description de l'entreprise</p>
+                 </div>
+             </div>
+             <p>Horaire de l'entreprise</p>
+             <div>
+                 <h5>Nos préstations</h5>
+                 <ul>
+                     <li>
+                         <p>nom de la prestation</p>
+                         <p>prix de la prestation</p>
+                     </li>
+                 </ul>
+             </div>
+
+             <div class="">
+                 <ul class="liste_image" >
+                     <li class="">
+                         <img class="image_entreprise" src="{{ asset('img/5b801509667d6.jpeg') }}"/>
+                     </li>
+                     <li class="">
+                         <img class="image_entreprise" src="{{ asset('img/5b801509667d6.jpeg') }}"/>
+                     </li>
+                     <li class="">
+                         <img class="image_entreprise" src="{{ asset('img/5b801509667d6.jpeg') }}"/>
+                     </li>
+                     <li class="">
+                         <img class="image_entreprise"  src="{{ asset('img/5b801509667d6.jpeg') }}"/>
+                     </li>
+                     <li class="">
+                         <img class="image_entreprise"  src="{{ asset('img/5b801509667d6.jpeg') }}"/>
+                     </li>
+                 </ul>
+             </div>
+
+
+         </div>
+
+     {% endblock %}
+     {% block footer %}
+         {{ parent() }}
+     {% endblock %}
+ {% endblock %}

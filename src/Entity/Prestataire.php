@@ -76,7 +76,6 @@ class Prestataire
     private $certification;
 
     /**
-     *
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le N°  est obligatoire")
      * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image")
@@ -86,7 +85,6 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
-     *
      */
     private $description_entreprise;
 
@@ -118,28 +116,24 @@ class Prestataire
      */
     private $profession;
 
-    /*
- * @ORM\Column(type="simple_array")
- * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
-
-    private $jour;*/
+    /**
+     * @ORM\Column(type="simple_array")
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+    */
+    private $jour;
 
     /**
      * @ORM\OneToMany(targetEntity="Prestation", mappedBy="prestataire")
      * @ORM\JoinColumn(name="prestation_id", referencedColumnName="id")
      */
     private $prestation;
+
     /**
      * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire")
      * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
-    /**
-     * @ORM\Column(type="array")
-     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
-     * @Assert\Choice({"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi","Samedi","Dimanche"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de jour" ))
-     */
-    private $jour;
+
 
     /**
      * @return mixed
@@ -404,8 +398,10 @@ class Prestataire
         return $this;
     }
 
-
-
+    public function __toString()
+    {
+        return $this->nom_entreprise;
+    }
 
 
 }
