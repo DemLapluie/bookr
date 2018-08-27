@@ -14,10 +14,15 @@ class RechercheType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->setMethod('GET')
             ->add(
-                'jour',HorairesType::class)
+                'jour',
+                TextType::class,[
+                'attr' => [
+                    'placeholder' => 'Jour',
+                ],
 
-
+            ])
             ->add('cp_entreprise',
                    TextType::class,
                 [
@@ -45,9 +50,18 @@ class RechercheType extends AbstractType
                         'Barbier' => 'Barbier',
                         'Prothésiste Ongulaire' => 'Prothésiste Ongulaire',
                         'MakeUp Artist' => 'MakeUp Artist',
-                        'Expert/Styliste du Regard' => 'Expert/Styliste du Regard',
+                        'Expert/Styliste du Regard' => 'Styliste du Regard',
                     )
                 ))
+            ->add(
+                'numero_siret',
+                TextType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'N° SIRET',
+                    ]
+                ]
+            )
         ;
     }
 

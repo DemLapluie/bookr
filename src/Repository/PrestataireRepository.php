@@ -51,6 +51,21 @@ class PrestataireRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function searchProfession(array $criteria)
+    {
+        $qb = $this->createQueryBuilder('p');
+
+        if (!empty($criteria['profession'])) {
+            $qb
+                ->andWhere('p.profession LIKE ' . $qb->expr()->literal('%' . $criteria['profession'] . '%'))
+            ;
+        }
+
+
+        return $qb->getQuery()->getResult();
+    }
+
+
 //    /**
 //     * @return Prestataire[] Returns an array of Prestataire objects
 //     */

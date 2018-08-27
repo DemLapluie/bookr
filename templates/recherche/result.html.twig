@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/recherche-presta.css') }}" />
+{% endblock %}
+
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div class="cat_type_nav recherche">
+            <nav>
+                <ul>
+                    <li><a href="#">Coiffeur</a></li>
+                    <li><a href="#">Prothesiste ongulaire</a></li>
+                    <li><a href="#">Barbier</a></li>
+                    <li><a href="#">Stylist des cils</a></li>
+                    <li><a href="#">MakeUp Artist</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main_content">
+            <div class="col-8 text-form">
+                <p class="col-6">Trouver votre meilleur prestataire esthetique pres de chez vous.</p>
+                <p class="note col-6">Service disponible dans toute l'Ile de france.</p>
+            </div>
+
+            <table class="table col-8">
+                <tr >
+                    <th>Nom</th>
+                    <th>Ville</th>
+                    <th>Code postale</th>
+                    <th>Type d'activité</th>
+                    <th>Lieu de prestation</th>
+                    <th>Jour</th>
+                </tr>
+                {% for prestataire in prestataires %}
+                    <tr>
+                        <td>{{ prestataire.nomEntreprise}}</td>
+                        <td>{{ prestataire.villeEntreprise}}</td>
+                        <td>{{ prestataire.cpEntreprise}}</td>
+                        <td>{{ prestataire.profession|join(', ') }}</td>
+                        <td>{{ prestataire.lieuPrestation|join(', ') }}</td>
+                        <td>{{ prestataire.jour|join(', ') }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td><p>Il n'y a pas de resultat</p></td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div class="form-btn-group text-right">
+                <a class="btn btn-outline-secondary" href="{{ path('recherche_presta')}}">
+                    Retour
+                </a>
+
+            </div>
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}
