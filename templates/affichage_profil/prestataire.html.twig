@@ -1,15 +1,83 @@
 {% extends 'base.html.twig' %}
- {% block stylesheets %}
-     {% block title %}Hello {{ controller_name }}!{% endblock %}	    {{ parent() }}
-     <link rel="stylesheet" href="{{ asset('css/inscription-prest.css') }}" />
- {% endblock %
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/profil-client.css') }}" />
+{% endblock %}
 
 {% block body %}
     {% block header %}
         {{ parent() }}
     {% endblock %}
     {% block content %}
-        {{ parent() }}
+        <h2 class="text-uppercase form_title font-weight-bold">Mon profil PRO</h2>
+        <span class="title_line"></span>
+
+
+
+        {{ form_start(form) }}
+        <h4 class="text-uppercase offset-1">Avatar</h4>
+        <span class="title_line offset-1 col-xl-3"></span>
+        {% if original_image %}
+            <div class="offset-2">
+                <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px">
+            </div>
+        {% endif %}
+
+
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.avatar) }}
+        </div>
+        <div class="col-xl-8 offset-1">
+            {{ form_widget(form.description_entreprise) }}
+        </div>
+        <h4 class="text-uppercase offset-1">Coordonées</h4>
+        <span class="title_line offset-1 col-xl-3"></span>
+
+        <div class="col-md-6 lieu">
+            {{ form_row(form.jour) }}
+        </div>
+        <div class="col-md-6 lieu">
+            {{ form_row(form.horaires.lundi_ouverture) }}
+            {{ form_row(form.horaires.lundi_fermeture) }}
+            {{ form_row(form.horaires.mardi_ouverture) }}
+            {{ form_row(form.horaires.mardi_fermeture) }}
+            {{ form_row(form.horaires.mercredi_ouverture) }}
+            {{ form_row(form.horaires.mercredi_fermeture) }}
+            {{ form_row(form.horaires.jeudi_ouverture) }}
+            {{ form_row(form.horaires.jeudi_fermeture) }}
+            {{ form_row(form.horaires.vendredi_ouverture) }}
+            {{ form_row(form.horaires.vendredi_fermeture) }}
+            {{ form_row(form.horaires.samedi_ouverture) }}
+            {{ form_row(form.horaires.samedi_fermeture) }}
+            {{ form_row(form.horaires.dimanche_ouverture) }}
+            {{ form_row(form.horaires.dimanche_fermeture) }}
+        </div>
+       <!--
+       <div class="col-xl-4 offset-1">
+            {{ form_widget(form.adresse) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.ville) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.cp) }}
+        </div>
+        <div class="col-xl-6 offset-1">
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.tel) }}
+        </div>
+        -->
+
+        <div class="form-btn-group offset-4 offset-sm-4 offset-md-5 offset-lg-6 offset-xl-7">
+            <button type="submit" class="modification_form_button">
+                Modifier
+            </button>
+        </div>
+        {{ form_end(form) }}
+
+
 
     {% endblock %}
     {% block footer %}

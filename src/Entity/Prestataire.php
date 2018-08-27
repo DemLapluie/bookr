@@ -92,7 +92,7 @@ class Prestataire
 
     /**
      * @var Client
-     * @ORM\OneToOne(targetEntity="Client")
+     * @ORM\OneToOne(targetEntity="Client", inversedBy="prestataire")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      *
      */
@@ -130,14 +130,13 @@ class Prestataire
      */
     private $prestation;
     /**
-     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire")
+     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire",cascade={"persist"})
      * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
     /**
      * @ORM\Column(type="array")
      * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
-     * @Assert\Choice({"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi","Samedi","Dimanche"}, multiple=true, min="1", minMessage="Veuillez faire au minimum 1 choix de jour" ))
      */
     private $jour;
 

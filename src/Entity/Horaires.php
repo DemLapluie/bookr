@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\DisponibiliteRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\HorairesRepository")
  */
 class Horaires
 {
@@ -145,110 +145,110 @@ class Horaires
         $this->lundi_Fermeture = $lundi_Fermeture;
         return $this;
     }
-    public function getMardiOuverture(): ?string
+    public function getMardiOuverture()
     {
         return $this->mardi_ouverture;
     }
-    public function setMardiOuverture(?string $mardi_ouverture): self
+    public function setMardiOuverture($mardi_ouverture): self
     {
         $this->mardi_ouverture = $mardi_ouverture;
         return $this;
     }
-    public function getMardiFermeture(): ?string
+    public function getMardiFermeture()
     {
         return $this->mardi_fermeture;
     }
-    public function setMardiFermeture(?string $mardi_fermeture): self
+    public function setMardiFermeture( $mardi_fermeture): self
     {
         $this->mardi_fermeture = $mardi_fermeture;
         return $this;
     }
-    public function getMercrediOuverture(): ?string
+    public function getMercrediOuverture()
     {
         return $this->mercredi_ouverture;
     }
-    public function setMercrediOuverture(?string $mercredi_ouverture): self
+    public function setMercrediOuverture( $mercredi_ouverture): self
     {
         $this->mercredi_ouverture = $mercredi_ouverture;
         return $this;
     }
-    public function getMercrediFermeture(): ?string
+    public function getMercrediFermeture()
     {
         return $this->mercredi_fermeture;
     }
-    public function setMercrediFermeture(?string $mercredi_fermeture): self
+    public function setMercrediFermeture($mercredi_fermeture): self
     {
         $this->mercredi_fermeture = $mercredi_fermeture;
         return $this;
     }
-    public function getJeudiOuverture(): ?string
+    public function getJeudiOuverture()
     {
         return $this->jeudi_ouverture;
     }
-    public function setJeudiOuverture(?string $jeudi_ouverture): self
+    public function setJeudiOuverture( $jeudi_ouverture): self
     {
         $this->jeudi_ouverture = $jeudi_ouverture;
         return $this;
     }
-    public function getJeudiFermeture(): ?string
+    public function getJeudiFermeture()
     {
         return $this->jeudi_fermeture;
     }
-    public function setJeudiFermeture(?string $jeudi_fermeture): self
+    public function setJeudiFermeture( $jeudi_fermeture): self
     {
         $this->jeudi_fermeture = $jeudi_fermeture;
         return $this;
     }
-    public function getVendrediOuverture(): ?string
+    public function getVendrediOuverture()
     {
         return $this->vendredi_ouverture;
     }
-    public function setVendrediOuverture(?string $vendredi_ouverture): self
+    public function setVendrediOuverture( $vendredi_ouverture): self
     {
         $this->vendredi_ouverture = $vendredi_ouverture;
         return $this;
     }
-    public function getVendrediFermeture(): ?string
+    public function getVendrediFermeture()
     {
         return $this->vendredi_fermeture;
     }
-    public function setVendrediFermeture(?string $vendredi_fermeture): self
+    public function setVendrediFermeture( $vendredi_fermeture): self
     {
         $this->vendredi_fermeture = $vendredi_fermeture;
         return $this;
     }
-    public function getSamediOuverture(): ?string
+    public function getSamediOuverture()
     {
         return $this->samedi_ouverture;
     }
-    public function setSamediOuverture(?string $samedi_ouverture): self
+    public function setSamediOuverture( $samedi_ouverture): self
     {
         $this->samedi_ouverture = $samedi_ouverture;
         return $this;
     }
-    public function getSamediFermeture(): ?string
+    public function getSamediFermeture()
     {
         return $this->samedi_fermeture;
     }
-    public function setSamediFermeture(?string $samedi_fermeture): self
+    public function setSamediFermeture( $samedi_fermeture): self
     {
         $this->samedi_fermeture = $samedi_fermeture;
         return $this;
     }
-    public function getDimancheOuverture(): ?string
+    public function getDimancheOuverture()
     {
         return $this->dimanche_ouverture;
     }
-    public function setDimancheOuverture(?string $dimanche_ouverture): self
+    public function setDimancheOuverture($dimanche_ouverture): self
     {
         $this->dimanche_ouverture = $dimanche_ouverture;
         return $this;
     }
-    public function getDimancheFermeture(): ?string
+    public function getDimancheFermeture()
     {
         return $this->dimanche_fermeture;
     }
-    public function setDimancheFermeture(?string $dimanche_fermeture): self
+    public function setDimancheFermeture($dimanche_fermeture): self
     {
         $this->dimanche_fermeture = $dimanche_fermeture;
         return $this;

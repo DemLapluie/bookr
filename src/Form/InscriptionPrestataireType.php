@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Prestataire;
+use App\Entity\Horaires;
+use App\Form\HorairesType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -118,24 +120,27 @@ class InscriptionPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
-        ->add(
-        'jour',
-        ChoiceType::class,
-        array(
-            'label' => 'Jour(s) et Horaires d\'ouverture :',
-            'choices'  => array(
-                'Lundi' => '1',
-                'Mardi' => '2',
-                'Mercredi' => '3',
-                'Jeudi' => '4',
-                'Vendredi' => '5',
-                'Samedi' => '6',
-                'Dimanche' => '7',
-            ),
-            'expanded' => true,
-            'multiple' => true
-        ))
-    ;
+            ->add(
+            'jour',
+            ChoiceType::class,
+            array(
+                'label' => 'Jour(s) et Horaires d\'ouverture :',
+                'choices'  => array(
+                    'Lundi' => '1',
+                    'Mardi' => '2',
+                    'Mercredi' => '3',
+                    'Jeudi' => '4',
+                    'Vendredi' => '5',
+                    'Samedi' => '6',
+                    'Dimanche' => '7',
+                ),
+                'expanded' => true,
+                'multiple' => true
+            ))
+
+            ->add('horaires',
+                HorairesType::class)
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -43,10 +43,35 @@ class ProfilPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
-            ->add(
-                'horaires',
-                HorairesType::class
-            )
+            ->add('lundi_ouverture',
+                HorairesType::class)
+            ->add('lundi_fermeture',
+                HorairesType::class)
+            ->add('mardi_ouverture',
+                HorairesType::class)
+            ->add('mardi_fermeture',
+                HorairesType::class)
+            ->add('mercredi_ouverture',
+                HorairesType::class)
+            ->add('mercredi_fermeture',
+                HorairesType::class)
+            ->add('jeudi_ouverture',
+                HorairesType::class)
+            ->add('jeudi_fermeture',
+                HorairesType::class)
+            ->add('vendredi_ouverture',
+                HorairesType::class)
+            ->add('vendredi_fermeture',
+                HorairesType::class)
+            ->add('samedi_ouverture',
+                HorairesType::class)
+            ->add('samedi_fermeture',
+                HorairesType::class)
+            ->add('dimanche_ouverture',
+                HorairesType::class)
+            ->add('dimanche_fermeture',
+                HorairesType::class)
+
             /*->add(
                'nom',
                PhotoType::class, array(
