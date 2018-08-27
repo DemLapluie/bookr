@@ -50,6 +50,15 @@ body{
 
 .cat_type_nav.recherche{ height: auto}
 
+.title_line {
+    display: block;
+    width: 60%;
+    margin-left: 5%;
+    border-bottom: 2px solid black;
+    margin-bottom: 53px;
+}
+
+.result_title{ margin-left: 32px}
 
 
 
@@ -79,6 +88,9 @@ body{
 .form-inscripton{
     margin: 0px auto 200px;
 }
+
+.form-inscripton.result{margin-bottom: 100px}
+
 .form-inscripton form{
     padding: 25px 0;
     border-radius: .25rem;
@@ -99,6 +111,57 @@ body{
     background-image: url("../img/bg_marbre.jpg");
     background-size: cover;
 }
+
+.main_content.result{
+    background-image: none;
+    background: white;
+}
+
+/* Affichage result */
+.table.result{ margin-bottom: 150px}
+
+.result-content {
+    display: flex;
+    border-top: 1px solid black;
+    margin-bottom: 0px;
+    padding: 20px 0;
+}
+
+.result-content.no-result{
+    margin-bottom: 250px;
+}
+.prestataires-result{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin-bottom: 75px;
+    padding: 20px 0;
+}
+
+.prestataire-infos h2, .prestataire-infos h4{font-family: Antraste}
+.prestataire-infos h2 span{font-size: .74em}
+.prestataire-infos{ margin-bottom: 50px}
+
+.prestataire-infos h4{
+    font-size: .8em;
+    color: grey;
+    font-family: Code-bold;
+}
+
+.img_avatar, .descrip-prestataire, .prestataire-infos .col-12 { padding: 0}
+.prestataire-infos .col-12 { display: flex}
+.descrip-prestataire{ font-family: Antraste; font-size: .8em; padding: 20px 35px}
+
+.img_avatar img{width: 90%}
+
+.left-info{
+    padding-top: 70px;
+    padding-left: 25px}
+.left-info span{
+    font-family: Antraste;
+    font-size: .8em}
+.jour-dispo span{ border-right: 1px solid black; font-family: Roboto; font-size: 1em; padding-right: 5px}
+.jour-dispo span:last-child { border: none}
+.jour-dispo span.label-jour{ border-right: inherit; font-family: Antraste; font-size: .8em ; padding-right: 0}
 
 /**  footer    **/
 
