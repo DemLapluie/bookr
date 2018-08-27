@@ -51,6 +51,15 @@ class RechercheType extends AbstractType
                         'Expert/Styliste du Regard' => 'Expert/Styliste du Regard',
                     )
                 ))
+            ->add(
+                'numero_siret',
+                TextType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'N° SIRET',
+                    ]
+                ]
+            )
         ;
     }
 

@@ -25,6 +25,7 @@ class Prestataire
      */
     private $nom_entreprise;
 
+
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="L' adresse est obligatoire")
@@ -119,9 +120,9 @@ class Prestataire
     private $profession;
 
     /**
- * @ORM\Column(type="simple_array")
- * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
- */
+    * @ORM\Column(type="simple_array")
+    * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+    */
     private $jour;
 
     public function __construct()
@@ -134,17 +135,26 @@ class Prestataire
         return $this->id;
     }
 
-    public function getNomEntreprise(): ?string
+    /**
+     * @return mixed
+     */
+    public function getNomEntreprise()
     {
         return $this->nom_entreprise;
     }
 
-    public function setNomEntreprise(string $nom_entreprise): self
+    /**
+     * @param mixed $nom_entreprise
+     * @return Prestataire
+     */
+    public function setNomEntreprise($nom_entreprise)
     {
         $this->nom_entreprise = $nom_entreprise;
-
         return $this;
     }
+
+
+
 
     public function getAdresseEntreprise(): ?string
     {

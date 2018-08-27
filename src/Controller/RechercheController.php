@@ -23,7 +23,7 @@ class RechercheController extends AbstractController
     }
 
     /**
-     * @Route("/recherche/prestataire")
+     * @Route("/recherche/prestataire", name="recherche_presta")
      */
     public function recherchePresta(Request $request)
     {
@@ -31,6 +31,8 @@ class RechercheController extends AbstractController
 
         $test = $repo->find(1);
         dump($test);
+
+        $prestataires = null;
 
         $form = $this->createForm( RechercheType::class);
 
@@ -43,9 +45,16 @@ class RechercheController extends AbstractController
             $prestataires = $repo->search($data);
             dump($prestataires);
 
+            return $this->render('recherche/result.html.twig', array(
+                'prestataires' => $prestataires,
+            ));
+
         }
         return $this->render('recherche/recherch_presta.html.twig', [
+            'prestataires' =>$prestataires,
             'form' => $form->createView(),
+
+
         ]);
     }
 }
