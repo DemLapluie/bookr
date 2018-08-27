@@ -1,16 +1,12 @@
-
-/* liste des images */
-.liste_image{
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.slider{
+    border-top: 1px solid gray ;
+    border-bottom: 1px solid gray ;
+    padding: 25px 0;
+    margin-bottom: 25px;
+    width: 100%;
 }
-
-.liste_image li{
-    display: inline-block;
-}
-
-.image_entreprise{
-    width: 200px;
+.fiche_prestataire {
+    border-top: 2px solid gray ;
+    padding-top: 25px;
+    margin-top: 25px;
 }

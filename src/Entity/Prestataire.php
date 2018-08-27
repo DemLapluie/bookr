@@ -171,11 +171,6 @@ class Prestataire
         return $this;
     }
 
-
-
-
-
-
     public function __construct()
     {
         $this->photo = new ArrayCollection();
@@ -194,7 +189,6 @@ class Prestataire
     public function setNomEntreprise(string $nom_entreprise): self
     {
         $this->nom_entreprise = $nom_entreprise;
-
         return $this;
     }
 

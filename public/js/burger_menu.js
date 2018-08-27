@@ -1,16 +1,17 @@
 
+
     var active = false;
     var scroll = true;
 
-    $('#burger_menu').on('click',function(){
+    $('#burger_menu').on('click', function () {
         /* ON bloque le scroll quand le menu bureger est ouvert */
-        if(scroll == true){
+        if (scroll == true) {
             window.onscroll = function () {
                 window.scrollTo(0, 0);
             }
 
             scroll = false;
-        }else if(scroll == false){
+        } else if (scroll == false) {
             window.onscroll = function () {
 
             }
@@ -18,7 +19,7 @@
         }
 
 
-        if(active === false){
+        if (active === false) {
             $('#burger_menu div').css({
                 'display': 'none'
             });
@@ -36,18 +37,18 @@
             });
 
             $('.burger_nav').css({
-                height : '100%'
+                height: '100%'
             });
 
             active = true;
-        }else {
+        } else {
             $('.burger_nav').css({
-                'height' : '0'
+                'height': '0'
             });
 
             $('#burger_menu div').css({
                 'display': 'block',
-                'margin-top' : '0'
+                'margin-top': '0'
             });
 
 
@@ -65,12 +66,13 @@
         }
     });
 
-    $('.burger_nav > ul > li > a').on('click',function(){
+    $('.burger_nav > ul > li > a').on('click', function () {
 
-        $('this > .sous_menu').css({'display' : 'block'})
+        $('this > .sous_menu').css({'display': 'block'})
 
 
     });
+
 
 
 

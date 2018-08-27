@@ -160,15 +160,6 @@ class AffichageProfilUserController extends AbstractController
     }
 
 
-
-
-
-
-
-
-
-
-
     /**
      * @Route("/profil/client")
      */

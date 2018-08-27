@@ -2,24 +2,49 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/affichage_prestataire.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/slider.css') }}" />
 {% endblock %}
  {% block body %}
      {% block header %}
          {{ parent() }}
      {% endblock %}
      {% block content %}
-         <div class="container">
+         <div class="container fiche_prestataire">
              <h2 class="text-uppercase">{{ prestataire }}</h2>
-             <p>adresse + ville + cp de l'entreprise</p>
+             <p>{{ prestataire.adresseEntreprise }} {{ prestataire.cpEntreprise }} {{ prestataire.villeEntreprise }}</p>
              <div class="row">
-                 <div class="col-md-3 col-12">
-                     <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                 <div class="col-lg-3 col-12">
+                     <img class="avatar" src="{{ asset('img/5b801509667d6.jpeg') }}" />
                  </div>
-                 <div class="offset-md-1 col-md-8 col-12">
-                     <p>description de l'entreprise</p>
+                 <div class="offset-lg-1 col-lg-8 col-12">
+                     <p>{{ prestataire.descriptionEntreprise }}</p>
                  </div>
              </div>
-             <p>Horaire de l'entreprise</p>
+             <p>{{ prestataire.horaires }} horaires de l'entreprise</p>
+             <div class="slider">
+                 <div class="item">
+                     <ul id="content-slider" class="content-slider">
+                         <li>
+                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                         </li>
+                         <li>
+                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                         </li>
+                         <li>
+                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                         </li>
+                         <li>
+                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                         </li>
+                         <li>
+                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                         </li>
+                         <li>
+                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                         </li>
+                     </ul>
+                 </div>
+             </div>
              <div>
                  <h5>Nos préstations</h5>
                  <ul>
@@ -29,32 +54,15 @@
                      </li>
                  </ul>
              </div>
-
-             <div class="">
-                 <ul class="liste_image" >
-                     <li class="">
-                         <img class="image_entreprise" src="{{ asset('img/5b801509667d6.jpeg') }}"/>
-                     </li>
-                     <li class="">
-                         <img class="image_entreprise" src="{{ asset('img/5b801509667d6.jpeg') }}"/>
-                     </li>
-                     <li class="">
-                         <img class="image_entreprise" src="{{ asset('img/5b801509667d6.jpeg') }}"/>
-                     </li>
-                     <li class="">
-                         <img class="image_entreprise"  src="{{ asset('img/5b801509667d6.jpeg') }}"/>
-                     </li>
-                     <li class="">
-                         <img class="image_entreprise"  src="{{ asset('img/5b801509667d6.jpeg') }}"/>
-                     </li>
-                 </ul>
-             </div>
-
-
          </div>
 
      {% endblock %}
      {% block footer %}
          {{ parent() }}
+     {% endblock %}
+     {% block javascripts %}
+         {{ parent() }}
+         <!-- //Js -->
+         <script src="{{ asset('js/slider.js') }}"></script>
      {% endblock %}
  {% endblock %}
