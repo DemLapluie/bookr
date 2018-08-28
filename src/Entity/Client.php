@@ -125,7 +125,7 @@ class Client implements UserInterface, \Serializable
     /**
      * @return Prestataire
      */
-    public function getPrestataire(): Prestataire
+    public function getPrestataire(): ?Prestataire
     {
         return $this->prestataire;
     }

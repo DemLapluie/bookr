@@ -40,7 +40,7 @@
                                 <a href="{{ path('app_affichageprofiluser_affichageclient') }}" class="text-uppercase nav-link">
                                     {{ app.user}}
                                 </a>
-                                <div></div
+                                <div></div>
                             </li>
                             <li>
                                 <a href="{{ path('app_security_logout') }}"><span class="text-uppercase">Deconnexion</span></a>
@@ -66,7 +66,14 @@
                                 </ul>
                             </li>
                             <li>
+                                {% if app.user is null or app.user.prestataire is null %}
                                 <a class="text-uppercase" href="{{ path('app_inscriptionprestataire_inscriptionprestataire') }}">Devenez prestataire</a>
+                                {% elseif app.user.prestataire.certification == 'En attente' %}
+                                <a class="text-uppercase" href="{{ path('inscription_validation') }}">Espace PRO</a>
+                                {% else %}
+                                <a class="text-uppercase" href="{{ path('modification_profil_prestataire') }}">Espace PRO</a>
+                                {% endif %}
+
                             </li>
                         </ul>
                     </nav>
