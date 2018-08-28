@@ -109,6 +109,9 @@ input[type=file]#inscription_prestataire_cni{ border: 1px solid black !important
     background-color: grey;
 }
 
+#inscription_prestataire_jour .form-inline { flex-flow: inherit }
+/****Affichage horraire *****/
+#horraire-lundi, #horraire-mardi, #horraire-mercredi, #horraire-jeudi, #horraire-vendredi, #horraire-samedi, #horraire-dimanche  {visibility: hidden;}
 
 /* -------- RESPONSIVE ----------- */
 @media screen and (max-width: 768px) {

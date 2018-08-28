@@ -14,10 +14,12 @@ $( function() {
         dateFormat: 'yy-mm-dd',
         minDate:0
     });
-    $( "#recherche_jour" ).autocomplete({
-        disabled: true
-    });
 } );
+$( "#recherche_jour" ).datepicker({
+    disabled:true
+});
+
+
 
 /*function JourDate() {
 
