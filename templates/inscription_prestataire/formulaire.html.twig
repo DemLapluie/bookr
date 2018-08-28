@@ -58,20 +58,34 @@
                                     {{ form_row(form.jour) }}
                                 </div>
                                 <div class="col-md-6 lieu">
+                                    <div id ="horraire-lundi">
                                     {{ form_row(form.horaires.lundi_ouverture) }}
                                     {{ form_row(form.horaires.lundi_fermeture) }}
+                                    </div>
+                                    <div id ="horraire-mardi">
                                     {{ form_row(form.horaires.mardi_ouverture) }}
                                     {{ form_row(form.horaires.mardi_fermeture) }}
+                                    </div>
+                                    <div id ="horraire-mercredi">
                                     {{ form_row(form.horaires.mercredi_ouverture) }}
                                     {{ form_row(form.horaires.mercredi_fermeture) }}
+                                    </div>
+                                    <div id ="horraire-jeudi">
                                     {{ form_row(form.horaires.jeudi_ouverture) }}
                                     {{ form_row(form.horaires.jeudi_fermeture) }}
+                                    </div>
+                                    <div id ="horraire-vendredi">
                                     {{ form_row(form.horaires.vendredi_ouverture) }}
                                     {{ form_row(form.horaires.vendredi_fermeture) }}
+                                    </div>
+                                    <div id ="horraire-samedi">
                                     {{ form_row(form.horaires.samedi_ouverture) }}
                                     {{ form_row(form.horaires.samedi_fermeture) }}
+                                    </div>
+                                    <div id ="horraire-dimanche">
                                     {{ form_row(form.horaires.dimanche_ouverture) }}
                                     {{ form_row(form.horaires.dimanche_fermeture) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +103,7 @@
 
     {% endblock %}
     {% block footer %}
-
         {{ parent() }}
+        <script src="{{ asset('js/afficher_horraire.js') }}"></script>
     {% endblock %}
 {% endblock %}
