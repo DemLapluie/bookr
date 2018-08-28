@@ -110,8 +110,9 @@ input[type=file]#inscription_prestataire_cni{ border: 1px solid black !important
 }
 
 #inscription_prestataire_jour .form-inline { flex-flow: inherit }
+.col-md-6.horraire{display: none}
 /****Affichage horraire *****/
-#horraire-lundi, #horraire-mardi, #horraire-mercredi, #horraire-jeudi, #horraire-vendredi, #horraire-samedi, #horraire-dimanche  {visibility: hidden;}
+#horraire-lundi, #horraire-mardi, #horraire-mercredi, #horraire-jeudi, #horraire-vendredi, #horraire-samedi, #horraire-dimanche  {visibility: hidden; display: none}
 
 /* -------- RESPONSIVE ----------- */
 @media screen and (max-width: 768px) {
