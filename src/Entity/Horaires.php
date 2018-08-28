@@ -115,7 +115,7 @@ class Horaires
     /**
      * @return mixed
      */
-    public function getLundiOuverture(): ?string
+    public function getLundiOuverture()
     {
         return $this->lundi_ouverture;
     }
@@ -131,7 +131,7 @@ class Horaires
     /**
      * @return mixed
      */
-    public function getLundiFermeture(): ?string
+    public function getLundiFermeture()
     {
         return $this->lundi_Fermeture;
     }

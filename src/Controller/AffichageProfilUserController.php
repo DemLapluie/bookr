@@ -62,19 +62,14 @@ class AffichageProfilUserController extends AbstractController
          * Requête POST pour modifier les données Prestataire en BDD via une modale (cf.fichier Twig)
          */
         $prestataire = $this->getUser()->getPrestataire();
-        $form = $this->createForm(ProfilPrestataireType::class);
+
+        //dump($prestataire->getHoraires());
+        $form = $this->createForm(ProfilPrestataireType::class, $prestataire);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
 
-                $prestataire->getAvatar();
-                $prestataire->setLieuPrestation();
-                $prestataire->getDescriptionEntreprise();
-                $prestataire->setAdresseEntreprise();
-                $prestataire->setVilleEntreprise();
-                $prestataire->setCpEntreprise();
-                $prestataire->setTelEntreprise();
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($prestataire);
