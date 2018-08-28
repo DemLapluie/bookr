@@ -42,21 +42,21 @@
                 <div class="col-8 form-inscripton result">
         {% endif %}
                 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-                <div class="row col-12 form-content">
-                    <div class="col">
+                <div class="row col-12  ">
+                    <div class="col-12 col-md">
                         <!-- p><input class="form-control" type="text" placeholder="Jour?" id="datepicker"></p>
                      <button class="btn-js" onclick="myFunction()">Try it</button>
 
                      <p id="demo"></p -->
                         {{ form_widget(form.jour) }}
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md ">
                         {{ form_widget(form.profession) }}
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md ">
                         {{ form_widget(form.cp_entreprise) }}
                     </div>
-                    <div class="col lieu">
+                    <div class="col-12 col-md  lieu">
                         {{ form_widget(form.lieu_prestation) }}
                     </div>
                     <div class="form-btn-group col">
@@ -70,22 +70,25 @@
 
             {% if prestataires is not null %}
                 {% for prestataire in prestataires %}
-                    <div class="result-content col-7">
+                    {% if prestataire.avatar and prestataire.descriptionEntreprise %}
+                    <a class="result-content col-7" href="{{ path('app_affichageprestataire_affichageprestataire', {id: prestataire.id}) }}">
                         <div class="col-9 prestataire-infos ">
                             <h2>{{ prestataire.nomEntreprise}} {#- <span>{{ prestataire.villeEntreprise}}</span>#}</h2>
                             <h4><i class="fas fa-map-marker-alt"></i> {{ prestataire.adresseEntreprise}}, {{ prestataire.cpEntreprise}} {{ prestataire.villeEntreprise}}</h4>
                             <div class="col-12">
+
                             <div class="col-5 img_avatar">
-                                <img src="{{ asset('img/shaperie1.png') }}" alt="logo attente">
+                                <img src="{{ asset('img/' ~ prestataire.avatar) }}" alt="logo attente">
                             </div>
+
+
                             <div class="col-7 descrip-prestataire">
-                                <p> Dans ce salon au look moderne vous retrouverez l'équipe et les savoir-faire
-                                    uniques de la shaperie pour une barbe et une coupe parfaites !</p>
-                                <p> La shaperie c'est en somme un salon trendy au style affirmé qui rspire</p>
+                            <p>{{ prestataire.descriptionEntreprise }}</p>
                             </div>
                             </div>
                         </div>
-                       <div class="col-3 col-md-4 left-info">
+
+                       <div class="col-3 col-md-3 left-info">
                             <p><span>Type de profession</span>:<br> {{ prestataire.profession|join(' | ')}}</p>
                             <p><span>Lieu de prestation</span>:<br> {{ prestataire.lieuPrestation|join(' | ')}}</p>
                             <p class="jour-dispo"><span class="label-jour">Jour disponibles</span>:<br>
@@ -107,8 +110,9 @@
                             {% endif%}
                             {% endfor %}
                             </p>
-                    </div>
-                    </div>
+                        </div>
+                    </a>
+                {% endif%}
                 {% else %}
                     {% if prestataires == 'invalid' %}
                         <div class="result-content col-7 no-result">
