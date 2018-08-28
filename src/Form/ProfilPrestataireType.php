@@ -37,8 +37,8 @@ class ProfilPrestataireType extends AbstractType
                 'ville_entreprise',
                 TextType::class,
                 [
+                    'required' => false,
                     'attr' => [
-                        'required' => false,
                         'placeholder' => 'Ville',
                     ]
                 ]
@@ -47,8 +47,8 @@ class ProfilPrestataireType extends AbstractType
                 'cp_entreprise',
                 TextType::class,
                 [
+                    'required' => false,
                     'attr' => [
-                        'required' => false,
                         'placeholder' => 'Code Postal',
                     ]
                 ])
@@ -56,8 +56,8 @@ class ProfilPrestataireType extends AbstractType
                 'tel_entreprise',
                 TextType::class,
                 [
+                    'required' => false,
                     'attr' => [
-                        'required' => false,
                         'placeholder' => 'Téléphone',
                     ]
                 ])
