@@ -36,13 +36,14 @@ class InscriptionPrestataireController extends AbstractController
         if($form->isSubmitted()){
             if($form->isValid()){
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($prestataire);
-                $em->flush();
+                //$em->persist($prestataire);
+                //$em->flush();
 
                 $prestataire -> setCertification("En attente");
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($prestataire);
+                $em->persist($prestataire->getHoraires());
                 $em->flush();
 
                 $this->addFlash(

@@ -18,8 +18,8 @@ class Horaires
     private $id;
     /**
      * @var Prestataire
-     * @ORM\OneToOne(targetEntity="prestataire", inversedBy="horaires")
-     * @ORM\JoinColumn(name="prestataire_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="prestataire", mappedBy="horaires")
+     *
      */
     private $prestataire;
     /**

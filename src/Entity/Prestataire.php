@@ -107,7 +107,6 @@ class Prestataire
     /**
      * @var Collection
      * @ORM\OneToMany(targetEntity="Photos", mappedBy="prestataire")
-     * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
      */
     private $photo;
 
@@ -124,12 +123,14 @@ class Prestataire
     private $jour;
 
     /**
+     * @var Collection
      * @ORM\OneToMany(targetEntity="Prestation", mappedBy="prestataire")
      */
     private $prestation;
 
     /**
-     * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire",cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Horaires", inversedBy="prestataire")
+     * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
 
