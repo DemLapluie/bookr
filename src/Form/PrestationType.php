@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,7 +21,7 @@ class PrestationType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Nom de la prestation',
+                        'placeholder' => 'Nom ?',
                     ]
                 ]
                 )
@@ -28,29 +29,31 @@ class PrestationType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Indiquez le prix en euros(€)',
+                        'placeholder' => 'Prix ? (€)',
                     ]
                 ]
                 )
             ->add('duree',
-                ChoiceType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Choisissez une durée',
-                    ]
-                ])
+                TimeType::class,
+                array(
+                    'label' => 'Durée ?',
+                    'required' => false,
+                    'placeholder' => array(
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)')
+                ))
             ->add('categorie',
-                ChoiceType::class,
+                TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Choisissez une catégorie',
+                        'placeholder' => 'Catégorie ?',
                     ]
                 ])
             ->add('description',
                     TextareaType::class,
                     [
                         'attr' => [
-                            'placeholder' => 'Déscription de la prestation',
+                            'placeholder' => 'Décrivez votre prestation',
                         ]
                     ]
                 )

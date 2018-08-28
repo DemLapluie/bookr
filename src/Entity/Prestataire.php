@@ -135,18 +135,18 @@ class Prestataire
     private $horaires;
 
     /**
-     * @return mixed
+     * @return Collection
      */
-    public function getPrestation()
+    public function getPrestation(): Collection
     {
         return $this->prestation;
     }
 
     /**
-     * @param mixed $prestation
+     * @param Collection $prestation
      * @return Prestataire
      */
-    public function setPrestation($prestation)
+    public function setPrestation(Collection $prestation): Prestataire
     {
         $this->prestation = $prestation;
         return $this;
@@ -330,22 +330,23 @@ class Prestataire
     }
 
     /**
-     * @return Photos
+     * @return Collection
      */
-    public function getPhoto(): Photos
+    public function getPhoto(): Collection
     {
         return $this->photo;
     }
 
     /**
-     * @param Photos $photo
+     * @param Collection $photo
      * @return Prestataire
      */
-    public function setPhoto(Photos $photo): Prestataire
+    public function setPhoto(Collection $photo): Prestataire
     {
         $this->photo = $photo;
         return $this;
     }
+
 
     /**
      * @return mixed

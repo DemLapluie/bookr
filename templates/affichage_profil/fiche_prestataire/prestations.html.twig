@@ -1,15 +1,84 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/inscription-prest.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/profil-client.css') }}" />
 {% endblock %}
- {% block body %}
-     {% block header %}
-         {{ parent() }}
-     {% endblock %}
-     {% block content %}
-     {% endblock %}
-     {% block footer %}
-         {{ parent() }}
-     {% endblock %}
- {% endblock %}
+
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <h2 class="text-uppercase form_title font-weight-bold">Mon Espace PRO</h2>
+        <span class="title_line"></span>
+
+        {% if prestations %}
+        {% else %}
+            <div class="row">
+                <div class="col-12 col-md-8 offset-1">
+                    Bienvenue sur l'interface de gestion de vos prestations, <br>
+                    vous permettant d'ajouter et/ou supprimer une ou des prestations à votre profil.<br><br>
+                    Ajoutez votre première prestation !
+
+                </div>
+            </div>
+        {% endif %}
+        <br>
+
+        <div class="row">
+        <div class="col-12">
+            {{ form_start(form) }}
+            <h4 class="text-uppercase offset-1">Ajouter une prestation</h4>
+            <span class="title_line offset-1 col-xl-3"></span>
+            {#{% if original_image %}
+                        <div class="offset-2">
+                           <!-- <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px"> -->
+                        </div>
+                    {% endif %}#}
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.categorie) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.nom) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+        {{ form_widget(form.duree) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.prix) }}
+        </div>
+        <div class="col-xl-4 offset-1">
+            {{ form_widget(form.description) }}
+        </div>
+
+            <div class="form-btn-group offset-1 offset-md-9">
+            <button type="submit" class="inscription_form_button">
+                Valider
+            </button>
+            </div>
+        {{ form_end(form) }}
+            <br>
+
+            <h4 class="text-uppercase offset-1">Ma liste de Prestations</h4>
+            <span class="title_line offset-1 col-xl-3"></span>
+
+            <div class="row xl-4 offset-1">
+                <div class="col-md-8 col-sm-9 form-field">
+
+                </div>
+                <div class="col-md-4 col-sm-6 form-field">
+
+                </div>
+
+
+
+        </div>
+
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}

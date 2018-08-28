@@ -123,17 +123,18 @@
                 </div >
                 <div class="row col-md-3">
                     <div class="col">
-                        <a href="" class="inscription_form_button">
+                        <a href="{{ path('modification_profil_photos') }}" class="inscription_form_button">
                             Gestion des Photos
                         </a>
                     </div>
                     <div class="col">
-                        <a href="" class="inscription_form_button">
+                        <a href="{{ path('modification_profil_prestations') }}" class="inscription_form_button">
                             Gestion des Prestations
                         </a>
                     </div>
                 </div>
             </div>
+                {#{%  if prestataire.prestation %}#}
             <div class="form-btn-group offset-1 offset-md-9">
                 <button type="submit" class="inscription_form_button">
                     Valider

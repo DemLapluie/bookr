@@ -7,6 +7,7 @@ use App\Entity\Photos;
 use App\Entity\Prestataire;
 use App\Entity\Prestation;
 use App\Form\PhotoType;
+use App\Form\PrestationType;
 use App\Form\ProfilClientType;
 use App\Form\ProfilPrestataireType;
 use Symfony\Component\HttpFoundation\File\File;
@@ -91,58 +92,75 @@ class AffichageProfilUserController extends AbstractController
     }
 
 
+
     /**
-     * @Route("/modificationprofil/prestations/list/{id}")
+     * @Route("/modificationprofil/photos/", name="modification_profil_photos")
      */
-    public function Photos(Request $request) {
+    public function gestionDesPhotos(Request $request) {
 
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository(PrestationsType::class);
-        $prestataire = $repository->findAll();
-        $prestataire->getPhoto();
-
+        $photos = $this->getUser()->getPrestataire()->getPhoto();
 
         $photo = new Photos();
-        $form = $this->createForm(PhotoType::class, $prestataire);
+        $form = $this->createForm(PhotoType::class, $photo);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
 
-                $photo->getNom();
+                $photo->getPhoto();
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($prestataire);
+                $em->persist($photo);
                 $em->flush();
 
                 $this->addFlash(
                     'success',
-                    'Vos photos sont mises à jour.'
+                    'Votre photo est ajoutée à votre profil'
                 );
 
-                return $this->render(
-                    '/affichage_profil/fiche_prestataire/photos.html.twig',
-                    [
-                        'prestataire' => $prestataire,
-                        'form'  => $form->createView()
-                    ]
-                );
             }
         }
+        return $this->render(
+            '/affichage_profil/fiche_prestataire/photos.html.twig',[
+                'photos' => $photos,
+                'form'  => $form->createView()
+            ]
+
+        );
     }
 
-    /**
-     * @Route("/modificationprofil/prestations/list/{id}")
-     */
-    public function affichagePrestations() {
-        $prestataire = $this->getUser()->getPrestataire();
-        $prestataire->getPrestations();
 
+    /**
+     * @Route("/modificationprofil/prestations/", name="modification_profil_prestations")
+     */
+    public function gestionDesPrestations(Request $request) {
+
+        $prestations = $this->getUser()->getPrestataire()->getPrestation();
+
+        $prestation = new Prestation();
+        $form = $this->createForm(PrestationType::class, $prestation);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted()) {
+            if ($form->isValid()) {
+
+                $prestation->getPrestation();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($prestation);
+                $em->flush();
+
+                $this->addFlash(
+                    'success',
+                    'Votre prestation est ajoutée à votre profil.'
+                );
+
+            }
+        }
         return $this->render(
-            '/affichage_profil/fiche_prestataire/prestations.html.twig',
-            [
-                'prestataire' => $prestataire,
-                //form'  => $form->createView(),
+            '/affichage_profil/fiche_prestataire/prestations.html.twig',[
+                'prestations' => $prestations,
+                'form'  => $form->createView()
             ]
+
         );
     }
 
