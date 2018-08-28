@@ -11,10 +11,11 @@
      {% block content %}
          <div class="container fiche_prestataire">
              <h2 class="text-uppercase">{{ prestataire }}</h2>
-             <p>{{ prestataire.adresseEntreprise }} {{ prestataire.cpEntreprise }} {{ prestataire.villeEntreprise }}</p>
+             <p><i class="fas fa-map-marker-alt"></i> {{ prestataire.adresseEntreprise}}, {{ prestataire.cpEntreprise}} {{ prestataire.villeEntreprise}}</p>
+
              <div class="row">
                  <div class="col-lg-3 col-12">
-                     <img class="avatar" src="{{ asset('img/5b801509667d6.jpeg') }}" />
+                     <img class="avatar col-lg-12 col-4" src="{{ asset('img/' ~ prestataire.avatar) }}" />
                  </div>
                  <div class="offset-lg-1 col-lg-8 col-12">
                      <p>{{ prestataire.descriptionEntreprise }}</p>

@@ -85,7 +85,7 @@ class Prestataire
     private $cni;
 
     /**
-     * @ORM\Column(type="string", length=45, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description_entreprise;
 

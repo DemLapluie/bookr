@@ -65,6 +65,7 @@ body{
 
 
 /* formulaire inscription */
+
 .text-form{ margin: 100px auto; }
 .text-form p{
     font-family: Antraste;
@@ -120,18 +121,32 @@ body{
 }
 
 /* Affichage result */
-.table.result{ margin-bottom: 150px}
+
+.table.result{
+    margin-bottom: 150px
+}
 
 .result-content {
     display: flex;
     border-top: 1px solid black;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding: 20px 0;
+    text-decoration: none;
+    color: black;
+}
+
+
+.result-content:hover {
+    text-decoration: none;
+    background-color: rgb(230,230,230);
+    color: black;
+
 }
 
 .result-content.no-result{
     margin-bottom: 250px;
 }
+
 .prestataires-result{
     border-bottom: 1px solid black;
     border-top: 1px solid black;
@@ -139,9 +154,16 @@ body{
     padding: 20px 0;
 }
 
-.prestataire-infos h2, .prestataire-infos h4{font-family: Antraste}
-.prestataire-infos h2 span{font-size: .74em}
-.prestataire-infos{ margin-bottom: 50px}
+.prestataire-infos h2,
+.prestataire-infos h4{
+    font-family: Antraste
+}
+.prestataire-infos h2 span {
+    font-size: .74em
+}
+.prestataire-infos{
+    margin-bottom: 50px
+}
 
 .prestataire-infos h4{
     font-size: .8em;
