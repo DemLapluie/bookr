@@ -1,3 +1,33 @@
+/*--------Javascript--------*/
+
+if ($("#profil_prestataire_jour_0").is(":checked")) {
+    document.getElementById("horaire-lundi").style.visibility = "visible";
+    document.getElementById("horaire-lundi").style.display = "table-row";
+}
+if ($("#profil_prestataire_jour_1").is(":checked")) {
+    document.getElementById("horaire-mardi").style.visibility = "visible";
+    document.getElementById("horaire-mardi").style.display = "table-row";
+}
+if ($("#profil_prestataire_jour_2").is(":checked")) {
+    document.getElementById("horaire-mercredi").style.visibility = "visible";
+    document.getElementById("horaire-mercredi").style.display = "table-row"
+}
+if ($("#profil_prestataire_jour_3").is(":checked")) {
+    document.getElementById("horaire-jeudi").style.visibility = "visible";
+    document.getElementById("horaire-jeudi").style.display = "table-row"
+}
+if ($("#profil_prestataire_jour_4").is(":checked")) {
+    document.getElementById("horaire-vendredi").style.visibility = "visible";
+    document.getElementById("horaire-vendredi").style.display = "table-row"
+}
+if ($("#profil_prestataire_jour_5").is(":checked")) {
+    document.getElementById("horaire-samedi").style.visibility = "visible";
+    document.getElementById("horaire-samedi").style.display = "table-row"
+}
+if ($("#profil_prestataire_jour_6").is(":checked")) {
+    document.getElementById("horaire-dimanche").style.visibility = "visible";
+    document.getElementById("horaire-dimanche").style.display = "table-row"
+}
 
 $("#profil_prestataire_jour_0").click(function(){ afficherHorraire(); });
 $("#profil_prestataire_jour_1").click(function(){ afficherHorraire(); });
@@ -15,10 +45,6 @@ $("#inscription_prestataire_jour_4").parent().append("<div id='add4'></div>");
 $("#inscription_prestataire_jour_5").parent().append("<div id='add5'></div>");
 $("#inscription_prestataire_jour_6").parent().append("<div id='add6'></div>");
 
-if ($("#profil_prestataire_jour_0").is(":checked")) {
-    document.getElementById("horaire-lundi").style.visibility = "visible";
-    document.getElementById("horaire-lundi").style.display = "table-row";
-}
 
 function afficherHorraire()
 {
