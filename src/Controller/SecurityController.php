@@ -69,7 +69,7 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/connexion")
-    */
+     */
     public function login(AuthenticationUtils $authenticationUtils)
     {
         // Traitement du formulaire par Security

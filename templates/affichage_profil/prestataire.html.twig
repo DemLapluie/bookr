@@ -17,11 +17,11 @@
         {{ form_start(form) }}
         <h4 class="text-uppercase offset-1">Avatar</h4>
         <span class="title_line offset-1 col-xl-3"></span>
-        {% if original_image %}
+{#{% if original_image %}
             <div class="offset-2">
-                <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px">
+               <!-- <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px"> -->
             </div>
-        {% endif %}
+        {% endif %}#}
 
 
         <div class="col-xl-4 offset-1">
@@ -33,6 +33,7 @@
         <h4 class="text-uppercase offset-1">Coordonées</h4>
         <span class="title_line offset-1 col-xl-3"></span>
 
+        {#{% if app.user.prestataire.jour == '1' %}#}
         <div class="col-md-6 lieu">
             {{ form_row(form.jour) }}
         </div>

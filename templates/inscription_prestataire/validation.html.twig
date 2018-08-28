@@ -27,7 +27,7 @@
                         certifiées, vous aurez accés à votre gestionnaire de profil prestataire.
                     </p>
                     {% if prestataire.certification == 'Validé'  %}
-                    <a type="button" class="btn valid btn-dark" href="{{ path('app_affichageprofiluser_modificationprofilprestataire') }}">Acceder au profil</a>
+                    <a type="button" class="btn valid btn-dark" href="{{ path('modification_profil_prestataire') }}">Acceder au profil</a>
                     {% else %}
                     <a type="button" class="btn valid btn-dark">Acceder au profil</a>
                     {% endif %}
