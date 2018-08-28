@@ -116,8 +116,8 @@ class Prestataire
     private $profession;
 
     /**
-     * @ORM\Column(type="simple_array")
-     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+     * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires", groups={"registration"})
     */
     private $jour;
 
@@ -128,24 +128,24 @@ class Prestataire
     private $prestation;
 
     /**
-     * @ORM\OneToOne(targetEntity="Horaires", inversedBy="prestataire")
+     * @ORM\OneToOne(targetEntity="Horaires", inversedBy="prestataire", cascade={"persist"})
      * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
 
     /**
-     * @return mixed
+     * @return Collection
      */
-    public function getPrestation()
+    public function getPrestation(): Collection
     {
         return $this->prestation;
     }
 
     /**
-     * @param mixed $prestation
+     * @param Collection $prestation
      * @return Prestataire
      */
-    public function setPrestation($prestation)
+    public function setPrestation(Collection $prestation): Prestataire
     {
         $this->prestation = $prestation;
         return $this;
@@ -313,7 +313,7 @@ class Prestataire
     /**
      * @return Client
      */
-    public function getClient(): Client
+    public function getClient()
     {
         return $this->client;
     }
@@ -322,29 +322,30 @@ class Prestataire
      * @param Client $client
      * @return Prestataire
      */
-    public function setClient(Client $client): Prestataire
+    public function setClient( $client): Prestataire
     {
         $this->client = $client;
         return $this;
     }
 
     /**
-     * @return Photos
+     * @return Collection
      */
-    public function getPhoto(): Photos
+    public function getPhoto(): Collection
     {
         return $this->photo;
     }
 
     /**
-     * @param Photos $photo
+     * @param Collection $photo
      * @return Prestataire
      */
-    public function setPhoto(Photos $photo): Prestataire
+    public function setPhoto(Collection $photo): Prestataire
     {
         $this->photo = $photo;
         return $this;
     }
+
 
     /**
      * @return mixed

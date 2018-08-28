@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Prestataire;
-use App\Entity\Horaires;
-use App\Form\HorairesType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -80,14 +78,6 @@ class InscriptionPrestataireType extends AbstractType
                     ]
                 ]
                 )
-           /** ->add(
-                'certification',
-                TextType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Statut de validation',
-                    ]
-                ]) */
             ->add(
                 'cni',
                 FileType::class,
@@ -96,14 +86,7 @@ class InscriptionPrestataireType extends AbstractType
                         'placeholder' => 'Pièce d\'identité',
                     ]
                 ])
-            /**->add(
-                'description_entreprise',
-                TextType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Description entreprise',
-                    ]
-                ])*/
+
 
             ->add(
                 'profession',
@@ -120,26 +103,6 @@ class InscriptionPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
-            ->add(
-            'jour',
-            ChoiceType::class,
-            array(
-                'label' => 'Jour(s) et Horaires d\'ouverture :',
-                'choices'  => array(
-                    'Lundi' => '1',
-                    'Mardi' => '2',
-                    'Mercredi' => '3',
-                    'Jeudi' => '4',
-                    'Vendredi' => '5',
-                    'Samedi' => '6',
-                    'Dimanche' => '7',
-                ),
-                'expanded' => true,
-                'multiple' => true
-            ))
-
-            ->add('horaires',
-                HorairesType::class)
         ;
     }
 
