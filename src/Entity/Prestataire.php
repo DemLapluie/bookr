@@ -125,13 +125,11 @@ class Prestataire
 
     /**
      * @ORM\OneToMany(targetEntity="Prestation", mappedBy="prestataire")
-     * @ORM\JoinColumn(name="prestation_id", referencedColumnName="id")
      */
     private $prestation;
 
     /**
      * @ORM\OneToOne(targetEntity="Horaires", mappedBy="prestataire",cascade={"persist"})
-     * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
 
