@@ -47,38 +47,9 @@ class RechercheController extends AbstractController
                 $data['jour'] = date('N', strtotime($data['jour']));
             }
             $prestataires = $repo->search($data);
-            dump($prestataires);
-
-
-
-        }
-        return $this->render('recherche/recherch_presta.html.twig', [
-            'prestataires' =>$prestataires,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/recherche/prestataire/resultat/{profession}")
-     */
-    public function afficheCatProfession(Request $request, $professsion)
-    {
-        $repo = $this->getDoctrine()->getRepository(Prestataire::class, $professsion);
-
-        $prestataires = null;
-
-        $form = $this->createForm( RechercheType::class);
-
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted()) {
-            $data = $form->getData();
-            dump($data);
-            if (!empty($data['jour'])) {
-                $data['jour'] = date('N', strtotime($data['jour']));
+            if (empty($data['jour'])&&empty($data['cp_entreprise'])&&empty($data['lieu_prestation'])&&empty($data['profession'])) {
+                $prestataires = 'invalid';
             }
-            $prestataires = $repo->searchProfession($data);
             dump($prestataires);
 
 
@@ -89,6 +60,8 @@ class RechercheController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+
 
 
 

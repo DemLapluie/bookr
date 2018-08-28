@@ -11,7 +11,11 @@ $( function() {
         dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
         dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
         weekHeader: 'Sem.',
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate:0
+    });
+    $( "#recherche_jour" ).autocomplete({
+        disabled: true
     });
 } );
 
