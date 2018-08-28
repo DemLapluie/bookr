@@ -63,9 +63,9 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=14)
-     * @Assert\NotBlank(message="Le n° SIRET est obligatoire")
-     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères")
-     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres")
+     * @Assert\NotBlank(message="Le n° SIRET est obligatoire", groups={"registration"})
+     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères", groups={"registration"})
+     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres", groups={"registration"})
      *
      */
     private $numero_siret;
@@ -78,8 +78,8 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le N°  est obligatoire")
-     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image")
+     * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"registration"})
+     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"registration"})
      *
      */
     private $cni;

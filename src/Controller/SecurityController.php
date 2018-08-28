@@ -20,7 +20,6 @@ class SecurityController extends AbstractController
         UserPasswordEncoderInterface $passwordEncoder
     )
     {
-        /* inscription*/
 
         $client = new Client();
         $form = $this->createForm(InscriptionType::class, $client, ['validation_groups' => ['registration']]);
