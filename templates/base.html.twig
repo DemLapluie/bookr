@@ -88,10 +88,10 @@
 
                             {% endif %}
 
-                            {% if app.user is null or not null %}
+                            {% if app.user is null or app.user.prestataire is null %}
                             <a href="{{ path('app_inscriptionprestataire_inscriptionprestataire') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
                             {% elseif app.user.prestataire.certification == 'En attente' %}
-                            <a href="{{ path('inscription_validation') }}" class="parte_link"><span class="text-uppercase">Devenez prestataire</span></a>
+                            <a href="{{ path('inscription_validation') }}" class="parte_link"><span class="text-uppercase">Espace PRO</span></a>
                             {% else %}
                             <a href="{{ path('modification_profil_prestataire') }}" class="parte_link"><span class="text-uppercase">Espace PRO</span></a>
                             {% endif %}
