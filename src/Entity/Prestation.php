@@ -38,8 +38,7 @@ class Prestation
     /**
      * @ORM\Column(type="string", length=45)
      * @Assert\NotBlank(message="La categorie est obligatoire")
-     * @Assert\Choice({"Barbe", "Coiffure", "Regard", "Make-up", "Ongles"})
-     */
+     *     */
     private $categorie;
 
     /**
@@ -124,7 +123,7 @@ class Prestation
     /**
      * @return Prestataire
      */
-    public function getPrestataire(): Prestataire
+    public function getPrestataire(): ?Prestataire
     {
         return $this->prestataire;
     }
@@ -138,5 +137,8 @@ class Prestation
         $this->prestataire = $prestataire;
         return $this;
     }
+
+
+
 
 }

@@ -57,7 +57,6 @@ class InscriptionPrestataireController extends AbstractController
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($prestataire);
-                $em->persist($prestataire->getHoraires());
                 $em->flush();
 
                 $this->addFlash(
