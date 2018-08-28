@@ -56,3 +56,10 @@ form{
 .modification_form_button:hover{
     background-color: grey;
 }
+
+/****Affichage horraire *****/
+#horaire-lundi, #horaire-mardi, #horaire-mercredi, #horaire-jeudi, #horaire-vendredi, #horaire-samedi, #horaire-dimanche  {visibility: hidden; display: none}
+
+.table.horraire thead th { border-bottom: none }
+
+.table.horraire thead th { border-top: none }
