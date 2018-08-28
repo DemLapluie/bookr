@@ -9,76 +9,138 @@
         {{ parent() }}
     {% endblock %}
     {% block content %}
-        <h2 class="text-uppercase form_title font-weight-bold">Mon profil PRO</h2>
+        <h2 class="text-uppercase form_title font-weight-bold">Mon Espace PRO</h2>
         <span class="title_line"></span>
 
-
-
-        {{ form_start(form) }}
-        <h4 class="text-uppercase offset-1">Avatar</h4>
-        <span class="title_line offset-1 col-xl-3"></span>
-{#{% if original_image %}
-            <div class="offset-2">
-               <!-- <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px"> -->
+        {% if prestataire.avatar and prestataire.descriptionEntreprise and prestataire.prestations %}
+        {% else %}
+        <div class="row">
+            <div class="col-12 col-md-8 offset-1">
+                Pour que votre profil soit disponible dans la liste de recherche de prestataires,<br>
+                Vous devez mettre à jour votre profil en ajoutant : un avatar, une description de votre activité et vos prestations !
             </div>
-        {% endif %}#}
+        </div>
+        {% endif %}
+        <br>
 
+        <div class="row">
+            <div class="col-12">
+                {{ form_start(form) }}
+                <h4 class="text-uppercase offset-1">Photo de profil</h4>
+                <span class="title_line offset-1 col-xl-3"></span>
+                {#{% if original_image %}
+                            <div class="offset-2">
+                               <!-- <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px"> -->
+                            </div>
+                        {% endif %}#}
+                <div class="col-xl-4 offset-1">
+                    {{ form_widget(form.avatar) }}
+                </div>
+                <br>
 
-        <div class="col-xl-4 offset-1">
-            {{ form_widget(form.avatar) }}
-        </div>
-        <div class="col-xl-8 offset-1">
-            {{ form_widget(form.description_entreprise) }}
-        </div>
-        <h4 class="text-uppercase offset-1">Coordonées</h4>
-        <span class="title_line offset-1 col-xl-3"></span>
+                <h4 class="text-uppercase offset-1">Coordonées</h4>
+                <span class="title_line offset-1 col-xl-3"></span>
 
-        {#{% if app.user.prestataire.jour == '1' %}#}
-        <div class="col-md-6 lieu">
-            {{ form_row(form.jour) }}
-        </div>
-        <div class="col-md-6 lieu">
-            {{ form_row(form.horaires.lundi_ouverture) }}
-            {{ form_row(form.horaires.lundi_fermeture) }}
-            {{ form_row(form.horaires.mardi_ouverture) }}
-            {{ form_row(form.horaires.mardi_fermeture) }}
-            {{ form_row(form.horaires.mercredi_ouverture) }}
-            {{ form_row(form.horaires.mercredi_fermeture) }}
-            {{ form_row(form.horaires.jeudi_ouverture) }}
-            {{ form_row(form.horaires.jeudi_fermeture) }}
-            {{ form_row(form.horaires.vendredi_ouverture) }}
-            {{ form_row(form.horaires.vendredi_fermeture) }}
-            {{ form_row(form.horaires.samedi_ouverture) }}
-            {{ form_row(form.horaires.samedi_fermeture) }}
-            {{ form_row(form.horaires.dimanche_ouverture) }}
-            {{ form_row(form.horaires.dimanche_fermeture) }}
-        </div>
-       <!--
-       <div class="col-xl-4 offset-1">
-            {{ form_widget(form.adresse) }}
-        </div>
-        <div class="col-xl-4 offset-1">
-            {{ form_widget(form.ville) }}
-        </div>
-        <div class="col-xl-4 offset-1">
-            {{ form_widget(form.cp) }}
-        </div>
-        <div class="col-xl-6 offset-1">
-            {{ form_widget(form.email) }}
-        </div>
-        <div class="col-xl-4 offset-1">
-            {{ form_widget(form.tel) }}
-        </div>
-        -->
+                <div class="row xl-4 offset-1">
+                    <div class="col-md-8 col-sm-9 form-field">
+                        {{ form_widget(form.adresse_entreprise) }}
+                    </div>
+                    <div class="col-md-4 col-sm-6 form-field">
+                        {{ form_widget(form.tel_entreprise) }}
+                    </div>
+                </div>
+                <br>
 
-        <div class="form-btn-group offset-4 offset-sm-4 offset-md-5 offset-lg-6 offset-xl-7">
-            <button type="submit" class="modification_form_button">
-                Modifier
-            </button>
+                <div class="row xl-4 offset-1">
+                    <div class="col-md-4 col-sm-4 ville">
+                        {{ form_widget(form.ville_entreprise) }}
+                    </div>
+                    <div class="col-md-4 col-sm-4 cp">
+                        {{ form_widget(form.cp_entreprise) }}
+                    </div>
+                </div>
+                <br>
+                <h4 class="text-uppercase offset-1">Activité</h4>
+                <span class="title_line offset-1 col-xl-3"></span>
+
+                <div class="row xl-4 offset-1">
+                    <div class="col-md-3 lieu">
+                        {{ form_row(form.profession) }}
+                    </div>
+                    <div class="col-md-3 lieu">
+                        {{ form_row(form.lieu_prestation) }}
+                    </div>
+                    <div class="col-md-6 col-sm-9 form-field">
+                        {{ form_row(form.description_entreprise) }}
+                    </div>
+                </div>
+                <br>
+                <h4 class="text-uppercase offset-1">Planning</h4>
+                <span class="title_line offset-1 col-xl-3"></span>
+                <div class="row xl-4 offset-1">
+                    <div class="col-md-3">
+                        {{ form_row(form.jour) }}
+                    </div>
+                    <div class="col-md">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Ouverture</th>
+                                <th scope="col">Fermeture</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ form_row(form.horaires.lundi_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.lundi_fermeture) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_row(form.horaires.mardi_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.mardi_fermeture) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_row(form.horaires.mercredi_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.mercredi_fermeture) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_row(form.horaires.jeudi_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.jeudi_fermeture) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_row(form.horaires.vendredi_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.vendredi_fermeture) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_row(form.horaires.samedi_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.samedi_fermeture) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_row(form.horaires.dimanche_ouverture) }}</td>
+                                <td>{{ form_row(form.horaires.dimanche_fermeture) }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                </div >
+                <div class="row col-md-3">
+                    <div class="col">
+                        <a href="" class="inscription_form_button">
+                            Gestion des Photos
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="inscription_form_button">
+                            Gestion des Prestations
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-btn-group offset-1 offset-md-9">
+                <button type="submit" class="inscription_form_button">
+                    Valider
+                </button>
+            </div>
+            {{ form_end(form) }}
         </div>
-        {{ form_end(form) }}
-
-
 
     {% endblock %}
     {% block footer %}

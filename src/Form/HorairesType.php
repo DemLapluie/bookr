@@ -19,8 +19,8 @@ class HorairesType extends AbstractType
                  array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -29,8 +29,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 )
                 )
@@ -40,8 +40,8 @@ class HorairesType extends AbstractType
                 array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -50,8 +50,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -60,8 +60,8 @@ class HorairesType extends AbstractType
                 array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -70,8 +70,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -80,8 +80,8 @@ class HorairesType extends AbstractType
                 array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -90,8 +90,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -100,8 +100,8 @@ class HorairesType extends AbstractType
                 array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -110,8 +110,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -120,8 +120,8 @@ class HorairesType extends AbstractType
                 array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -130,8 +130,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -140,8 +140,8 @@ class HorairesType extends AbstractType
                 array('label' => 'ouverture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Hour',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
             ->add(
@@ -150,8 +150,8 @@ class HorairesType extends AbstractType
                 array('label' => 'fermeture',
                     'required' => false,
                     'placeholder' => array(
-                        'hour' => 'Heure',
-                        'minute' => 'Minute'
+                        'hour' => 'Heure(s)',
+                        'minute' => 'Minute(s)'
                     )
                 ))
         ;

@@ -6,7 +6,6 @@ use App\Entity\Client;
 use App\Entity\Photos;
 use App\Entity\Prestataire;
 use App\Entity\Prestation;
-use App\Form\InscriptionPrestataireType;
 use App\Form\PhotoType;
 use App\Form\ProfilClientType;
 use App\Form\ProfilPrestataireType;
@@ -63,16 +62,15 @@ class AffichageProfilUserController extends AbstractController
          * Requête POST pour modifier les données Prestataire en BDD via une modale (cf.fichier Twig)
          */
         $prestataire = $this->getUser()->getPrestataire();
-        $form = $this->createForm(InscriptionPrestataireType::class);
+        $form = $this->createForm(ProfilPrestataireType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
 
-                $prestataire->setAvatar();
-                $prestataire->setNomEntreprise();
+                $prestataire->getAvatar();
                 $prestataire->setLieuPrestation();
-                $prestataire->setDescriptionEntreprise();
+                $prestataire->getDescriptionEntreprise();
                 $prestataire->setAdresseEntreprise();
                 $prestataire->setVilleEntreprise();
                 $prestataire->setCpEntreprise();

@@ -1,8 +1,13 @@
 <?php
 namespace App\Form;
 use App\Entity\Prestataire;
+use App\Entity\Horaires;
 use App\Form\HorairesType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 class ProfilPrestataireType extends AbstractType
@@ -15,22 +20,61 @@ class ProfilPrestataireType extends AbstractType
                 FileType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Sélectionner une image',
+                        'placeholder' => 'Sélectionner une image (logo, photo)',
                     ]
                 ]
             )
             ->add(
-                'description_entreprise',
+                'adresse_entreprise',
+                TextType::class,
+                [
+                    'required' => false,
+                    'attr' => [
+                        'placeholder' => 'Adresse',
+                    ]
+                ] )
+            ->add(
+                'ville_entreprise',
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Description entreprise',
+                        'required' => false,
+                        'placeholder' => 'Ville',
+                    ]
+                ]
+            )
+            ->add(
+                'cp_entreprise',
+                TextType::class,
+                [
+                    'attr' => [
+                        'required' => false,
+                        'placeholder' => 'Code Postal',
+                    ]
+                ])
+            ->add(
+                'tel_entreprise',
+                TextType::class,
+                [
+                    'attr' => [
+                        'required' => false,
+                        'placeholder' => 'Téléphone',
+                    ]
+                ])
+            ->add(
+                'description_entreprise',
+                TextareaType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'Expliquer en quelques mots votre activité...',
                     ]
                 ])
             ->add(
                 'jour',
                 ChoiceType::class,
                 array(
+                    'required' => false,
+                    'label' => 'Jour(s) et Horaires d\'ouverture :',
                     'choices'  => array(
                         'Lundi' => '1',
                         'Mardi' => '2',
@@ -43,34 +87,39 @@ class ProfilPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
-            ->add('lundi_ouverture',
+
+            ->add('horaires',
                 HorairesType::class)
-            ->add('lundi_fermeture',
-                HorairesType::class)
-            ->add('mardi_ouverture',
-                HorairesType::class)
-            ->add('mardi_fermeture',
-                HorairesType::class)
-            ->add('mercredi_ouverture',
-                HorairesType::class)
-            ->add('mercredi_fermeture',
-                HorairesType::class)
-            ->add('jeudi_ouverture',
-                HorairesType::class)
-            ->add('jeudi_fermeture',
-                HorairesType::class)
-            ->add('vendredi_ouverture',
-                HorairesType::class)
-            ->add('vendredi_fermeture',
-                HorairesType::class)
-            ->add('samedi_ouverture',
-                HorairesType::class)
-            ->add('samedi_fermeture',
-                HorairesType::class)
-            ->add('dimanche_ouverture',
-                HorairesType::class)
-            ->add('dimanche_fermeture',
-                HorairesType::class)
+
+            ->add(
+                'profession',
+                ChoiceType::class,
+                array(
+                    'required' => false,
+                    'label' => 'Profession',
+                    'choices'  => array(
+                        'Coiffeur' => 'Coiffeur',
+                        'Barbier' => 'Barbier',
+                        'Prothésiste Ongulaire' => 'Prothésiste Ongulaire',
+                        'MakeUp Artist' => 'MakeUp Artist',
+                        'Expert/Styliste du Regard' => 'Expert/Styliste du Regard',
+                    ),
+                    'expanded' => true,
+                    'multiple' => true
+                ))
+            ->add(
+                'lieu_prestation',
+                ChoiceType::class,
+                array(
+                    'required' => false,
+                    'label' => 'Lieu de réalisation de la prestation',
+                    'choices'  => array(
+                        'Chez le client' => 'Chez le client',
+                        'Chez le prestataire' => 'Chez le prestataire',
+                        'En salon/institut' => 'En salon/institut'),
+                    'expanded' => true,
+                    'multiple' => true
+                ))
 
             /*->add(
                'nom',
