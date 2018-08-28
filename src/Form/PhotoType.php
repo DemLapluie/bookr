@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Photos;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use App\Entity\Prestataire;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
