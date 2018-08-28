@@ -15,10 +15,10 @@
         <div class="cat_type_nav recherche">
             <nav>
                 <ul>
-                    <li><a href="#">Coiffeurs</a></li>
+                    <li><a href="#">Coiffeur</a></li>
                     <li><a href="#">Prothesiste ongulaire</a></li>
                     <li><a href="#">Barbier</a></li>
-                    <li><a href="#">Stylist des cils</a></li>
+                    <li><a href="#">Styliste des cils</a></li>
                     <li><a href="#">MakeUp Artist</a></li>
                 </ul>
             </nav>
@@ -41,7 +41,7 @@
         {% else %}
                 <div class="col-8 form-inscripton result">
         {% endif %}
-                {{ form_start(form) }}
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                 <div class="row col-12 form-content">
                     <div class="col">
                         <!-- p><input class="form-control" type="text" placeholder="Jour?" id="datepicker"></p>
@@ -110,11 +110,22 @@
                     </div>
                     </div>
                 {% else %}
+                    {% if prestataires == 'invalid' %}
+                        <div class="result-content col-7 no-result">
+                            <h3>Veuillez saisir au moins un critères de recherche</h3>
+                        </div>
+                    {% else %}
+
                 <div class="result-content col-7 no-result">
                     <h3>Il n'y a pas de résultats</h3>
                 </div>
+                    {% endif %}
                 {% endfor %}
-            {% endif %}
+                {% elseif prestataires == 'invalid' %}
+                    <div class="result-content col-7 no-result">
+                        <h3>Veuillez saisir au moins un critères de recherche</h3>
+                    </div>
+                {% endif %}
         </div>
 
     {% endblock %}
