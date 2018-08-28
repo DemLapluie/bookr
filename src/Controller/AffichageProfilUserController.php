@@ -18,41 +18,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AffichageProfilUserController extends AbstractController
 {
-    /**
-    /**
-     * @Route("/profil/prestataire/")
-     */
-
-    /**public function affichagePrestataire() // Méthode nécessaire pour la recherche
-    {
-        /**
-         * Requête GET pour afficher les données archivées Prestataire en BDD
-         */
-
-        /**$em = $this->getDoctrine()->getManager();
-
-        $repository = $em->getRepository(ProfilPrestataireType::class);
-        $prestataire = $repository->findAll();
-
-        $prestataire->getAvatar();
-        $prestataire->getAdresseEntreprise();
-        $prestataire->getVilleEntreprise();
-        $prestataire->getCpEntreprise();
-        $prestataire->getTelEntreprise();
-        $prestataire->getDescriptionEntreprise();
-        $prestataire->getPhoto();
-        $prestataire->getPrestation();
-        $prestataire->getJour();
-        $prestataire->getHoraires();
-
-        return $this->render(
-            '/affichage_profil/prestataire.html.twig',
-            [
-                'prestataire' => $prestataire,
-            ]
-        );
-    }
-    */
 
     /**
      * @Route("/modificationprofil/prestataire/", name="modification_profil_prestataire")
@@ -71,7 +36,7 @@ class AffichageProfilUserController extends AbstractController
 
         if (!empty($originalImage)) {
             $prestataire->setAvatar(
-                new  File($this->getParameter('upload_dir') . $originalImage)
+                new  File($this->getParameter('upload_dir') . $originalImage, ['validation_groups' => ['registration']])
             );
         }
 

@@ -116,8 +116,8 @@ class Prestataire
     private $profession;
 
     /**
-     * @ORM\Column(type="simple_array")
-     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires")
+     * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires", groups={"registration"})
     */
     private $jour;
 
@@ -128,7 +128,7 @@ class Prestataire
     private $prestation;
 
     /**
-     * @ORM\OneToOne(targetEntity="Horaires", inversedBy="prestataire")
+     * @ORM\OneToOne(targetEntity="Horaires", inversedBy="prestataire", cascade={"persist"})
      * @ORM\JoinColumn(name="horaires_id", referencedColumnName="id")
      */
     private $horaires;
@@ -313,7 +313,7 @@ class Prestataire
     /**
      * @return Client
      */
-    public function getClient(): Client
+    public function getClient()
     {
         return $this->client;
     }
@@ -322,7 +322,7 @@ class Prestataire
      * @param Client $client
      * @return Prestataire
      */
-    public function setClient(Client $client): Prestataire
+    public function setClient( $client): Prestataire
     {
         $this->client = $client;
         return $this;
