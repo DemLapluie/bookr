@@ -172,11 +172,10 @@ footer {
 
 /* -------------- RESPONSIVE --------------------- */
 
-@media screen and (max-width: 1200px) {
-
-
-
-
+@media screen and (max-width: 1566px) {
+    .descrip-prestataire {
+        padding-top: 0;
+    }
 }
 
 

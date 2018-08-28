@@ -14,11 +14,11 @@
         <div class="cat_type_nav recherche">
             <nav>
                 <ul>
-                <li><a href="#">Coiffeur</a></li>
-                <li><a href="#">Prothesiste ongulaire</a></li>
-                <li><a href="#">Barbier</a></li>
-                <li><a href="#">Stylist des cils</a></li>
-                <li><a href="#">MakeUp Artist</a></li>
+                    <a href="{{ path('recherche_presta', {"recherche": {'profession': 'Coiffeur'}}) }}">Coiffeur</a>
+                    <a href="{{ path('recherche_presta', {"recherche": {'profession': 'Prothésiste Ongulaire'}}) }}">Prothesiste ongulaire</a>
+                    <a href="{{ path('recherche_presta', {"recherche": {'profession': 'Barbier'}}) }}">Barbier</a>
+                    <a href="{{ path('recherche_presta', {"recherche": {'profession': 'Styliste du Regard'}}) }}">Stylist des cils</a>
+                    <a href="{{ path('recherche_presta', {"recherche": {'profession': 'MakeUp Artist'}}) }}">MakeUp Artist</a>
                 </ul>
             </nav>
 

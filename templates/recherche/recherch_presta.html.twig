@@ -15,11 +15,11 @@
         <div class="cat_type_nav recherche">
             <nav>
                 <ul>
-                    <li><a href="#">Coiffeur</a></li>
-                    <li><a href="#">Prothesiste ongulaire</a></li>
-                    <li><a href="#">Barbier</a></li>
-                    <li><a href="#">Styliste des cils</a></li>
-                    <li><a href="#">MakeUp Artist</a></li>
+                    <li><a href="{{ path('recherche_presta', {"recherche": {'profession': 'Coiffeur'}}) }}">Coiffeur</a></li>
+                    <li><a href="{{ path('recherche_presta', {"recherche": {'profession': 'Prothésiste Ongulaire'}}) }}">Prothesiste ongulaire</a></li>
+                    <li><a href="{{ path('recherche_presta', {"recherche": {'profession': 'Barbier'}}) }}">Barbier</a></li>
+                    <li><a href="{{ path('recherche_presta', {"recherche": {'profession': 'Styliste du Regard'}}) }}">Stylist des cils</a></li>
+                    <li><a href="{{ path('recherche_presta', {"recherche": {'profession': 'MakeUp Artist'}}) }}">MakeUp Artist</a></li>
                 </ul>
             </nav>
         </div>
@@ -72,8 +72,8 @@
                 {% for prestataire in prestataires %}
                     <div class="result-content col-7">
                         <div class="col-9 prestataire-infos ">
-                            <h2>{{ prestataire.nomEntreprise}} - <span>{{ prestataire.villeEntreprise}}</span></h2>
-                            <h4><i class="fas fa-map-marker-alt"></i> {{ prestataire.adresseEntreprise}}</h4>
+                            <h2>{{ prestataire.nomEntreprise}} {#- <span>{{ prestataire.villeEntreprise}}</span>#}</h2>
+                            <h4><i class="fas fa-map-marker-alt"></i> {{ prestataire.adresseEntreprise}}, {{ prestataire.cpEntreprise}} {{ prestataire.villeEntreprise}}</h4>
                             <div class="col-12">
                             <div class="col-5 img_avatar">
                                 <img src="{{ asset('img/shaperie1.png') }}" alt="logo attente">
@@ -85,7 +85,7 @@
                             </div>
                             </div>
                         </div>
-                       <div class="col-3 left-info">
+                       <div class="col-3 col-md-4 left-info">
                             <p><span>Type de profession</span>:<br> {{ prestataire.profession|join(' | ')}}</p>
                             <p><span>Lieu de prestation</span>:<br> {{ prestataire.lieuPrestation|join(' | ')}}</p>
                             <p class="jour-dispo"><span class="label-jour">Jour disponibles</span>:<br>
