@@ -62,6 +62,17 @@ class AffichageProfilUserController extends AbstractController
          * Requête POST pour modifier les données Prestataire en BDD via une modale (cf.fichier Twig)
          */
         $prestataire = $this->getUser()->getPrestataire();
+        $originalImage = null;
+
+        if(!is_null($prestataire->getAvatar())){
+            $originalImage = $prestataire->getAvatar() ;
+        }
+
+        if (!empty($originalImage)) {
+            $prestataire->setAvatar(
+                new  File($this->getParameter('upload_dir') . $originalImage)
+            );
+        }
 
         //dump($prestataire->getHoraires());
         $form = $this->createForm(ProfilPrestataireType::class, $prestataire);
@@ -69,6 +80,26 @@ class AffichageProfilUserController extends AbstractController
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
+
+                /**
+                 * @var UploadedFile|null
+                 */
+                $image = $prestataire->getAvatar() ;
+
+                if(!is_null($image)){
+                    $filename = uniqid() . '.' . $image->guessExtension();
+                    $image->move(
+                        $this->getParameter('upload_dir'),
+                        $filename
+                    );
+
+                    $prestataire->setAvatar($filename);
+                    if (!is_null($originalImage)){
+                        unlink($this->getParameter('upload_dir') . $originalImage);
+                    }
+                }else{
+                    $prestataire->setAvatar($originalImage);
+                }
 
 
                 $em = $this->getDoctrine()->getManager();
@@ -86,6 +117,7 @@ class AffichageProfilUserController extends AbstractController
             [
                 'prestataire' => $prestataire,
                 'form'  => $form->createView(),
+                'original_image'  => $originalImage
             ]
         );
     }

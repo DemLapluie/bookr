@@ -96,7 +96,7 @@ class Client implements UserInterface, \Serializable
     private $civilite;
 
     /**
-     * @ORM\Column(type="string", length=45, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Image(maxSize="2M", maxSizeMessage="Le fichier ne doit pas faire plus de 2Mo",
      * mimeTypesMessage="Le fichier doit être une image")
      */

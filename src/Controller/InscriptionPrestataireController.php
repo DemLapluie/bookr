@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Prestataire;
 use App\Form\InscriptionPrestataireType;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,9 +36,22 @@ class InscriptionPrestataireController extends AbstractController
 
         if($form->isSubmitted()){
             if($form->isValid()){
-                $em = $this->getDoctrine()->getManager();
-                //$em->persist($prestataire);
-                //$em->flush();
+
+                /**
+                 * @var UploadedFile|null
+                 */
+                $image = $prestataire->getCni() ;
+
+                if(!is_null($image)){
+                    $filename = uniqid() . '.' . $image->guessExtension();
+                    $image->move(
+                        $this->getParameter('upload_dir'),
+                        $filename
+                    );
+
+                    $prestataire->setCni($filename);
+
+                }
 
                 $prestataire -> setCertification("En attente");
 

@@ -80,7 +80,6 @@ class Prestataire
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"registration"})
      * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"registration"})
-     *
      */
     private $cni;
 
@@ -98,7 +97,7 @@ class Prestataire
     private $client;
 
     /**
-     * @ORM\Column(type="string", length=45, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Image(maxSize="2M", maxSizeMessage="Le fichier ne doit pas faire plus de 2Mo",
      * mimeTypesMessage="Le fichier doit être une image")
      */
@@ -287,12 +286,12 @@ class Prestataire
         return $this;
     }
 
-    public function getCni(): ?string
+    public function getCni()
     {
         return $this->cni;
     }
 
-    public function setCni(string $cni): self
+    public function setCni($cni): self
     {
         $this->cni = $cni;
 
