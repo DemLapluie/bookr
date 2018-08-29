@@ -34,19 +34,19 @@
                            <!-- <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px"> -->
                         </div>
                     {% endif %}#}
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.categorie) }}
         </div>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.nom) }}
         </div>
-        <div class="col-xl-4 offset-1">
-        {{ form_widget(form.duree) }}
+        <div class="col-xl-4 offset-1 form-group">
+        {{ form_row(form.duree) }}
         </div>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.prix) }}
         </div>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.description) }}
         </div>
 
