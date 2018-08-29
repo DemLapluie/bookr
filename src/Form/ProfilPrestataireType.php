@@ -17,6 +17,7 @@ class ProfilPrestataireType extends AbstractType
                 'avatar',
                 FileType::class,
                 [
+                    'required' => false,
                     'attr' => [
                         'placeholder' => 'Sélectionner une image (logo, photo)',
                     ]
