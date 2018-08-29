@@ -147,16 +147,17 @@ class AffichageProfilUserController extends AbstractController
      */
     public function gestionDesPrestations(Request $request) {
 
-        $prestations = $this->getUser()->getPrestataire()->getPrestation();
-
+        $prestataire = $this->getUser()->getPrestataire();
         $prestation = new Prestation();
+
         $form = $this->createForm(PrestationType::class, $prestation);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
 
-                $prestation->getPrestation();
+                $prestation->setPrestataire($prestataire);
+
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($prestation);
                 $em->flush();
@@ -170,7 +171,7 @@ class AffichageProfilUserController extends AbstractController
         }
         return $this->render(
             '/affichage_profil/fiche_prestataire/prestations.html.twig',[
-                'prestations' => $prestations,
+                'prestataire' => $prestataire,
                 'form'  => $form->createView()
             ]
 
