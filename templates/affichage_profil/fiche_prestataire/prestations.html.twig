@@ -24,19 +24,19 @@
             {{ form_start(form) }}
             <h4 class="text-uppercase offset-1">Ajouter une prestation</h4>
             <span class="title_line offset-1 col-xl-3"></span>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.categorie) }}
         </div>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.nom) }}
         </div>
-        <div class="col-xl-4 offset-1">
-        {{ form_widget(form.duree) }}
+        <div class="col-xl-4 offset-1 form-group">
+        {{ form_row(form.duree) }}
         </div>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.prix) }}
         </div>
-        <div class="col-xl-4 offset-1">
+        <div class="col-xl-4 offset-1 form-group">
             {{ form_widget(form.description) }}
         </div>
 
