@@ -21,36 +21,37 @@
         <br>
 
         <div class="row">
-        <div class="col-12">
-            {{ form_start(form) }}
-            <h4 class="text-uppercase offset-1">Ajouter une photo</h4>
-            <span class="title_line offset-1 col-xl-3"></span>
+            <div class="col-12">
+                {{ form_start(form) }}
+                <h4 class="text-uppercase offset-1">Ajouter une photo</h4>
+                <span class="title_line offset-1 col-xl-3"></span>
 
-            <div class="col-xl-4 offset-1">
-                {{ form_widget(form.nom) }}
-            </div>
-            <div class="form-btn-group offset-1 offset-md-9">
-                <button type="submit" class="inscription_form_button">
-                    Ajouter
-                </button>
-            </div>
-            {{ form_end(form) }}
-            <br>
-            <div class="col-4 offset-8 btn-retour">
-                <a href="{{ path('modification_profil_prestataire') }}" class="inscription_form_button">
-                    Retour
-                </a>
-            </div>
-            <h4 class="text-uppercase offset-1">Ma Galerie</h4>
-            <span class="title_line offset-1 col-xl-3"></span>
-            <div class="col-11 img-gallery">
-            {% for photo in prestataire.photo %}
+                <div class="col-xl-4 offset-1">
+                    {{ form_widget(form.nom) }}
+                </div>
+                <div class="form-btn-group text-right">
+                    <button type="submit" class="inscription_form_button">
+                        Ajouter
+                    </button>
+                    <div class="text-uppercase text-right">
+                        <a href="{{ path('modification_profil_prestataire') }}" class="inscription_form_button">
+                            Retour
+                        </a>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+                <br>
 
-                <img width="200px" src="{{ asset('img/' ~ photo.nom) }}" />
+                <h4 class="text-uppercase offset-1">Ma Galerie</h4>
+                <span class="title_line offset-1 col-xl-3"></span>
+                <div class="col-11 img-gallery">
+                {% for photo in prestataire.photo %}
 
-            {% endfor %}
+                    <img width="200px" src="{{ asset('img/' ~ photo.nom) }}" />
+
+                {% endfor %}
+                </div>
             </div>
-
         </div>
 
     {% endblock %}

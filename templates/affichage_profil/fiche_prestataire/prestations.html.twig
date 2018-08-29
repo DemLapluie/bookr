@@ -40,18 +40,18 @@
             {{ form_widget(form.description) }}
         </div>
 
-            <div class="form-btn-group offset-1 offset-md-9">
-            <button type="submit" class="inscription_form_button">
-                Valider
-            </button>
+            <div class="form-btn-group text-right">
+                <button type="submit" class="inscription_form_button">
+                    Valider
+                </button>
+                <div class="text-uppercase text-right">
+                    <a href="{{ path('modification_profil_prestataire') }}" class="inscription_form_button">
+                        Retour
+                    </a>
+                </div>
             </div>
         {{ form_end(form) }}
             <br>
-            <div class="col-4 offset-8 btn-retour">
-                <a href="{{ path('modification_profil_prestataire') }}" class="inscription_form_button">
-                    Retour
-                </a>
-            </div>
             <h4 class="text-uppercase offset-1">Ma liste de Prestations</h4>
             <span class="title_line offset-1 col-xl-3"></span>
             <div class="prestation-list col-10">
