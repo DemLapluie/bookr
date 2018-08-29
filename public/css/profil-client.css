@@ -101,7 +101,9 @@ form{
 .jour-dispo span:last-child { border: none}
 .jour-dispo span.label-jour{ border-right: inherit; font-family: Antraste; font-size: .8em ; padding-right: 0}
 
-.img-gallery {margin: 0 auto}
+.img-gallery, .prestation-list {margin: 0 auto}
+
+.prestation-list{ margin-bottom: 100px}
 
 /****Affichage horraire *****/
 #horaire-lundi, #horaire-mardi, #horaire-mercredi, #horaire-jeudi, #horaire-vendredi, #horaire-samedi, #horaire-dimanche  {visibility: hidden; display: none}
