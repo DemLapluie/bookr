@@ -16,6 +16,15 @@ class InscriptionPrestataireType extends AbstractType
     {
         $builder
             ->add(
+                'cni',
+                FileType::class,
+                [
+                    'attr' => [
+                        'placeholder' => 'Pièce d\'identité',
+                    ]
+                ]
+            )
+            ->add(
                 'nom_entreprise',
                  TextType::class,
                 [
