@@ -117,8 +117,8 @@ class Prestataire
     private $profession;
 
     /**
-     * @ORM\Column(type="simple_array")
-     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires", groups={"user"})
+     * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires", groups={"Strict"})
     */
     private $jour;
 

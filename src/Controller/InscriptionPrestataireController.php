@@ -31,7 +31,7 @@ class InscriptionPrestataireController extends AbstractController
         $prestataire = new Prestataire();
         $prestataire->setClient($this->getUser());
 
-        $form = $this->createForm( InscriptionPrestataireType::class, $prestataire);
+        $form = $this->createForm( InscriptionPrestataireType::class, $prestataire, ['validation_groups' => ['Static','Prestataire']]);
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
