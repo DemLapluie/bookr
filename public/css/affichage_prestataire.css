@@ -81,7 +81,7 @@
 }
 
 .table-horaire, .prestation { margin: 0 auto}
-.prestation{ padding-left: 0}
+.prestation{ padding-left: 0; margin-bottom: 80px;}
 
 .table thead th { border-bottom: 2px solid black}
 
