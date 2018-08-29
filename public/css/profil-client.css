@@ -105,6 +105,8 @@ form{
 
 .prestation-list{ margin-bottom: 100px}
 
+.btn-retour{margin-bottom: 70px}
+
 /****Affichage horraire *****/
 #horaire-lundi, #horaire-mardi, #horaire-mercredi, #horaire-jeudi, #horaire-vendredi, #horaire-samedi, #horaire-dimanche  {visibility: hidden; display: none}
 

@@ -47,7 +47,11 @@
             </div>
         {{ form_end(form) }}
             <br>
-
+            <div class="col-4 offset-8 btn-retour">
+                <a href="{{ path('modification_profil_prestataire') }}" class="inscription_form_button">
+                    Retour
+                </a>
+            </div>
             <h4 class="text-uppercase offset-1">Ma liste de Prestations</h4>
             <span class="title_line offset-1 col-xl-3"></span>
             <div class="prestation-list col-10">
@@ -67,15 +71,7 @@
             </div>
 
 
-            <div class="row xl-4 offset-1">
-                <div class="col-md-8 col-sm-9 form-field">
-
-                </div>
-                <div class="col-md-4 col-sm-6 form-field">
-
-                </div>
-        </div>
-
+            </div>
     {% endblock %}
     {% block footer %}
         {{ parent() }}
