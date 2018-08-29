@@ -10,7 +10,7 @@
     {% endblock %}
     {% block content %}
         <h2 class="text-uppercase form_title font-weight-bold">Mon Espace PRO</h2>
-        <span class="title_line"></span>
+        <span class="title_line top"></span>
 
         {% if prestataire.avatar and prestataire.descriptionEntreprise and prestataire.prestation %}
         {% else %}
@@ -21,67 +21,65 @@
             </div>
         </div>
         {% endif %}
-        <br>
 
-        <div class="col-12">
-            <div class="col-12">
+            <div class="col-12 main_content">
                 {{ form_start(form) }}
                 <h4 class="text-uppercase offset-1">Photo de profil</h4>
                 <span class="title_line offset-1 col-xl-3"></span>
                 {% if original_image %}
-                    <div class="offset-2">
+                    <div class="profil-img">
                        <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px">
                     </div>
                 {% endif %}
-                <div class="col-xl-4 offset-1">
+                <div class="col-4 col-md-5 profil-img-upload">
                     {{ form_widget(form.avatar) }}
                 </div>
                 <br>
 
                 <h4 class="text-uppercase offset-1">Coordonées</h4>
-                <span class="title_line offset-1 col-xl-3"></span>
+                <span class="title_line offset-1 col-3"></span>
 
-                <div class="col-xl-4 offset-1">
-                    <div class="col-md-8 col-sm-9 form-field">
+                <div class="row col-md-7 offset-1 col-sm-11 coord ">
+                    <div class="col-md-8 form-field">
                         {{ form_widget(form.adresse_entreprise) }}
                     </div>
-                    <div class="col-md-4 col-sm-6 form-field">
+                    <div class="col-md-4 form-field">
                         {{ form_widget(form.tel_entreprise) }}
                     </div>
                 </div>
                 <br>
-
-                <div class="xl-4 offset-1">
-                    <div class="col-md-4 col-sm-4 ville">
+                <div class="row col-md-6 offset-1 col-sm-11 coord ">
+                    <div class="col-md-4 ville">
                         {{ form_widget(form.ville_entreprise) }}
                     </div>
-                    <div class="col-md-4 col-sm-4 cp">
+                    <div class="col-md-4 cp">
                         {{ form_widget(form.cp_entreprise) }}
                     </div>
                 </div>
                 <br>
-                <h4 class="text-uppercase offset-1">Activité</h4>
+                <h4 class="text-uppercase offset-1 col-sm-12">Activité</h4>
                 <span class="title_line offset-1 col-xl-3"></span>
-
-                <div class=" xl-4 offset-1">
-                    <div class="col-md-3 lieu">
+                <div class="col-6 offset-1 col-sm-10 activite">
+                  <div class="row">
+                    <div class="col-md-5 lieu">
                         {{ form_row(form.profession) }}
                     </div>
-                    <div class="col-md-3 lieu">
+                    <div class="col-md-5 lieu">
                         {{ form_row(form.lieu_prestation) }}
                     </div>
-                    <div class="col-md-6 col-sm-9 form-field">
+                  </div>
+                    <div class="col-md-6 form-field">
                         {{ form_row(form.description_entreprise) }}
                     </div>
                 </div>
                 <br>
                 <h4 class="text-uppercase offset-1">Planning</h4>
                 <span class="title_line offset-1 col-xl-3"></span>
-                <div class="xl-4 offset-1">
-                    <div class="col-md-3">
-                        {{ form_row(form.jour) }}
-                    </div>
-                    <div class="col-md">
+
+                <div class="col-md-3 jour-disp">
+                    {{ form_row(form.jour) }}
+                </div>
+                <div class="col-md-9 col-sm-12 jour-hours">
                         <table class="table horraire">
                             <thead>
                             <tr>
@@ -127,28 +125,27 @@
                             </tr>
                             </tbody>
                         </table>
-                </div >
-                <div class="col-md-3">
-                    <div class="col">
-                        <a href="{{ path('modification_profil_photos') }}" class="inscription_form_button">
-                            Gestion des Photos
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="{{ path('modification_profil_prestations') }}" class="inscription_form_button">
-                            Gestion des Prestations
-                        </a>
-                    </div>
                 </div>
-            </div>
-                {#{%  if prestataire.prestation %}#}
-            <div class="form-btn-group offset-1 offset-md-9">
+            <div class="form-btn-group offset-md-10">
                 <button type="submit" class="inscription_form_button">
                     Valider
                 </button>
             </div>
             {{ form_end(form) }}
-        </div>
+                <h6 class="text-uppercase offset-1 title-gestion">Options de gestions de photos et de prestations</h6>
+                <div class="col-6 col-sm-10 offset-1 row gestion-btn">
+                    <div class="col-4">
+                        <a href="" class="inscription_form_button">
+                            Gestion des Photos
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="" class="inscription_form_button">
+                            Gestion des Prestations
+                        </a>
+                    </div>
+                </div>
+            </div>
 
     {% endblock %}
     {% block footer %}

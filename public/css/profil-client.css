@@ -20,6 +20,17 @@ Page de modification profil Client
     border-bottom: 2px solid black;
 }
 
+.main_content{
+    background-image: url("../img/bg_marbre.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 11px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.title_line.top{margin-bottom: 30px}
+
 
 /* formulaire */
 
@@ -44,6 +55,13 @@ form{
     box-shadow: 0 0 5px #000000;
 }
 
+.activite .row{ margin-left: 2px}
+.coord div:last-child{margin-left: -20px }
+
+
+.jour-disp, .jour-hours, .profil-img, .profil-img-upload { margin-left: 9.7%}
+
+
 .modification_form_button{
     margin: 60px auto 0 ;
     background-color: black;
@@ -56,6 +74,22 @@ form{
 .modification_form_button:hover{
     background-color: grey;
 }
+
+.inscription_form_button{
+    margin-top: 0;
+    margin-bottom: 50px;
+    background-color: black;
+    color: white;
+    padding: 15px 40px;
+    cursor: pointer;
+    border: none;
+}
+.inscription_form_button:hover{
+    background-color: grey;
+}
+
+.title-gestion{margin-top: 43px}
+.gestion-btn {margin: 50px 0 110px 8%}
 
 /****Affichage horraire *****/
 #horaire-lundi, #horaire-mardi, #horaire-mercredi, #horaire-jeudi, #horaire-vendredi, #horaire-samedi, #horaire-dimanche  {visibility: hidden; display: none}

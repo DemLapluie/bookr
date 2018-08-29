@@ -45,6 +45,7 @@ $("#inscription_prestataire_jour_4").parent().append("<div id='add4'></div>");
 $("#inscription_prestataire_jour_5").parent().append("<div id='add5'></div>");
 $("#inscription_prestataire_jour_6").parent().append("<div id='add6'></div>");
 
+
 function afficherHorraire()
 {
     if ($("#profil_prestataire_jour_0").is(":checked")) {
