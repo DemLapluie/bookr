@@ -86,10 +86,16 @@ form{
 }
 .inscription_form_button:hover{
     background-color: grey;
+    text-decoration: none;
+    color: white;
 }
 
 .title-gestion{margin-top: 43px}
 .gestion-btn {margin: 50px 0 110px 8%}
+
+.title-photo-prest { margin-left: 8%}
+
+.btn-modif{ margin-bottom: 65px}
 
 /****Affichage horraire *****/
 #horaire-lundi, #horaire-mardi, #horaire-mercredi, #horaire-jeudi, #horaire-vendredi, #horaire-samedi, #horaire-dimanche  {visibility: hidden; display: none}

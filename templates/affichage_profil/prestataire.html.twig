@@ -74,7 +74,7 @@
                 </div>
                 <br>
                 <h4 class="text-uppercase offset-1">Planning</h4>
-                <span class="title_line offset-1 col-xl-3"></span>
+                <span class="title_line offset-1 col-3"></span>
 
                 <div class="col-md-3 jour-disp">
                     {{ form_row(form.jour) }}
@@ -132,15 +132,16 @@
                 </button>
             </div>
             {{ form_end(form) }}
-                <h6 class="text-uppercase offset-1 title-gestion">Options de gestions de photos et de prestations</h6>
-                <div class="col-6 col-sm-10 offset-1 row gestion-btn">
+                <h5 class="text-uppercase font-weight-bold title-photo-prest">photos et prestations</h3>
+                <span class="title_line top offset-1 col-2"></span>
+                <div class="col-5 col-sm-8 offset-1 row gestion-btn">
                     <div class="col-4">
-                        <a href="" class="inscription_form_button">
+                        <a href="{{ path('modification_profil_photos') }}" class="inscription_form_button">
                             Gestion des Photos
                         </a>
                     </div>
                     <div class="col-4">
-                        <a href="" class="inscription_form_button">
+                        <a href="{{ path('modification_profil_prestations') }}" class="inscription_form_button">
                             Gestion des Prestations
                         </a>
                     </div>

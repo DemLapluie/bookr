@@ -78,15 +78,6 @@ class InscriptionPrestataireType extends AbstractType
                     ]
                 ]
                 )
-            ->add(
-                'cni',
-                FileType::class,
-                [
-                    'attr' => [
-                        'placeholder' => 'Pièce d\'identité',
-                    ]
-                ])
-
 
             ->add(
                 'profession',

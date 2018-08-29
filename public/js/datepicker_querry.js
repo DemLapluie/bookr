@@ -15,9 +15,8 @@ $( function() {
         minDate:0
     });
 } );
-$( "#recherche_jour" ).datepicker({
-    disabled:true
-});
+
+$("#recherche_jour").attr("autocomplete", "off");
 
 
 

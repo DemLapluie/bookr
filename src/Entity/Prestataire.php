@@ -77,7 +77,7 @@ class Prestataire
     private $certification;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"user"})
      * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"user"})
      */

@@ -11,9 +11,7 @@
     {% block content %}
         <h2 class="text-uppercase form_title font-weight-bold">Mon profil</h2>
         <span class="title_line"></span>
-
-
-
+              <div class="main_content">
                 {{ form_start(form) }}
                 <h4 class="text-uppercase offset-1">Pseudo</h4>
                 <span class="title_line offset-1 col-xl-3"></span>
@@ -32,7 +30,7 @@
                 <div class="col-xl-4 offset-1">
                     {{ form_widget(form.avatar) }}
                 </div>
-                <div class="col-xl-8 offset-1">
+                <div class="col-xl-4 offset-1">
                     {{ form_widget(form.description) }}
                 </div>
                 <h4 class="text-uppercase offset-1">Coordonées</h4>
@@ -46,19 +44,20 @@
                 <div class="col-xl-4 offset-1">
                     {{ form_widget(form.cp) }}
                 </div>
-                <div class="col-xl-6 offset-1">
+                <div class="col-xl-4 offset-1">
                     {{ form_widget(form.email) }}
                 </div>
                 <div class="col-xl-4 offset-1">
                     {{ form_widget(form.tel) }}
                 </div>
 
-                <div class="form-btn-group offset-4 offset-sm-4 offset-md-5 offset-lg-6 offset-xl-7">
+                <div class="form-btn-group offset-4 offset-sm-4 offset-md-5 offset-lg-6 offset-xl-7 btn-modif">
                     <button type="submit" class="modification_form_button">
                         Modifier
                     </button>
                 </div>
                 {{ form_end(form) }}
+              </div>
 
     {% endblock %}
     {% block footer %}
