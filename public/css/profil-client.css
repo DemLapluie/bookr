@@ -97,9 +97,14 @@ form{
 
 .btn-modif{ margin-bottom: 65px}
 
+.jour-dispo span{ border-right: 1px solid black; font-family: Roboto; font-size: 1em; padding-right: 5px}
+.jour-dispo span:last-child { border: none}
+.jour-dispo span.label-jour{ border-right: inherit; font-family: Antraste; font-size: .8em ; padding-right: 0}
+
 /****Affichage horraire *****/
 #horaire-lundi, #horaire-mardi, #horaire-mercredi, #horaire-jeudi, #horaire-vendredi, #horaire-samedi, #horaire-dimanche  {visibility: hidden; display: none}
 
 .table.horraire thead th { border-bottom: none }
 
 .table.horraire thead th { border-top: none }
+

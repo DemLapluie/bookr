@@ -1,15 +1,96 @@
 .slider{
-    border-top: 1px solid gray ;
-    border-bottom: 1px solid gray ;
+    /*border-top: 1px solid gray ;*/
+    /*border-bottom: 1px solid gray ;*/
     padding: 25px 0;
     margin-bottom: 25px;
     width: 100%;
 }
 .fiche_prestataire {
-    border-top: 2px solid gray ;
     padding-top: 25px;
     margin-top: 25px;
 }
+
 .avatar img{
     width: 100%;
+}
+
+/*******Afiche presta***/
+.result-content {
+    display: flex;
+    border-top: 1px solid black;
+    margin-bottom: 0;
+    padding: 20px 0;
+    text-decoration: none;
+    color: black;
+}
+
+
+.result-content:hover {
+    text-decoration: none;
+    background-color: rgb(230,230,230);
+    color: black;
+
+}
+
+.result-content.no-result{
+    margin-bottom: 250px;
+}
+
+.prestataire-infos h2,
+.prestataire-infos h4{
+    font-family: Antraste
+}
+.prestataire-infos h2 span {
+    font-size: .74em
+}
+.prestataire-infos{
+    margin-bottom: 50px
+}
+
+.prestataire-infos h4{
+    font-size: .8em;
+    color: grey;
+    font-family: Code-bold;
+}
+
+.left-info{
+    padding-top: 70px;
+    padding-left: 25px}
+.left-info span{
+    font-family: Antraste;
+    font-size: .8em}
+
+.img_avatar, .descrip-prestataire, .prestataire-infos .col-12 { padding: 0}
+.prestataire-infos .col-12 { display: flex}
+
+.img_avatar img{width: 90%}
+.descrip-prestataire{ font-family: Antraste; font-size: .8em; padding: 20px 35px}
+
+.jour-dispo span.label-jour {
+    border-right: inherit;
+    font-family: Antraste;
+    font-size: .8em;
+    padding-right: 0;
+}
+
+.jour-dispo span {
+    border-right: 1px solid black;
+    font-family: Roboto;
+    font-size: 1em;
+    padding-right: 5px;
+}
+
+.table-horaire, .prestation { margin: 0 auto}
+.prestation{ padding-left: 0}
+
+.table thead th { border-bottom: 2px solid black}
+
+.table th { border-top: 1px solid black}
+
+/* -------------- RESPONSIVE --------------------- */
+
+@media screen and (max-width: 1566px) {
+    .descrip-prestataire {
+        padding-top: 0;
+    }
 }
