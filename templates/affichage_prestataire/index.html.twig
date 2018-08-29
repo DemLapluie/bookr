@@ -119,17 +119,17 @@
                  </div>
              </div>
              <div class="col-10 prestation">
-                 <h5>Nos préstations</h5>
+                 <h5>Nos prestations</h5>
                  {% for prestation in prestataire.prestation %}
 
                      <div>
                          <h6>
-                             Nom de la préstation : {{ prestation.nom }}
+                             Nom de la prestation : {{ prestation.nom }}
                          </h6>
                          <p> Prix : {{ prestation.prix }}€</p>
                          <p> Durée : {{ prestation.duree|date('H:i') }}</p>
                          <p> Catégorie : {{ prestation.categorie }}</p>
-                         <p> Déscription : {{ prestation.description }}</p>
+                         <p> Description : {{ prestation.description }}</p>
                      </div>
 
                  {% endfor %}
