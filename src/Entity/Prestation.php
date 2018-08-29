@@ -30,7 +30,7 @@ class Prestation
     private $prix;
 
     /**
-     * @ORM\Column(type="string", length=3, nullable=true)
+     * @ORM\Column(type="time", nullable=true)
      * @Assert\NotBlank(message="La duree est obligatoire")
      */
     private $duree;
@@ -84,12 +84,12 @@ class Prestation
         return $this;
     }
 
-    public function getDuree(): ?string
+    public function getDuree(): ?\DateTimeInterface
     {
         return $this->duree;
     }
 
-    public function setDuree(string $duree): self
+    public function setDuree(?\DateTimeInterface $duree): self
     {
         $this->duree = $duree;
 
@@ -137,8 +137,6 @@ class Prestation
         $this->prestataire = $prestataire;
         return $this;
     }
-
-
 
 
 }
