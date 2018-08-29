@@ -21,7 +21,7 @@ class PrestationType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Nom ?',
+                        'placeholder' => 'Nom de la prestation ?',
                     ]
                 ]
                 )
@@ -46,7 +46,7 @@ class PrestationType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Catégorie ?',
+                        'placeholder' => 'Catégorie de la prestations ?',
                     ]
                 ])
             ->add('description',
