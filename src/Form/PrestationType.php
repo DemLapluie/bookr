@@ -46,14 +46,14 @@ class PrestationType extends AbstractType
                 TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Catégorie de la prestations ?',
+                        'placeholder' => 'Catégorie de la prestation ?',
                     ]
                 ])
             ->add('description',
                     TextareaType::class,
                     [
                         'attr' => [
-                            'placeholder' => 'Décrivez votre prestation',
+                            'placeholder' => 'Décrivez votre prestation...',
                         ]
                     ]
                 )
