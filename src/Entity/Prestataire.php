@@ -63,9 +63,9 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=14)
-     * @Assert\NotBlank(message="Le n° SIRET est obligatoire", groups={"registration"})
-     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères", groups={"registration"})
-     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres", groups={"registration"})
+     * @Assert\NotBlank(message="Le n° SIRET est obligatoire", groups={"user"})
+     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères", groups={"user"})
+     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres", groups={"user"})
      *
      */
     private $numero_siret;
@@ -78,8 +78,8 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"registration"})
-     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"registration"})
+     * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"user"})
+     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"user"})
      */
     private $cni;
 
@@ -116,8 +116,8 @@ class Prestataire
     private $profession;
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
-     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires", groups={"registration"})
+     * @ORM\Column(type="simple_array")
+     * @Assert\NotBlank(message="Les jours de disponibilités sont obligatoires", groups={"user"})
     */
     private $jour;
 

@@ -36,12 +36,12 @@ class AffichageProfilUserController extends AbstractController
 
         if (!empty($originalImage)) {
             $prestataire->setAvatar(
-                new  File($this->getParameter('upload_dir') . $originalImage, ['validation_groups' => ['registration']])
+                new  File($this->getParameter('upload_dir') . $originalImage)
             );
         }
 
         //dump($prestataire->getHoraires());
-        $form = $this->createForm(ProfilPrestataireType::class, $prestataire);
+        $form = $this->createForm(ProfilPrestataireType::class, $prestataire, ['validation_groups' => ['user']]);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
@@ -95,16 +95,30 @@ class AffichageProfilUserController extends AbstractController
      */
     public function gestionDesPhotos(Request $request) {
 
-        $photos = $this->getUser()->getPrestataire()->getPhoto();
+        $prestataire = $this->getUser()->getPrestataire();
 
         $photo = new Photos();
+
         $form = $this->createForm(PhotoType::class, $photo);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()) {
 
-                $photo->getPhoto();
+                $image = $photo->getNom() ;
+
+                if(!is_null($image)){
+                    $filename = uniqid() . '.' . $image->guessExtension();
+                    $image->move(
+                        $this->getParameter('upload_dir'),
+                        $filename
+                    );
+
+                    $photo->setNom($filename);
+                    $photo->setPrestataire($filename);
+
+                }
+
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($photo);
                 $em->flush();
@@ -118,7 +132,6 @@ class AffichageProfilUserController extends AbstractController
         }
         return $this->render(
             '/affichage_profil/fiche_prestataire/photos.html.twig',[
-                'photos' => $photos,
                 'form'  => $form->createView()
             ]
 
@@ -234,7 +247,7 @@ class AffichageProfilUserController extends AbstractController
             }else{
                 $this->addFlash(
                     'error',
-                    'Erreuraagarg'
+                    'Erreur'
                 );
             }
 

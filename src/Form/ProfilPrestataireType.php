@@ -1,8 +1,6 @@
 <?php
 namespace App\Form;
 use App\Entity\Prestataire;
-use App\Entity\Horaires;
-use App\Form\HorairesType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -120,28 +118,6 @@ class ProfilPrestataireType extends AbstractType
                     'expanded' => true,
                     'multiple' => true
                 ))
-
-            /*->add(
-               'nom',
-               PhotoType::class, array(
-                       'nom',TextType::class,
-                   [
-                       'attr' => [
-                           'placeholder' => 'Ajouter une photo',
-                       ]
-                   ])
-           )
-            ->add(
-               'prestation',
-               PrestationType::class, array(
-                   'nom', TextType::class,
-                   [
-                       'attr' => [
-                           'placeholder' => 'Ajouter une prestation',
-                       ]
-                   ])
-           )
-           */
         ;
     }
     public function configureOptions(OptionsResolver $resolver)

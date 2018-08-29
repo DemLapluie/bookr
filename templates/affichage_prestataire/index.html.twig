@@ -21,7 +21,51 @@
                      <p>{{ prestataire.descriptionEntreprise }}</p>
                  </div>
              </div>
-             <p>{{ prestataire.horaires }} horaires de l'entreprise</p>
+             {% for jour in prestataire.jour %}
+                 {% if jour == 1  %}
+                     <div class="horaire">
+                         <p>Lundi</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.lundiOuverture|date('H:i') }}</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.lundiFermeture|date('H:i') }}</p>
+                     </div>
+                 {% elseif jour == 2  %}
+                     <div class="horaire">
+                         <p>Mardi</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.mardiOuverture|date('H:i') }}</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.mardiFermeture|date('H:i') }}</p>
+                     </div>
+                 {% elseif jour == 3  %}
+                     <div class="horaire">
+                         <p>Mercredi</p>
+                         <p class="horaire_heure"></p>{{ prestataire.horaires.mercrediOuverture|date('H:i') }}
+                         <p class="horaire_heure"></p>{{ prestataire.horaires.mercrediFermeture|date('H:i') }}
+                     </div>
+                 {% elseif jour == 4  %}
+                     <div class="horaire">
+                         <p>Jeudi</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.jeudiOuverture|date('H:i') }}</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.jeudiFermeture|date('H:i') }}</p>
+                     </div>
+                 {% elseif jour == 5  %}
+                     <div class="horaire">
+                         <p>Vendredi</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.vendrediOuverture|date('H:i') }}</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.vendrediFermeture|date('H:i') }}</p>
+                     </div>
+                 {% elseif jour == 6  %}
+                     <div class="horaire">
+                         <p>Samedi</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.samediOuverture|date('H:i') }}</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.samediFermeture|date('H:i') }}</p>
+                     </div>
+                 {% elseif jour == 7  %}
+                     <div class="horaire">
+                         <p>Dimanche</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.dimancheOuverture|date('H:i') }}</p>
+                         <p class="horaire_heure">{{ prestataire.horaires.dimancheFermeture|date('H:i') }}</p>
+                     </div>
+                 {% endif %}
+             {% endfor %}
              <div class="slider">
                  <div class="item">
                      <ul id="content-slider" class="content-slider">
