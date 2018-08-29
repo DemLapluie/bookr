@@ -25,11 +25,7 @@
             {{ form_start(form) }}
             <h4 class="text-uppercase offset-1">Ajouter une photo</h4>
             <span class="title_line offset-1 col-xl-3"></span>
-            {#{% if original_image %}
-                        <div class="offset-2">
-                           <!-- <img class="avatar_actuel" src="{{ asset('/img/' ~ original_image) }}" height="200px"> -->
-                        </div>
-                    {% endif %}#}
+
             <div class="col-xl-4 offset-1">
                 {{ form_widget(form.nom) }}
             </div>
@@ -43,7 +39,11 @@
 
             <h4 class="text-uppercase offset-1">Ma Galerie</h4>
             <span class="title_line offset-1 col-xl-3"></span>
+            {% for photo in prestataire.photo %}
 
+                <img width="200px" src="{{ asset('img/' ~ photo.nom) }}" />
+
+            {% endfor %}
             <div class="row xl-4 offset-1">
                 <div class="col-md-8 col-sm-9 form-field">
 
