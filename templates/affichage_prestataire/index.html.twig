@@ -21,72 +21,70 @@
                      <p>{{ prestataire.descriptionEntreprise }}</p>
                  </div>
              </div>
-             {% for jour in prestataire.jour %}
-                 {% if jour == 1  %}
-                     <div class="horaire">
-                         <p>Lundi</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.lundiOuverture|date('H:i') }}</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.lundiFermeture|date('H:i') }}</p>
-                     </div>
-                 {% elseif jour == 2  %}
-                     <div class="horaire">
-                         <p>Mardi</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.mardiOuverture|date('H:i') }}</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.mardiFermeture|date('H:i') }}</p>
-                     </div>
-                 {% elseif jour == 3  %}
-                     <div class="horaire">
-                         <p>Mercredi</p>
-                         <p class="horaire_heure"></p>{{ prestataire.horaires.mercrediOuverture|date('H:i') }}
-                         <p class="horaire_heure"></p>{{ prestataire.horaires.mercrediFermeture|date('H:i') }}
-                     </div>
-                 {% elseif jour == 4  %}
-                     <div class="horaire">
-                         <p>Jeudi</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.jeudiOuverture|date('H:i') }}</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.jeudiFermeture|date('H:i') }}</p>
-                     </div>
-                 {% elseif jour == 5  %}
-                     <div class="horaire">
-                         <p>Vendredi</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.vendrediOuverture|date('H:i') }}</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.vendrediFermeture|date('H:i') }}</p>
-                     </div>
-                 {% elseif jour == 6  %}
-                     <div class="horaire">
-                         <p>Samedi</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.samediOuverture|date('H:i') }}</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.samediFermeture|date('H:i') }}</p>
-                     </div>
-                 {% elseif jour == 7  %}
-                     <div class="horaire">
-                         <p>Dimanche</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.dimancheOuverture|date('H:i') }}</p>
-                         <p class="horaire_heure">{{ prestataire.horaires.dimancheFermeture|date('H:i') }}</p>
-                     </div>
-                 {% endif %}
-             {% endfor %}
+             <table class="table">
+                 <thead>
+                    <tr>
+                        <td>Jour</td>
+                        <td>Ouverture</td>
+                        <td>Fermeture</td>
+                    </tr>
+                 </thead>
+                 <tbody>
+                 {% for jour in prestataire.jour %}
+                     {% if jour == 1  %}
+                             <tr>
+                                 <td>Lundi</td>
+                                 <td>{{ prestataire.horaires.lundiOuverture|date('H:i') }}</td>
+                                 <td>{{ prestataire.horaires.lundiFermeture|date('H:i') }}</td>
+                             </tr>
+                     {% elseif jour == 2  %}
+                             <tr>
+                                 <td>Mardi</td>
+                                 <td>{{ prestataire.horaires.mardiOuverture|date('H:i') }}</td>
+                                 <td>{{ prestataire.horaires.mardiFermeture|date('H:i') }}</td>
+                             </tr>
+                     {% elseif jour == 3  %}
+                            <tr>
+                                 <td>Mercredi</td>
+                                 <td>{{ prestataire.horaires.mercrediOuverture|date('H:i') }}</td>
+                                 <td>{{ prestataire.horaires.mercrediFermeture|date('H:i') }}</td>
+                            </tr>
+                     {% elseif jour == 4  %}
+                            <tr>
+                                 <td>Jeudi</td>
+                                 <td>{{ prestataire.horaires.jeudiOuverture|date('H:i') }}</td>
+                                 <td>{{ prestataire.horaires.jeudiFermeture|date('H:i') }}</td>
+                            </tr>
+                     {% elseif jour == 5  %}
+                            <tr>
+                                 <td>Vendredi</td>
+                                 <td>{{ prestataire.horaires.vendrediOuverture|date('H:i') }}</td>
+                                 <td>{{ prestataire.horaires.vendrediFermeture|date('H:i') }}</td>
+                            </tr>
+                     {% elseif jour == 6  %}
+                            <tr>
+                                 <td>Samedi</td>
+                                 <td>{{ prestataire.horaires.samediOuverture|date('H:i') }}</td>
+                                 <td>{{ prestataire.horaires.samediFermeture|date('H:i') }}</td>
+                            </tr>
+                     {% elseif jour == 7  %}
+                            <tr>
+                                <td>Dimanche</td>
+                                <td>{{ prestataire.horaires.dimancheOuverture|date('H:i') }}</td>
+                                <td>{{ prestataire.horaires.dimancheFermeture|date('H:i') }}</td>
+                            </tr>
+                     {% endif %}
+                 {% endfor %}
+                 </tbody>
+             </table>
              <div class="slider">
                  <div class="item">
                      <ul id="content-slider" class="content-slider">
-                         <li>
-                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
-                         </li>
-                         <li>
-                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
-                         </li>
-                         <li>
-                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
-                         </li>
-                         <li>
-                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
-                         </li>
-                         <li>
-                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
-                         </li>
-                         <li>
-                             <img src="{{ asset('img/5b801509667d6.jpeg') }}" />
-                         </li>
+                         {% for photo in prestataire.photo %}
+                             <li>
+                                 <img src="{{ asset('img/' ~ photo.nom) }}" />
+                             </li>
+                         {% endfor %}
                      </ul>
                  </div>
              </div>

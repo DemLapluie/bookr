@@ -41,7 +41,7 @@ class AffichageProfilUserController extends AbstractController
         }
 
         //dump($prestataire->getHoraires());
-        $form = $this->createForm(ProfilPrestataireType::class, $prestataire, ['validation_groups' => ['user']]);
+        $form = $this->createForm(ProfilPrestataireType::class, $prestataire, ['validation_groups' => ['Static','Prestataire']]);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
@@ -115,7 +115,7 @@ class AffichageProfilUserController extends AbstractController
                     );
 
                     $photo->setNom($filename);
-                    $photo->setPrestataire($filename);
+                    $photo->setPrestataire($prestataire);
 
                 }
 
@@ -131,8 +131,11 @@ class AffichageProfilUserController extends AbstractController
             }
         }
         return $this->render(
-            '/affichage_profil/fiche_prestataire/photos.html.twig',[
-                'form'  => $form->createView()
+            '/affichage_profil/fiche_prestataire/photos.html.twig',
+            [
+                'form'  => $form->createView(),
+                'prestataire' => $prestataire,
+
             ]
 
         );

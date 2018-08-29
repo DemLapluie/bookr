@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PrestataireRepository")
+ * @Assert\GroupSequence({"Strict","Prestataire"})
  */
 class Prestataire
 {
@@ -63,9 +64,9 @@ class Prestataire
 
     /**
      * @ORM\Column(type="string", length=14)
-     * @Assert\NotBlank(message="Le n° SIRET est obligatoire", groups={"user"})
-     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères", groups={"user"})
-     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres", groups={"user"})
+     * @Assert\NotBlank(message="Le n° SIRET est obligatoire")
+     * @Assert\Length(max="14", min="14", maxMessage="Le n° SIRET ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\Type(type="digit", message="Le N° de siret doit contenir uniquement des chiffres")
      *
      */
     private $numero_siret;
@@ -77,9 +78,9 @@ class Prestataire
     private $certification;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"user"})
-     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"user"})
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le fichier est obligatoire", groups={"Strict"})
+     * @Assert\File(maxSize="2M", mimeTypesMessage="Le fichier doit être une image", groups={"Strict"})
      */
     private $cni;
 
